@@ -28,11 +28,14 @@ public class ToolbarController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        escapeHatch.getChildren();
+
+        //Test code
+
+        /*escapeHatch.getChildren();
         handlaButton.setText("1");
         historikButton.setText("2");
         hjalpButton.setText("3");
-        anvandareButton.setText("4");
+        anvandareButton.setText("4");*/
 
 
     }
