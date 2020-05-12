@@ -24,10 +24,8 @@ public class ParentController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         backendControllerProducts = new BackendControllerProducts();
-        i= Integer.parseInt(backendControllerProducts.getCustomer());
-        backendControllerProducts.setCustomer(String.valueOf(i));
-        usernameLabel.setText(backendControllerProducts.getCustomer());
 
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
@@ -35,6 +33,7 @@ public class ParentController implements Initializable {
                 backendControllerProducts.iM.shutDown();
             }
         }));
+
 
     }
 }
