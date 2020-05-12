@@ -13,9 +13,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
 
-        ResourceBundle bundle = java.util.ResourceBundle.getBundle("recipesearch/resources/RecipeSearch");
-        Parent root = FXMLLoader.load(getClass().getResource("Parent.fxml"));
-        primaryStage.setTitle("Hello World");
+        ResourceBundle bundle = java.util.ResourceBundle.getBundle("Project/Resources/Project.properties");
+        Parent root = FXMLLoader.load(getClass().getResource("Parent.fxml"),bundle);
         primaryStage.setScene(new Scene(root, 500, 500));
         primaryStage.show();
 
