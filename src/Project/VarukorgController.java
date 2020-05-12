@@ -19,13 +19,13 @@ public class VarukorgController implements Initializable {
     private FlowPane flowPane;
 
     @FXML
-    private Label varukorgLabel;
+    private Label cartLabel;
 
     @FXML
-    private Button kassaButton;
+    private Button checkoutButton;
 
     @FXML
-    private Label prisLabel;
+    private Label priceLabel;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -34,9 +34,9 @@ public class VarukorgController implements Initializable {
 
         /*flowPane.setPrefWidth(700);
         System.out.println(flowPane.getPrefWidth());
-        varukorgLabel.setText("Hej hej");
-        kassaButton.setText("då då");
-        prisLabel.setText("10000 kr");*/
+        cartLabel.setText("Hej hej");
+        checkoutButton.setText("då då");
+        priceLabel.setText("10000 kr");*/
 
     }
 }

@@ -14,16 +14,16 @@ public class ToolbarController implements Initializable {
     private Pane escapeHatch;
 
     @FXML
-    private Button handlaButton;
+    private Button shopButton;
 
     @FXML
-    private Button historikButton;
+    private Button historyButton;
 
     @FXML
-    private Button hjalpButton;
+    private Button helpButton;
 
     @FXML
-    private Button anvandareButton;
+    private Button userButton;
 
 
     @Override
@@ -32,10 +32,10 @@ public class ToolbarController implements Initializable {
         //Test code
 
         /*escapeHatch.getChildren();
-        handlaButton.setText("1");
-        historikButton.setText("2");
-        hjalpButton.setText("3");
-        anvandareButton.setText("4");*/
+        shopButton.setText("1");
+        historyButton.setText("2");
+        helpButton.setText("3");
+        userButton.setText("4");*/
 
 
     }

@@ -18,13 +18,13 @@ public class CategoryListController implements Initializable {
 
 
     //Write all categories in this list
-    ObservableList<String> names = FXCollections.observableArrayList("Kött", "Frukt", "Glass", "Växter");
+    ObservableList<String> categories = FXCollections.observableArrayList("Kött", "Frukt", "Glass", "Växter");
 
     @FXML
     private ListView<String> list;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        list.setItems(names);
+        list.setItems(categories);
     }
 }
