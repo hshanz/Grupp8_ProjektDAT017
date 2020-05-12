@@ -29,7 +29,12 @@ public class ParentController implements Initializable {
         backendControllerProducts.setCustomer(String.valueOf(i));
         usernameLabel.setText(backendControllerProducts.getCustomer());
 
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> backendControllerProducts.iM.shutDown()));
+        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
+            @Override
+            public void run() {
+                backendControllerProducts.iM.shutDown();
+            }
+        }));
 
     }
 }
