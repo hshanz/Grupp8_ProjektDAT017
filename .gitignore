@@ -1,0 +1,8 @@
+
+*.xml
+.idea/ant.xml
+.idea/gradle.xml
+.idea/misc.xml
+out/production/Projekt/sample/sample.fxml
+out/production/Projekt/sample/Main.class
+out/production/Projekt/sample/Controller.class
