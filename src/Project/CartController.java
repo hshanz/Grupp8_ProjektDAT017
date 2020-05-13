@@ -10,7 +10,7 @@ import java.awt.*;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class VarukorgController implements Initializable {
+public class CartController implements Initializable {
 
 
 
