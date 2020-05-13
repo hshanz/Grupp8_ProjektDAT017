@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="680.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.CheckoutController">
+   <children>
+      <StackPane fx:id="Finish" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <StackPane fx:id="wiz4_Confirm" layoutX="87.0" layoutY="162.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <StackPane fx:id="wiz3_Payment" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <StackPane fx:id="wiz1_Check" layoutX="30.0" layoutY="30.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane dividerPositions="0.685370741482966" prefHeight="200.0" prefWidth="200.0">
+               <items>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="22.0" layoutY="15.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: dcdcdc;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="15.0">
+                           <children>
+                              <Pane layoutX="176.0" layoutY="46.0" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: AAAAAA;">
+                                 <children>
+                                    <AnchorPane prefHeight="30.0" prefWidth="294.0">
+                                       <children>
+                                          <Circle fill="#5ca1ff" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="-50.0" />
+                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="64.0" />
+                                             </font>
+                                          </Text>
+                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="-40.0" />
+                                          <Circle fill="#ababab" layoutX="122.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="58.0" />
+                                          <Circle fill="#ababab" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="58.0" />
+                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="167.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="280.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="678.0" prefWidth="436.0">
+                     <children>
+                        <GridPane AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="276.0" minHeight="10.0" prefHeight="206.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="120.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="192.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <Pane prefHeight="206.0" prefWidth="281.0" style="-fx-background-color: A0A0A0;">
+                                 <children>
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="261.0" text="Avbryt" />
+                                    <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="261.0" text="Ta bort allt" />
+                                 </children>
+                              </Pane>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#ToWiz2" prefHeight="149.0" prefWidth="281.0" text="Fortsätt" GridPane.rowIndex="3" />
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Att betala:" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="Cost_text_1" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="---kr" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="64.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </children></AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </StackPane>
+      <StackPane fx:id="wiz2_Date" layoutX="20.0" layoutY="20.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane dividerPositions="0.685370741482966" prefHeight="200.0" prefWidth="200.0">
+               <items>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="22.0" layoutY="15.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: CDCDCD;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="15.0">
+                           <children>
+                              <Pane layoutX="176.0" layoutY="46.0" prefHeight="30.0" prefWidth="300.0" style="-fx-background-color: AAAAAA;">
+                                 <children>
+                                    <AnchorPane prefHeight="30.0" prefWidth="294.0">
+                                       <children>
+                                          <Circle fill="#ababab" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="-40.0" />
+                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="-40.0" />
+                                          <Circle fill="#5ca1ff" layoutX="122.0" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.leftAnchor="48.0" />
+                                          <Circle fill="#ababab" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" AnchorPane.rightAnchor="58.0" />
+                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="64.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="167.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="280.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="16.0" layoutY="185.0" prefHeight="449.0" prefWidth="620.0" style="-fx-background-color: F0F0F0;" />
+                              <Pane layoutX="16.0" layoutY="132.0" prefHeight="53.0" prefWidth="130.0" style="-fx-background-color: F0F0F0;">
+                                 <children>
+                                    <Text layoutX="42.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="157.0" layoutY="141.0" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: DFDFDF;">
+                                 <children>
+                                    <Text layoutX="36.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad" />
+                                 </children>
+                              </Pane>
+                              <Pane layoutX="272.0" layoutY="141.0" prefHeight="44.0" prefWidth="108.0" style="-fx-background-color: DFDFDF;">
+                                 <children>
+                                    <Text layoutX="36.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Månad" />
+                                 </children>
+                              </Pane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="678.0" prefWidth="436.0">
+                     <children>
+                        <GridPane AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="276.0" minHeight="10.0" prefHeight="206.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="145.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="163.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Pane prefHeight="206.0" prefWidth="281.0" style="-fx-background-color: A0A0A0;">
+                                 <children>
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="86.0" prefWidth="261.0" text="Avbryt" />
+                                    <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#ToWiz1" prefHeight="86.0" prefWidth="261.0" text="Tillbaka" />
+                                 </children>
+                              </Pane>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#ToWiz3" prefHeight="149.0" prefWidth="281.0" text="Fortsätt" GridPane.rowIndex="3" />
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Att betala:" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="Cost_text_2" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--kr" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="64.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Levereras:" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="Delivery_date_1" fill="#ff0505" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ej valt" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="48.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children></StackPane>
+   </children>
+</AnchorPane>

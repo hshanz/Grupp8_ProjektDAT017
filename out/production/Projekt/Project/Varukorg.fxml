@@ -16,14 +16,14 @@
             <FlowPane fx:id="flowPane" prefHeight="400.0" prefWidth="300.0" />
          </content>
       </ScrollPane>
-      <Label fx:id="varukorgLabel" layoutX="69.0" layoutY="14.0" text="Varukorg">
+      <Label fx:id="cartLabel" layoutX="69.0" layoutY="14.0" text="Varukorg">
          <font>
             <Font size="40.0" />
          </font>
       </Label>
       <Line endX="100.0" layoutX="150.0" layoutY="72.0" startX="-100.0" />
-      <Button fx:id="kassaButton" layoutX="79.0" layoutY="528.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="140.0" text="Till kassa" />
-      <Label fx:id="prisLabel" layoutX="14.0" layoutY="498.0" prefHeight="27.0" prefWidth="85.0" text="= 226 kr">
+      <Button fx:id="checkoutButton" layoutX="79.0" layoutY="528.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="140.0" text="Till kassa" />
+      <Label fx:id="priceLabel" layoutX="14.0" layoutY="498.0" prefHeight="27.0" prefWidth="85.0" text="= 226 kr">
          <font>
             <Font size="18.0" />
          </font>
