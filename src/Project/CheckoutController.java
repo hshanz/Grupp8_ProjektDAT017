@@ -24,8 +24,10 @@ public class CheckoutController implements Initializable {
 
     @FXML Text Cost_text_1; // These texts should be updated with the complete cost of the purchase + "kr".
     @FXML Text Cost_text_2;
+    @FXML Text Cost_text_3;
 
     @FXML Text Delivery_date_1; //These texts should be updated with the with the delivery date. The "Delivery_date_1" should also change colour to black when first updated with a date.
+    @FXML Text Delivery_date_2;
 
     @FXML Text this_month_text; //Should say the current month (ex "Mars")
     @FXML Text next_month_text; //Should say next month (ex "April")

@@ -23,6 +23,16 @@
     -fx-border-color : black;
 }
 
+.unimportant-element{
+    -fx-background-color : #ababab;
+    -fx-font-size : 36;
+}
+
+.background-element{
+    -fx-background-color : #888888;
+}
+
+
 .caution-button{
     -fx-background-color: #ee5533;
     -fx-font-size : 36;
@@ -33,4 +43,5 @@
 .caution-button:hover{
     -fx-background-color: #ff8866;
 }
+
 
