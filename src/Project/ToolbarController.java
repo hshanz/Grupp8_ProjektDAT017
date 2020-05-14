@@ -9,6 +9,7 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ToolbarController implements Initializable {
+    private ParentController parentController;
 
     @FXML
     private Pane escapeHatch;
@@ -25,18 +26,14 @@ public class ToolbarController implements Initializable {
     @FXML
     private Button userButton;
 
+    @FXML
+    public void onClick() {
+        parentController.setCenterPage("UserPage.fxml");
+    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
-        //Test code
-
-        /*escapeHatch.getChildren();
-        shopButton.setText("1");
-        historyButton.setText("2");
-        helpButton.setText("3");
-        userButton.setText("4");*/
-
-
+        parentController = ParentController.getInstance();
     }
 }

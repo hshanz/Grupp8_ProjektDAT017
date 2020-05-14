@@ -3,23 +3,35 @@ package Project;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.BorderPane;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class ParentController implements Initializable {
     BackendControllerProducts backendControllerProducts;
-    int i;
+    PaneLoader paneLoader;
+    static ParentController parentController;
 
-    @FXML Label usernameLabel;
-    @FXML Button button;
+    public static ParentController getInstance(){
+        return parentController;
+    }
 
+    @FXML BorderPane mainPane;
+
+    public void setCenterPage(String str){
+        mainPane.setCenter(paneLoader.LoadPane(str));
+    }
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-
+        parentController = this;
         backendControllerProducts = new BackendControllerProducts();
+        paneLoader = new PaneLoader();
+
+        mainPane.setTop(paneLoader.LoadPane("Toolbar.fxml"));
+        mainPane.setLeft(paneLoader.LoadPane("CategoryList.fxml"));
 
 
 
