@@ -11,3 +11,37 @@
 
 }
 
+.important-element{
+    -fx-background-color : #5ca1ff;
+}
+
+
+
+.important-button{
+    -fx-background-color : #5ca1ff;
+    -fx-font-size : 48;
+    -fx-border-color : black;
+}
+
+.unimportant-element{
+    -fx-background-color : #ababab;
+    -fx-font-size : 36;
+}
+
+.background-element{
+    -fx-background-color : #888888;
+}
+
+
+.caution-button{
+    -fx-background-color: #ee5533;
+    -fx-font-size : 36;
+    -fx-font-color : #000000;
+    -fx-border-color: black;
+}
+
+.caution-button:hover{
+    -fx-background-color: #ff8866;
+}
+
+

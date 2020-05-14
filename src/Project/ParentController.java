@@ -14,12 +14,6 @@ public class ParentController implements Initializable {
     @FXML Label usernameLabel;
     @FXML Button button;
 
-    @FXML
-    public void onClick(){
-        i++;
-        backendControllerProducts.setCustomer(String.valueOf(i));
-        usernameLabel.setText(backendControllerProducts.getCustomer());
-    }
 
 
     @Override
@@ -27,10 +21,15 @@ public class ParentController implements Initializable {
 
         backendControllerProducts = new BackendControllerProducts();
 
+
+
+
+
+
         Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
             @Override
             public void run() {
-                backendControllerProducts.iM.shutDown();
+                backendControllerProducts.shutDown();
             }
         }));
 
