@@ -44,4 +44,9 @@
     -fx-background-color: #ff8866;
 }
 
+.normal-text{
+    -fx-font-size: 24;
+    -fx-font-color: #000000000;
+}
+
 
