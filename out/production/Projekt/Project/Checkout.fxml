@@ -340,12 +340,12 @@
                                     <Text fx:id="this_month_text" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Månad" textAlignment="CENTER" wrappingWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
                                  </children>
                               </AnchorPane>
-                              <AnchorPane fx:id="next_month_pane" layoutX="156.0" layoutY="143.0" onMouseClicked="#SetMonthNext" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: E6E6E6;">
+                              <AnchorPane fx:id="next_month_pane" layoutX="156.0" layoutY="146.0" onMouseClicked="#SetMonthNext" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: E6E6E6;">
                                  <children>
                                     <Text fx:id="next_month_text" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Månad" textAlignment="CENTER" wrappingWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
                                  </children>
                               </AnchorPane>
-                              <AnchorPane fx:id="after_next_month_pane" layoutX="296.0" layoutY="143.0" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: E6E6E6;">
+                              <AnchorPane fx:id="after_next_month_pane" layoutX="296.0" layoutY="146.0" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: E6E6E6;">
                                  <children>
                                     <Text fx:id="after_next_month_text" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Månad" textAlignment="CENTER" wrappingWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
                                  </children>
