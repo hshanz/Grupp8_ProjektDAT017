@@ -27,9 +27,11 @@ public class CheckoutController implements Initializable {
     @FXML Text Cost_text_1; // These texts should be updated with the complete cost of the purchase + "kr".
     @FXML Text Cost_text_2;
     @FXML Text Cost_text_3;
+    @FXML Text Cost_text_4;
 
     @FXML Text Delivery_date_1; //These texts should be updated with the with the delivery date. The "Delivery_date_1" should also change colour to black when first updated with a date.
     @FXML Text Delivery_date_2;
+    @FXML Text Delivery_date_3;
 
     @FXML Text this_month_text; //Should say the current month (ex "Mars")
     @FXML Text next_month_text; //Should say next month (ex "April")
@@ -51,6 +53,9 @@ public class CheckoutController implements Initializable {
     @FXML TextField city_field;
     @FXML TextField postal_number_field;
 
+    @FXML Text confirm_name; //Should display the full name of the buyer, (first name + surname)
+    @FXML Text confirm_adress; //should display the delivery address of the buyer
+    @FXML Text confirm_cardnumber; //Should display 8 stars and then the 4 last numbers of the credit card number. (ex: **** **** 1234)
 
 
 
@@ -121,4 +126,11 @@ public class CheckoutController implements Initializable {
         SetLarge(after_next_month_pane);
     }
     //endregion
+
+    //region Confirm_wiz_methods
+    public void ConfirmAndBuy () //the method that actually confirms the purchase
+    {
+
+        ToFinish();
+    }
 }

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -18,7 +20,6 @@
 <AnchorPane prefHeight="680.0" prefWidth="1000.0" stylesheets="@ListCSS.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.CheckoutController">
    <children>
       <StackPane fx:id="Finish" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-      <StackPane fx:id="wiz4_Confirm" layoutX="87.0" layoutY="162.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <StackPane fx:id="wiz1_Check" layoutX="30.0" layoutY="30.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <SplitPane dividerPositions="0.685370741482966" prefHeight="200.0" prefWidth="200.0">
@@ -409,5 +410,111 @@
                </items>
             </SplitPane>
          </children></StackPane>
+      <StackPane fx:id="wiz4_Confirm" layoutX="87.0" layoutY="162.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane dividerPositions="0.685370741482966" prefHeight="200.0" prefWidth="200.0">
+               <items>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                     <children>
+                        <Pane layoutX="22.0" layoutY="15.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: dcdcdc;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="22.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="15.0">
+                           <children>
+                              <Pane layoutX="176.0" layoutY="46.0" prefHeight="30.0" prefWidth="300.0" styleClass="background-element">
+                                 <children>
+                                    <AnchorPane prefHeight="30.0" prefWidth="294.0">
+                                       <children>
+                                          <Circle fill="#ababab" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="-40.0" />
+                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.rightAnchor="-50.0" />
+                                          <Circle fill="#ababab" layoutX="122.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="58.0" />
+                                          <Circle fill="#5ca1ff" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
+                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="167.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="275.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
+                                             <font>
+                                                <Font size="64.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </Pane>
+                              <AnchorPane layoutX="1.0" layoutY="117.0" prefHeight="531.0" prefWidth="651.0">
+                                 <children>
+                                    <ScrollPane layoutX="226.0" layoutY="7.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="331.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+                                    <ListView layoutX="202.0" layoutY="200.0" prefHeight="128.0" prefWidth="651.0" AnchorPane.bottomAnchor="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="678.0" prefWidth="285.0">
+                     <children>
+                        <GridPane AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="276.0" minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="148.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="163.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Pane prefHeight="200.0" prefWidth="277.0" styleClass="background-element">
+                                 <children>
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#EscapeCheckout" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Avbryt" />
+                                    <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#ToWiz3" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Tillbaka" />
+                                 </children>
+                              </Pane>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#ToWiz4" prefHeight="149.0" prefWidth="281.0" styleClass="important-button" text="Fortsätt" GridPane.rowIndex="3" />
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="2">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Att betala:" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="Cost_text_31" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--kr" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="64.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="158.0" prefWidth="281.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Levereras:" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="Delivery_date_21" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="----" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="48.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>

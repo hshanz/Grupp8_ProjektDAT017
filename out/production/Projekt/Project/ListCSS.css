@@ -13,6 +13,7 @@
 
 .important-element{
     -fx-background-color : #5ca1ff;
+    -fx-fill : #5ca1ff;
 }
 
 
@@ -26,6 +27,7 @@
 .unimportant-element{
     -fx-background-color : #ababab;
     -fx-font-size : 36;
+    -fx-fill : #ababab;
 }
 
 .background-element{
