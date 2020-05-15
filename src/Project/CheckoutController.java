@@ -96,7 +96,7 @@ public class CheckoutController implements Initializable {
     {
 
         month_pane.setPrefHeight(38);
-        month_pane.setLayoutY(143);
+        month_pane.setLayoutY(146);
         month_pane.setStyle("-fx-background-color: #E6E6E6");
     }
 
