@@ -27,7 +27,7 @@ public class ToolbarController implements Initializable {
     private Button userButton;
 
     @FXML
-    public void onClick() {
+    public void onClickUserPage() {
         parentController.setCenterPage("UserPage.fxml");
     }
 

@@ -13,11 +13,12 @@ public class ParentController implements Initializable {
     PaneLoader paneLoader;
     static ParentController parentController;
 
+    @FXML BorderPane mainPane;
+
     public static ParentController getInstance(){
         return parentController;
     }
 
-    @FXML BorderPane mainPane;
 
     public void setCenterPage(String str){
         mainPane.setCenter(paneLoader.LoadPane(str));
@@ -29,7 +30,6 @@ public class ParentController implements Initializable {
         parentController = this;
         backendControllerProducts = new BackendControllerProducts();
         paneLoader = new PaneLoader();
-
         mainPane.setTop(paneLoader.LoadPane("Toolbar.fxml"));
         mainPane.setLeft(paneLoader.LoadPane("CategoryList.fxml"));
 
