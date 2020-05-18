@@ -567,7 +567,7 @@
                   <AnchorPane layoutX="377.0" layoutY="100.0" prefHeight="480.0" prefWidth="246.0" style="-fx-background-color: EfEFEf;" AnchorPane.bottomAnchor="100.0" AnchorPane.topAnchor="100.0">
                      <children>
                         <Text layoutX="68.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-large-text" text="Välj tid" />
-                        <Text layoutX="86.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="--" textAlignment="RIGHT" AnchorPane.rightAnchor="140.0" />
+                        <Text fx:id="day_of_times" layoutX="86.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="--" textAlignment="RIGHT" AnchorPane.rightAnchor="140.0" />
                         <Button layoutX="121.0" layoutY="67.0" mnemonicParsing="false" onAction="#Change_day" prefHeight="30.0" prefWidth="115.0" styleClass="caution-button-small" text="Byt dag" AnchorPane.rightAnchor="10.0" />
                      </children>
                   </AnchorPane>

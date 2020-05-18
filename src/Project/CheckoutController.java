@@ -43,6 +43,7 @@ public class CheckoutController implements Initializable {
     @FXML AnchorPane after_next_month_pane;
 
     @FXML StackPane choose_time_popup; //The popup where you choose the time of the delivery
+    @FXML Text day_of_times; //shows the current day where you are choosing the time the delivery, (ex: Mars 9)
     //endregion
 
     //region payment_wiz vars
@@ -143,6 +144,7 @@ public class CheckoutController implements Initializable {
         choose_time_popup.toBack();
     }
     //endregion
+
     //endregion
 
     //region Confirm_wiz_methods
