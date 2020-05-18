@@ -33,6 +33,7 @@ public class CheckoutController implements Initializable {
     @FXML Text Delivery_date_2;
     @FXML Text Delivery_date_3;
 
+    //region date_wiz vars
     @FXML Text this_month_text; //Should say the current month (ex "Mars")
     @FXML Text next_month_text; //Should say next month (ex "April")
     @FXML Text after_next_month_text; //Should say the month after the next month (ex "Maj")
@@ -41,6 +42,10 @@ public class CheckoutController implements Initializable {
     @FXML AnchorPane next_month_pane;
     @FXML AnchorPane after_next_month_pane;
 
+    @FXML StackPane choose_time_popup; //The popup where you choose the time of the delivery
+    //endregion
+
+    //region payment_wiz vars
     //Here is the payment information field. All information that we already have (from the profile) should be pre-written.
     @FXML TextField first_name_field;
     @FXML TextField surname_field;
@@ -52,12 +57,18 @@ public class CheckoutController implements Initializable {
     @FXML TextField delivery_adress_field;
     @FXML TextField city_field;
     @FXML TextField postal_number_field;
+    //endregion
 
+    //region confirm_wiz vars
     @FXML Text confirm_name; //Should display the full name of the buyer, (first name + surname)
     @FXML Text confirm_adress; //should display the delivery address of the buyer
     @FXML Text confirm_cardnumber; //Should display 8 stars and then the 4 last numbers of the credit card number. (ex: **** **** 1234)
+    //endregion
 
-
+    //region Finnish vars
+    @FXML Text wares_to_dest; //Should say the number of wares that is delivered to the destination (ex: 6st varor är påväg mot Kazakhstansgatan 13)
+    @FXML Text date_and_time; //should say the date and time the wares are delivered (ex: 10 mars kl 16:30)
+    //endregion
 
     //region Change stackpane methods. (might need improvement)
     public void ToWiz1()
@@ -125,6 +136,13 @@ public class CheckoutController implements Initializable {
         SetSmall(next_month_pane);
         SetLarge(after_next_month_pane);
     }
+
+    //region choose_time_popup methods
+    public void Change_day ()
+    {
+        choose_time_popup.toBack();
+    }
+    //endregion
     //endregion
 
     //region Confirm_wiz_methods
@@ -133,4 +151,10 @@ public class CheckoutController implements Initializable {
 
         ToFinish();
     }
+    //endregion
+
+    //region Finnish_methods
+    public void BackToStore () //Should close the checkout and go back to the store.
+    {}
+    //endregion
 }

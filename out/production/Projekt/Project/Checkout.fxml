@@ -488,7 +488,7 @@
                         </AnchorPane>
                      </children>
                   </AnchorPane>
-                  <AnchorPane prefHeight="678.0" prefWidth="436.0">
+                  <AnchorPane prefHeight="678.0" prefWidth="205.0">
                      <children>
                         <GridPane AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
                            <columnConstraints>
