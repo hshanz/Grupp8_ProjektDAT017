@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="130.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.HistoryItemController">
+   <children>
+      <ImageView fx:id="productImage" fitHeight="110.0" fitWidth="110.0" layoutX="10.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+      <Label fx:id="productName" layoutX="43.0" layoutY="5.0" text="Produkt" />
+      <Label fx:id="historyCount" layoutX="14.0" layoutY="21.0" text="x st," />
+      <Label fx:id="historyPrice" layoutX="73.0" layoutY="21.0" text="xx kr" />
+      <Label fx:id="singleItem" layoutX="21.0" layoutY="148.0" text="1 st/kg" />
+      <Label fx:id="currentPrice" layoutX="21.0" layoutY="166.0" text="xx kr" />
+      <Button fx:id="addButton" layoutX="60.0" layoutY="148.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="64.0" text="Lägg till" />
+   </children>
+</AnchorPane>
