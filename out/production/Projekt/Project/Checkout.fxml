@@ -14,12 +14,12 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Polyline?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="680.0" prefWidth="1000.0" stylesheets="@ListCSS.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.CheckoutController">
    <children>
-      <StackPane fx:id="Finish" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
       <StackPane fx:id="wiz1_Check" layoutX="30.0" layoutY="30.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <SplitPane dividerPositions="0.685370741482966" prefHeight="200.0" prefWidth="200.0">
@@ -428,6 +428,20 @@
                </items>
             </SplitPane>
          </children></StackPane>
+      <StackPane fx:id="Finish" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: EFEFEF;">
+               <children>
+                  <Button layoutX="866.0" layoutY="591.0" mnemonicParsing="false" onAction="#BackToStore" prefHeight="138.0" prefWidth="246.0" styleClass="important-button" text="Till Affär" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0" />
+                  <Text layoutX="364.0" layoutY="94.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="large-text" text="Köp klart!" textAlignment="CENTER" AnchorPane.topAnchor="30.0" />
+                  <Circle fill="#4dee3c" layoutX="500.0" layoutY="340.0" radius="112.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Polyline fill="CHARTREUSE" layoutX="337.0" layoutY="364.0" points="-50.0, -40.0, 19.0, -85.0, 85.0, 19.0, 371.0, -211.0, 440.0, -125.0, 74.0, 93.0, -50.0, -40.0" strokeType="INSIDE" strokeWidth="3.0" />
+                  <Text fx:id="wares_to_dest" layoutX="353.0" layoutY="538.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="-st varor är påväg mot --." wrappingWidth="294.0" AnchorPane.bottomAnchor="133.0" />
+                  <Text layoutX="353.0" layoutY="573.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="De kommer att vara framme " wrappingWidth="311.0" AnchorPane.bottomAnchor="98.0" />
+                  <Text fx:id="date_and_time" layoutX="353.0" layoutY="608.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="-- kl--" wrappingWidth="311.0" AnchorPane.bottomAnchor="63.0" />
+               </children>
+            </AnchorPane>
+         </children></StackPane>
       <StackPane fx:id="wiz2_Date" layoutX="20.0" layoutY="20.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: FFFFFF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <SplitPane dividerPositions="0.685370741482966" prefHeight="200.0" prefWidth="200.0">
@@ -545,5 +559,21 @@
                </items>
             </SplitPane>
          </children></StackPane>
+      <StackPane fx:id="choose_time_popup" prefHeight="680.0" prefWidth="1000.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane opacity="0.91" prefHeight="200.0" prefWidth="200.0" styleClass="black-background" />
+            <AnchorPane prefHeight="558.0" prefWidth="856.0">
+               <children>
+                  <AnchorPane layoutX="377.0" layoutY="100.0" prefHeight="480.0" prefWidth="246.0" style="-fx-background-color: EfEFEf;" AnchorPane.bottomAnchor="100.0" AnchorPane.topAnchor="100.0">
+                     <children>
+                        <Text layoutX="68.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-large-text" text="Välj tid" />
+                        <Text fx:id="day_of_times" layoutX="86.0" layoutY="96.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="--" textAlignment="RIGHT" AnchorPane.rightAnchor="140.0" />
+                        <Button layoutX="121.0" layoutY="67.0" mnemonicParsing="false" onAction="#Change_day" prefHeight="30.0" prefWidth="115.0" styleClass="caution-button-small" text="Byt dag" AnchorPane.rightAnchor="10.0" />
+                     </children>
+                  </AnchorPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
    </children>
 </AnchorPane>

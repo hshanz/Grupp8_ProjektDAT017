@@ -16,8 +16,6 @@
     -fx-fill : #5ca1ff;
 }
 
-
-
 .important-button{
     -fx-background-color : #5ca1ff;
     -fx-font-size : 48;
@@ -42,13 +40,33 @@
     -fx-border-color: black;
 }
 
+.caution-button-small{
+    -fx-background-color: #ee5533;
+    -fx-font-size : 18;
+    -fx-font-color : #000000;
+    -fx-border-color: black;
+}
+
 .caution-button:hover{
     -fx-background-color: #ff8866;
 }
 
 .normal-text{
     -fx-font-size: 24;
-    -fx-font-color: #000000000;
+    -fx-font-color: #000000;
 }
 
+.large-text{
+    -fx-font-size: 64;
+    -fx-font-color: #000000;
+}
+
+.medium-large-text{
+    -fx-font-size: 36;
+    -fx-font-color: #000000;
+}
+
+.black-background{
+    -fx-background-color: #000000;
+}
 

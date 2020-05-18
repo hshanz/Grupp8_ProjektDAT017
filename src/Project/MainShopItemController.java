@@ -1,19 +1,23 @@
 package Project;
 
 
+import com.sun.media.jfxmediaimpl.platform.Platform;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingCart;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainShopItemController implements Initializable{
+public class MainShopItemController extends AnchorPane {
 
     @FXML private ImageView productImage;
     @FXML private Label productName;
@@ -22,9 +26,24 @@ public class MainShopItemController implements Initializable{
 
     ShoppingItem shoppingItem;
     Product p;
+    ParentController parentController = ParentController.getInstance();
 
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
+    public MainShopItemController() {
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("MainShopItem.fxml"));
+        fxmlLoader.setController(this);
+
+        try {
+            fxmlLoader.load();
+        } catch (IOException exception) {
+            throw new RuntimeException(exception);
+        }
+
+
+
+        productName.setText("asddddd");
+
+        p = parentController.backendControllerProducts.getProduct(137);
+       productImage.setImage(parentController.backendControllerProducts.getFXImage(p));
 
     }
 
