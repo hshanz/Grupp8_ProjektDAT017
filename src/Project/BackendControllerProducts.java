@@ -8,11 +8,16 @@ import java.util.List;
 
 public class BackendControllerProducts {
     private IMatDataHandler iM;
-    BackendControllerProducts backendControllerProducts;
+
+
 
     public BackendControllerProducts() {
         iM = IMatDataHandler.getInstance();
     }
+
+   public ShoppingCart getShoppingCart(){
+        return iM.getShoppingCart();
+   }
 
     public void shutDown(){
         iM.shutDown();

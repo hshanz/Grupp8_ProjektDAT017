@@ -5,38 +5,55 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.FlowPane;
+import se.chalmers.cse.dat216.project.*;
 
 import java.awt.*;
 import java.net.URL;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
-public class CartController implements Initializable {
+public class CartController implements ShoppingCartListener {
 
 
 
     //Add items to this one (it is inside a scroll pane)
-    @FXML
-    private FlowPane flowPane;
+    @FXML private FlowPane flowPane;
+    @FXML private Label cartLabel;
+    @FXML private Button checkoutButton;
+    @FXML private Label priceLabel;
 
-    @FXML
-    private Label cartLabel;
+    ParentController parentController;
+    ShoppingCart shoppingCart;
+    List <CartItemController> cartItemList = new ArrayList<>();
 
-    @FXML
-    private Button checkoutButton;
+    public CartController() {
+        parentController = ParentController.getInstance();
+        shoppingCart = parentController.backendControllerProducts.getShoppingCart();
 
-    @FXML
-    private Label priceLabel;
+    }
+
 
     @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        if (cartEvent.isAddEvent()){
+            addItemTocart(cartEvent.getShoppingItem());
+        }
 
-        //Test code
+    }
 
-        /*flowPane.setPrefWidth(700);
-        System.out.println(flowPane.getPrefWidth());
-        cartLabel.setText("Hej hej");
-        checkoutButton.setText("då då");
-        priceLabel.setText("10000 kr");*/
-
+    private void addItemTocart(ShoppingItem sci){
+        boolean itemAldredyInCart = false;
+        for (ShoppingItem s: shoppingCart.getItems()) {
+            if (sci.equals(s)){
+                itemAldredyInCart = true;
+                break;
+            }
+        }
+        if (itemAldredyInCart){
+            sci.setAmount(sci.getAmount()+1);
+        } else {
+            cartItemList.add(new CartItemController(sci,this));
+        }
     }
 }

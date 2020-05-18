@@ -32,6 +32,7 @@ public class ParentController implements Initializable {
         paneLoader = new PaneLoader();
         mainPane.setTop(paneLoader.LoadPane("Toolbar.fxml"));
         mainPane.setLeft(paneLoader.LoadPane("CategoryList.fxml"));
+        mainPane.setRight(paneLoader.LoadPane("Cart.fxml"));
 
 
 
