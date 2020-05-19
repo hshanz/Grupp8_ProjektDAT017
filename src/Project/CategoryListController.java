@@ -16,7 +16,7 @@ public class CategoryListController extends AnchorPane implements Initializable 
     //Documentation can be found here:
     //https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/ListView.html
 
-    //For styling options check ListCSS.css
+    //For styling options check ProjectStylesheet.css
 
 
     //Write all categories in this list
