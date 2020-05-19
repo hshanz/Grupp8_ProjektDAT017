@@ -2,6 +2,7 @@ package Project;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -12,8 +13,10 @@ import se.chalmers.cse.dat216.project.ShoppingCart;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
-public class CartItemController extends AnchorPane {
+public class CartItemController extends AnchorPane  {
 
     @FXML private ImageView CartItemImage;
     @FXML private Label CartItemName;
@@ -24,8 +27,8 @@ public class CartItemController extends AnchorPane {
     ShoppingItem shoppingItem;
     CartController parent;
     Product product;
-
     public CartItemController(ShoppingItem shoppingItem, CartController parent) {
+
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CartItem.fxml"));
         fxmlLoader.setController(this);
 
@@ -40,6 +43,7 @@ public class CartItemController extends AnchorPane {
         this.parent = parent;
         product = shoppingItem.getProduct();
         CartItemImage.setImage(this.parent.parentController.backendControllerProducts.getFXImage(product));
+
         CartItemName.setText("SSSSSSSSSSSS");
         CartItemPrice.setText("SSSSSSSSSSSSS");
         CartItemCount.setText("SSSSSSSSSSSSS");
@@ -50,10 +54,20 @@ public class CartItemController extends AnchorPane {
 
     }
 
-
     public void incCartItemCount() {
         int temp = Integer.parseInt(CartItemCount.getText());
         temp++;
         CartItemCount.setText(String.valueOf(temp));
     }
+
+    /*
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+
+        CartItemName.setText("SSSSSSSSSSSS");
+        CartItemPrice.setText("SSSSSSSSSSSSS");
+        CartItemCount.setText("SSSSSSSSSSSSS");
+    }
+    */
 }
