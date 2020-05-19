@@ -11,6 +11,33 @@
 
 }
 
+
+/* Toolbar Settings */
+
+.toolbar-background{
+    -fx-background-color: #DC3C3C;
+}
+
+.toolbar-button{
+    -fx-background-color: #FFD1D1;
+    -fx-pref-height: 80px;
+    -fx-background-radius: 5 5 0 0 ;
+    -fx-alignment: center;
+    -fx-font-size: 20px;
+}
+
+.toolbar-button-selected{
+    -fx-background-color: #EFEFEF;
+    -fx-pref-height: 100px;
+    -fx-background-radius: 5 5 0 0 ;
+    -fx-alignment: center;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+
+
+
 .important-element{
     -fx-background-color : #5ca1ff;
     -fx-fill : #5ca1ff;
