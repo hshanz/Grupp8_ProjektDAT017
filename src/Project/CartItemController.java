@@ -31,6 +31,8 @@ public class CartItemController extends AnchorPane  {
 
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CartItem.fxml"));
         fxmlLoader.setController(this);
+        fxmlLoader.setRoot(this);
+
 
         try {
             fxmlLoader.load();
