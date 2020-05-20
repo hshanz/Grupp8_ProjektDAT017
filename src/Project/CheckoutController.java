@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -47,7 +48,10 @@ public class CheckoutController implements Initializable {
     @FXML AnchorPane next_month_pane;
     @FXML AnchorPane after_next_month_pane;
 
+    @FXML ScrollPane calendar_pane; //Should be populated with CheckoutDate
+
     @FXML StackPane choose_time_popup; //The popup where you choose the time of the delivery
+    @FXML ListView time_list; //This list should be populated with CheckoutTime.
     @FXML Text day_of_times; //shows the current day where you are choosing the time the delivery, (ex: Mars 9)
     //endregion
 
@@ -66,6 +70,7 @@ public class CheckoutController implements Initializable {
     //endregion
 
     //region confirm_wiz vars
+    @FXML ScrollPane checkout_cart_confirm_pane; //Should be populated with CheckoutItemSmall
     @FXML Text confirm_name; //Should display the full name of the buyer, (first name + surname)
     @FXML Text confirm_adress; //should display the delivery address of the buyer
     @FXML Text confirm_cardnumber; //Should display 8 stars and then the 4 last numbers of the credit card number. (ex: **** **** 1234)
