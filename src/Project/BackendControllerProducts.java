@@ -47,6 +47,10 @@ public class BackendControllerProducts {
         return iM.findProducts(str);
     }
 
+    public List<Product> getProducts(ProductCategory pc){
+        return iM.getProducts(pc);
+    }
+
     public Image getFXImage(Product p){
         return iM.getFXImage(p);
     }

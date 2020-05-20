@@ -28,8 +28,19 @@ public class ToolbarController implements Initializable {
 
     @FXML
     public void onClickUserPage() {
-        parentController.setCenterPage("UserPage.fxml");
+        parentController.setCenterPage("UserPage");
     }
+
+    @FXML
+    public void onClickShop(){
+        parentController.setCenterPage("StorePage");
+    }
+
+    public void onClickHistory(){
+        parentController.setCenterPage(".fxml");
+    }
+
+
 
 
     @Override
