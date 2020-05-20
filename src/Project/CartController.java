@@ -41,7 +41,11 @@ public class CartController extends AnchorPane implements Initializable {
 
         ShoppingItem shoppingItem = new ShoppingItem(product);
 
-        flowPane.getChildren().add(new CartItemController(shoppingItem,this));
+        for (int i = 0; i < 10; i++) {
+            flowPane.getChildren().add(new CartItemController(shoppingItem,this));
+        }
+
+
 
 
         flowPane.getChildren().add(button);
