@@ -12,12 +12,11 @@ import se.chalmers.cse.dat216.project.*;
 
 import java.awt.*;
 import java.net.URL;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
-import java.util.ResourceBundle;
-import java.util.Scanner;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-public class CartController extends AnchorPane implements Initializable {
+public class CartController extends AnchorPane implements Initializable,ShoppingCartListener {
 
 
 
@@ -27,30 +26,44 @@ public class CartController extends AnchorPane implements Initializable {
     @FXML private Button checkoutButton;
     @FXML private Label priceLabel;
 
-    private Button button = new Button("button");
 
-    ParentController parentController;
+
+    private BackendControllerProducts bckEndP;
     ShoppingCart shoppingCart;
-    List <CartItemController> cartItemList = new ArrayList<>();
+    List <CartItemController> cartItemList;
 
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        parentController = ParentController.getInstance();
-        Product product = parentController.backendControllerProducts.getProduct(137);
-
-        ShoppingItem shoppingItem = new ShoppingItem(product);
-
-        flowPane.getChildren().add(new CartItemController(shoppingItem,this));
-
-
-        flowPane.getChildren().add(button);
-
+        bckEndP = BackendControllerProducts.getInstance();
+        shoppingCart =bckEndP.getShoppingCart();
+        cartItemList = new CopyOnWriteArrayList<>();
+        shoppingCart.addShoppingCartListener(this);
 
 
     }
 
-
-
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        if (cartEvent.isAddEvent()){
+            cartItemList.add(new CartItemController(cartEvent.getShoppingItem()));
+        } else if (cartItemList.size() > shoppingCart.getItems().size()){
+            for (CartItemController c : cartItemList) {
+                if (cartEvent.getShoppingItem().equals(c.getShoppingItem())) {
+                    cartItemList.remove(c);
+                }
+            }
+        }
+        updateList();
     }
+
+    private void updateList(){
+        priceLabel.setText(String.valueOf(shoppingCart.getTotal()));
+        flowPane.getChildren().clear();
+        for (CartItemController i:cartItemList) {
+            i.update();
+            flowPane.getChildren().add(i);
+        }
+    }
+}
 

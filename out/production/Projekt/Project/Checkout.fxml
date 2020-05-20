@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
@@ -20,6 +21,123 @@
 
 <AnchorPane prefHeight="680.0" prefWidth="1000.0" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.CheckoutController">
    <children>
+      <StackPane fx:id="wiz2_Date" layoutX="20.0" layoutY="20.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: FFFFFF;" styleClass="background-element" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <SplitPane dividerPositions="0.685370741482966" prefHeight="200.0" prefWidth="200.0" styleClass="background-element">
+               <items>
+                  <AnchorPane prefHeight="653.0" prefWidth="661.0" styleClass="background-element">
+                     <children>
+                        <AnchorPane layoutX="18.0" layoutY="16.0" prefHeight="648.0" prefWidth="657.0" styleClass="grey-background-element" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="15.0">
+                           <children>
+                              <Pane layoutX="176.0" layoutY="46.0" prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="46.0">
+                                 <children>
+                                    <AnchorPane prefHeight="30.0" prefWidth="294.0">
+                                       <children>
+                                          <Circle fill="#ababab" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="-40.0" />
+                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="-40.0" />
+                                          <Circle fill="#5ca1ff" layoutX="122.0" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.leftAnchor="48.0" />
+                                          <Circle fill="#ababab" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
+                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="64.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="167.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="280.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </Pane>
+                              <AnchorPane fx:id="next_month_pane" layoutX="156.0" layoutY="146.0" onMouseClicked="#SetMonthNext" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: ffd1d1;" AnchorPane.leftAnchor="156.0">
+                                 <children>
+                                    <Text fx:id="next_month_text" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Månad" textAlignment="CENTER" wrappingWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="this_month_pane" layoutX="16.0" layoutY="132.0" onMouseClicked="#SetMonthThis" prefHeight="53.0" prefWidth="100.0" style="-fx-background-color: EFEFEF;" AnchorPane.leftAnchor="16.0">
+                                 <children>
+                                    <Text fx:id="this_month_text" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Månad" textAlignment="CENTER" wrappingWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="after_next_month_pane" layoutX="296.0" layoutY="146.0" onMouseClicked="#SetMonthAfterNext" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: ffd1d1;" AnchorPane.leftAnchor="296.0">
+                                 <children>
+                                    <Text fx:id="after_next_month_text" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Månad" textAlignment="CENTER" wrappingWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Pane layoutX="17.0" layoutY="185.0" prefHeight="449.0" prefWidth="620.0" styleClass="background-element" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="185.0" />
+                           </children>
+                        </AnchorPane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="678.0" prefWidth="205.0" styleClass="background-element">
+                     <children>
+                        <GridPane AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="276.0" minHeight="10.0" prefHeight="208.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="147.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="163.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="dark-background-element" GridPane.vgrow="NEVER">
+                                 <children>
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#EscapeCheckout" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Avbryt" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#ToWiz1" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Tillbaka" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                 </children>
+                              </AnchorPane>
+                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#ToWiz3" prefHeight="149.0" prefWidth="281.0" styleClass="important-button" text="Fortsätt" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Att betala:" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="Cost_text_2" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--kr" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="64.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="158.0" prefWidth="281.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1">
+                                 <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Levereras:" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="Delivery_date_1" fill="#dc3c3c" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ej valt" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="48.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <Line endX="180.2928924560547" startX="-100.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+               </items>
+            </SplitPane>
+         </children></StackPane>
       <StackPane fx:id="Finish" layoutX="10.0" layoutY="10.0" prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background-element">
@@ -375,7 +493,7 @@
       </StackPane>
       <StackPane fx:id="wiz1_Check" layoutX="30.0" layoutY="30.0" prefHeight="150.0" prefWidth="200.0" styleClass="background-element" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <SplitPane dividerPositions="0.685370741482966" prefHeight="200.0" prefWidth="200.0">
+            <SplitPane dividerPositions="0.6854" prefHeight="200.0" prefWidth="200.0">
                <items>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
@@ -413,6 +531,7 @@
                                     </AnchorPane>
                                  </children>
                               </Pane>
+                              <ListView fx:id="cart_list" layoutX="-3.0" layoutY="125.0" prefHeight="399.0" prefWidth="432.0" styleClass="grey-background-element" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="120.0" />
                            </children>
                         </AnchorPane>
                      </children>
@@ -458,122 +577,5 @@
             </SplitPane>
          </children>
       </StackPane>
-      <StackPane fx:id="wiz2_Date" layoutX="20.0" layoutY="20.0" prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: FFFFFF;" styleClass="background-element" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <children>
-            <SplitPane dividerPositions="0.685370741482966" prefHeight="200.0" prefWidth="200.0" styleClass="background-element">
-               <items>
-                  <AnchorPane prefHeight="653.0" prefWidth="661.0" styleClass="background-element">
-                     <children>
-                        <AnchorPane layoutX="18.0" layoutY="16.0" prefHeight="648.0" prefWidth="657.0" styleClass="grey-background-element" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="15.0">
-                           <children>
-                              <Pane layoutX="176.0" layoutY="46.0" prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="46.0">
-                                 <children>
-                                    <AnchorPane prefHeight="30.0" prefWidth="294.0">
-                                       <children>
-                                          <Circle fill="#ababab" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="-40.0" />
-                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                             <font>
-                                                <Font size="48.0" />
-                                             </font>
-                                          </Text>
-                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="-40.0" />
-                                          <Circle fill="#5ca1ff" layoutX="122.0" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.leftAnchor="48.0" />
-                                          <Circle fill="#ababab" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
-                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                             <font>
-                                                <Font size="64.0" />
-                                             </font>
-                                          </Text>
-                                          <Text layoutX="167.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                             <font>
-                                                <Font size="48.0" />
-                                             </font>
-                                          </Text>
-                                          <Text layoutX="280.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
-                                             <font>
-                                                <Font size="48.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </Pane>
-                              <AnchorPane fx:id="next_month_pane" layoutX="156.0" layoutY="146.0" onMouseClicked="#SetMonthNext" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: ffd1d1;" AnchorPane.leftAnchor="156.0">
-                                 <children>
-                                    <Text fx:id="next_month_text" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Månad" textAlignment="CENTER" wrappingWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="this_month_pane" layoutX="16.0" layoutY="132.0" onMouseClicked="#SetMonthThis" prefHeight="53.0" prefWidth="100.0" style="-fx-background-color: EFEFEF;" AnchorPane.leftAnchor="16.0">
-                                 <children>
-                                    <Text fx:id="this_month_text" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Månad" textAlignment="CENTER" wrappingWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="after_next_month_pane" layoutX="296.0" layoutY="146.0" onMouseClicked="#SetMonthAfterNext" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: ffd1d1;" AnchorPane.leftAnchor="296.0">
-                                 <children>
-                                    <Text fx:id="after_next_month_text" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Månad" textAlignment="CENTER" wrappingWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
-                                 </children>
-                              </AnchorPane>
-                              <Pane layoutX="17.0" layoutY="185.0" prefHeight="449.0" prefWidth="620.0" styleClass="background-element" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="22.0" AnchorPane.topAnchor="185.0" />
-                           </children>
-                        </AnchorPane>
-                     </children>
-                  </AnchorPane>
-                  <AnchorPane prefHeight="678.0" prefWidth="205.0" styleClass="background-element">
-                     <children>
-                        <GridPane AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="15.0">
-                           <columnConstraints>
-                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                           </columnConstraints>
-                           <rowConstraints>
-                              <RowConstraints maxHeight="276.0" minHeight="10.0" prefHeight="208.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="147.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="163.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
-                           </rowConstraints>
-                           <children>
-                              <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="dark-background-element" GridPane.vgrow="NEVER">
-                                 <children>
-                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#EscapeCheckout" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Avbryt" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-                                    <Button layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#ToWiz1" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Tillbaka" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
-                                 </children>
-                              </AnchorPane>
-                              <Button alignment="CENTER" mnemonicParsing="false" onAction="#ToWiz3" prefHeight="149.0" prefWidth="281.0" styleClass="important-button" text="Fortsätt" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
-                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="3">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Att betala:" textAlignment="CENTER" wrappingWidth="280.673828125">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="Cost_text_2" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="--kr" textAlignment="CENTER" wrappingWidth="280.673828125">
-                                       <font>
-                                          <Font size="64.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                              <VBox prefHeight="158.0" prefWidth="281.0" GridPane.halignment="CENTER" GridPane.hgrow="NEVER" GridPane.rowIndex="1">
-                                 <children>
-                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Levereras:" textAlignment="CENTER" wrappingWidth="280.673828125">
-                                       <font>
-                                          <Font size="36.0" />
-                                       </font>
-                                    </Text>
-                                    <Text fx:id="Delivery_date_1" fill="#dc3c3c" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ej valt" textAlignment="CENTER" wrappingWidth="280.673828125">
-                                       <font>
-                                          <Font size="48.0" />
-                                       </font>
-                                    </Text>
-                                 </children>
-                              </VBox>
-                              <Line endX="180.2928924560547" startX="-100.0" GridPane.halignment="CENTER" GridPane.hgrow="ALWAYS" GridPane.rowIndex="2" />
-                           </children>
-                        </GridPane>
-                     </children>
-                  </AnchorPane>
-               </items>
-            </SplitPane>
-         </children></StackPane>
    </children>
 </AnchorPane>

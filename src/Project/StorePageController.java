@@ -8,9 +8,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.GridPane;
+import se.chalmers.cse.dat216.project.Product;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class StorePageController extends AnchorPane implements Initializable {
@@ -23,30 +26,28 @@ public class StorePageController extends AnchorPane implements Initializable {
     @FXML
     public TextField searchField;
 
-    @FXML
-    GridPane grid;
-
+    BackendControllerProducts bckEndP;
+    HashMap<Product,MainShopItemController> productMap = new HashMap<>();
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("StorePage.fxml"));
-        fxmlLoader.setController(this);
+        bckEndP = BackendControllerProducts.getInstance();
+        fillMap();
+        update();
 
-        try {
-            fxmlLoader.load();
-        } catch (IOException exception) {
-            throw new RuntimeException(exception);
+
+    }
+
+    private void update(){
+        flowPane.getChildren().clear();
+        for (Product p:bckEndP.getProducts()) {
+            flowPane.getChildren().add(productMap.get(p));
         }
+    }
 
-
-        grid.add(new MainShopItemController(),0,0);
-
-
-        //flowPane.getChildren().add(new MainShopItemController());
-
-        //Test Code
-
-        /*flowPane.getChildren().add(new Button());
-        searchField.setText("Hej hej!");*/
+    private void fillMap(){
+        for (Product p:bckEndP.getProducts()) {
+            productMap.put(p,new MainShopItemController(p));
+        }
     }
 }
