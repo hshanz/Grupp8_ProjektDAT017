@@ -86,6 +86,20 @@
 }
 
 
+/*Shop Item*/
+
+.shop-item-plus-button{
+    -fx-background-color: #3CDC3C;
+    -fx-background-radius: 90;
+}
+
+.shop-item-minus-button{
+    -fx-background-color: #DC3C3C;
+    -fx-background-radius: 90;
+    
+
+}
+
 
 
 

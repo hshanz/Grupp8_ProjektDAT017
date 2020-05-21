@@ -23,7 +23,7 @@ public class CategoryListController extends AnchorPane implements Initializable 
 
 
     //Write all categories in this list
-    ObservableList<String> categories = FXCollections.observableArrayList("Kött", "Frukt", "Glass", "Växter");
+    ObservableList<String> categories = FXCollections.observableArrayList("Hela sortiment","Kött", "Frukt", "Glass", "Växter");
 
     @FXML
     private ListView<String> list;
@@ -31,5 +31,6 @@ public class CategoryListController extends AnchorPane implements Initializable 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         list.setItems(categories);
+        
     }
 }
