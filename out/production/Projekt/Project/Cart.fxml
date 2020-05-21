@@ -10,7 +10,9 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" styleClass="cart" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.CartController">
    <children>
+
       <Label fx:id="cartLabel" layoutX="69.0" layoutY="4.0" text="Varukorg">
+
          <font>
             <Font size="40.0" />
          </font>

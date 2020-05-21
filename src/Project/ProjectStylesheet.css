@@ -90,38 +90,48 @@
 
 
 .important-element{
-    -fx-background-color : #5ca1ff;
-    -fx-fill : #5ca1ff;
-}
-
-.important-button{
-    -fx-background-color : #5ca1ff;
-    -fx-font-size : 48;
-    -fx-border-color : black;
+    -fx-background-color : #DC3C3C;
+    -fx-fill : #DC3C3C;
 }
 
 .unimportant-element{
-    -fx-background-color : #ababab;
-    -fx-font-size : 36;
-    -fx-fill : #ababab;
+    -fx-fill : #ffd1d1;
+    -fx-background-color : #ffd1d1;
+    -fx-border-color : #000000
+}
+
+.important-button{
+    -fx-background-color : #3cdc3c;
+    -fx-font-size : 48;
+    -fx-text-fill : #000000;
+    -fx-border-color : black;
 }
 
 .background-element{
+    -fx-background-color : #efefef;
+    -fx-fill : #efefef;
+}
+.dark-background-element{
     -fx-background-color : #888888;
+}
+.grey-background-element{
+    -fx-background-color : #DDDDDD;
+
 }
 
 
+
 .caution-button{
-    -fx-background-color: #ee5533;
+    -fx-background-color: #9a2a2a;
     -fx-font-size : 36;
-    -fx-font-color : #000000;
+    -fx-text-fill : #000000;
     -fx-border-color: black;
 }
 
 .caution-button-small{
-    -fx-background-color: #ee5533;
+    -fx-background-color: #9a2a2a;
     -fx-font-size : 18;
-    -fx-font-color : #000000;
+    -fx-text-fill : #000000;
     -fx-border-color: black;
 }
 
@@ -131,20 +141,43 @@
 
 .normal-text{
     -fx-font-size: 24;
-    -fx-font-color: #000000;
+    -fx-text-fill : #000000;
 }
 
 .large-text{
-    -fx-font-size: 64;
-    -fx-font-color: #000000;
+    -fx-font-size : 64;
+    -fx-text-fill : #000000;
 }
 
 .medium-large-text{
     -fx-font-size: 36;
-    -fx-font-color: #000000;
+    -fx-text-fill : #000000;
 }
 
 .black-background{
     -fx-background-color: #000000;
+}
+
+.sub-item-button {
+    -fx-background-color : #DC3C3C;
+
+    -fx-border-radius : 30px 30px 30px 30px;
+    -fx-background-radius : 30px 30px 30px 30px;
+
+    -fx-border-color : #000000;
+    -fx-font-size : 28;
+    -fx-text-fill : #000000;
+    -fx-font-weight : bold;
+}
+.add-item-button {
+    -fx-background-color : #3cdc3c;
+
+    -fx-border-radius : 30px 30px 30px 30px;
+    -fx-background-radius : 30px 30px 30px 30px;
+
+    -fx-border-color : #000000;
+    -fx-font-size : 28;
+    -fx-text-fill : #000000;
+    -fx-font-weight : bold;
 }
 

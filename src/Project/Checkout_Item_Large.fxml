@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="80.0" prefWidth="620.0" style="-fx-border-color: #000000;" styleClass="background-element" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.CheckoutItemLarge">
+   <children>
+      <Text fx:id="name_text" layoutX="14.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Testtextlångochjobbig" AnchorPane.leftAnchor="15.0" />
+      <Button layoutX="268.0" layoutY="11.0" mnemonicParsing="false" onAction="#RemoveWare" prefHeight="60.0" prefWidth="60.0" styleClass="sub-item-button" text="-" AnchorPane.leftAnchor="270.0" />
+      <Button layoutX="400.0" layoutY="11.0" mnemonicParsing="false" onAction="#AddWare" prefHeight="60.0" prefWidth="60.0" styleClass="add-item-button" text="+" AnchorPane.leftAnchor="400.0" />
+      <TextField fx:id="number_of_wares" layoutX="341.0" layoutY="17.0" prefHeight="50.0" prefWidth="50.0" AnchorPane.leftAnchor="340.0" />
+      <Text fx:id="cost_text" layoutX="471.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="1000kr" AnchorPane.leftAnchor="471.0" />
+   </children>
+</AnchorPane>

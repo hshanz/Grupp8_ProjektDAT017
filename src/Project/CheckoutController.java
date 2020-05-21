@@ -3,6 +3,8 @@ package Project;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.Pane;
@@ -33,6 +35,10 @@ public class CheckoutController implements Initializable {
     @FXML Text Delivery_date_2;
     @FXML Text Delivery_date_3;
 
+    //region check_wiz vars
+    @FXML ListView cart_list; //should be filled with CheckoutItemLarge to show what is in the cart.
+    //endregion
+
     //region date_wiz vars
     @FXML Text this_month_text; //Should say the current month (ex "Mars")
     @FXML Text next_month_text; //Should say next month (ex "April")
@@ -42,7 +48,10 @@ public class CheckoutController implements Initializable {
     @FXML AnchorPane next_month_pane;
     @FXML AnchorPane after_next_month_pane;
 
+    @FXML ScrollPane calendar_pane; //Should be populated with CheckoutDate
+
     @FXML StackPane choose_time_popup; //The popup where you choose the time of the delivery
+    @FXML ListView time_list; //This list should be populated with CheckoutTime.
     @FXML Text day_of_times; //shows the current day where you are choosing the time the delivery, (ex: Mars 9)
     //endregion
 
@@ -61,6 +70,7 @@ public class CheckoutController implements Initializable {
     //endregion
 
     //region confirm_wiz vars
+    @FXML ScrollPane checkout_cart_confirm_pane; //Should be populated with CheckoutItemSmall
     @FXML Text confirm_name; //Should display the full name of the buyer, (first name + surname)
     @FXML Text confirm_adress; //should display the delivery address of the buyer
     @FXML Text confirm_cardnumber; //Should display 8 stars and then the 4 last numbers of the credit card number. (ex: **** **** 1234)
@@ -106,7 +116,7 @@ public class CheckoutController implements Initializable {
     {
         month_pane.setPrefHeight(53);
         month_pane.setLayoutY(132);
-        month_pane.setStyle("-fx-background-color: #F0F0F0");
+        month_pane.setStyle("-fx-background-color: #EFEFEF");
     }
 
     private void SetSmall(AnchorPane month_pane)
@@ -114,7 +124,7 @@ public class CheckoutController implements Initializable {
 
         month_pane.setPrefHeight(38);
         month_pane.setLayoutY(146);
-        month_pane.setStyle("-fx-background-color: #E6E6E6");
+        month_pane.setStyle("-fx-background-color: #FFD1D1");
     }
 
     public void SetMonthThis () // changes the displayed month to this month.

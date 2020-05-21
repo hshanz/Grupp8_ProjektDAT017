@@ -1,5 +1,6 @@
 package Project;
 
+import javafx.beans.property.Property;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -8,15 +9,13 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class CartItemController extends AnchorPane  {
+public class CartItemController extends AnchorPane {
 
     @FXML private ImageView CartItemImage;
     @FXML private Label CartItemName;
@@ -24,52 +23,37 @@ public class CartItemController extends AnchorPane  {
     @FXML private Label CartItemCount;
     @FXML private AnchorPane pane;
 
-    ShoppingItem shoppingItem;
-    CartController parent;
-    Product product;
-    public CartItemController(ShoppingItem shoppingItem, CartController parent) {
-
+    private ShoppingCart shoppingCart;
+    private ShoppingItem shoppingItem;
+    private Product product;
+    BackendControllerProducts bckEndP;
+    public CartItemController(ShoppingItem shoppingItem) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CartItem.fxml"));
         fxmlLoader.setController(this);
         fxmlLoader.setRoot(this);
-
-
         try {
             fxmlLoader.load();
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
 
-
+        bckEndP = BackendControllerProducts.getInstance();
+        shoppingCart = bckEndP.getShoppingCart();
         this.shoppingItem = shoppingItem;
-        this.parent = parent;
         product = shoppingItem.getProduct();
-        CartItemImage.setImage(this.parent.parentController.backendControllerProducts.getFXImage(product));
 
-        CartItemName.setText("SSSSSSSSSSSS");
-        CartItemPrice.setText("SSSSSSSSSSSSS");
-        CartItemCount.setText("SSSSSSSSSSSSS");
-
-
-
-
-
+        CartItemName.setText(product.getName());
+        CartItemPrice.setText(String.valueOf(product.getPrice()));
+        CartItemCount.setText(String.valueOf(shoppingItem.getAmount()));
+        CartItemImage.setImage(bckEndP.getFXImage(product));
     }
 
-    public void incCartItemCount() {
-        int temp = Integer.parseInt(CartItemCount.getText());
-        temp++;
-        CartItemCount.setText(String.valueOf(temp));
+
+    public void update(){
+        CartItemCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 
-    /*
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
-
-        CartItemName.setText("SSSSSSSSSSSS");
-        CartItemPrice.setText("SSSSSSSSSSSSS");
-        CartItemCount.setText("SSSSSSSSSSSSS");
+    public ShoppingItem getShoppingItem() {
+        return shoppingItem;
     }
-    */
 }
