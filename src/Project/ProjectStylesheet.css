@@ -1,15 +1,93 @@
+
+
+/* Category list*/
+
 .list-cell{
-    -fx-background-color: white;
+    -fx-background-color: #FFD1D1;
+    -fx-padding: 10px;
+    -fx-border-color: #EFEFEF;
+    -fx-border-width: 10 0 0 0;
+    -fx-background-insets: 0 20 0 0;
+    -fx-font-size: 15px;
+
+    -fx-background-radius: 0 10 10 0;
+
 }
 
 .list-cell:hover{
-    -fx-background-color: gray;
+    -fx-background-color: #c2a1a1;
+    -fx-background-insets: 0 10 0 0;
 }
 
 .list-cell:selected{
-    -fx-background-color: red;
+    -fx-background-color: #DC3C3C;
+    -fx-text-fill: black;
+    -fx-background-insets: 0 0 0 0;
 
 }
+
+
+/* Toolbar Settings */
+
+.toolbar-background{
+    -fx-background-color: #DC3C3C;
+}
+
+.toolbar-button{
+    -fx-background-color: #FFD1D1;
+    -fx-pref-height: 80px;
+    -fx-background-radius: 0 10 0 0 ;
+    -fx-alignment: center;
+    -fx-font-size: 20px;
+}
+
+.toolbar-button-selected{
+    -fx-background-color: #EFEFEF;
+    -fx-pref-height: 100px;
+    -fx-background-radius: 0 10 0 0 ;
+    -fx-alignment: center;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.toolbar-button:hover{
+    -fx-background-color: #c2a1a1;
+    -fx-pref-height: 90px;
+}
+
+
+/* Cart settings*/
+
+.cart{
+    -fx-border-width: 0 0 0 3;
+    -fx-border-color: black;
+    -fx-background-color: #EFEFEF;
+}
+
+.cart-button{
+    -fx-background-color: #3CDC3C ;
+    -fx-border-color: black;
+    -fx-border-width: 2px;
+    -fx-border-radius: 5px;
+
+    -fx-background-radius: 5px;
+
+    -fx-font-size: 25px;
+}
+
+.cart-button:hover{
+    -fx-background-color: #2ca32c;
+}
+
+.cart-priceText{
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+
+}
+
+
+
+
 
 .important-element{
     -fx-background-color : #DC3C3C;
