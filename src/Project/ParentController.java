@@ -21,6 +21,7 @@ public class ParentController implements Initializable {
     private Pane toolBar;
     private Pane categoryList;
     private Pane cart;
+    private Pane checkout;
     private Pane storePage;
     private Pane userPage;
 
@@ -33,9 +34,18 @@ public class ParentController implements Initializable {
         switch (str) {
             case "StorePage":
                 mainPane.setCenter(storePage);
+                mainPane.setLeft(categoryList);
+                mainPane.setRight(cart);
                 break;
             case "UserPage":
                 mainPane.setCenter(userPage);
+                mainPane.setLeft(categoryList);
+                mainPane.setRight(cart);
+                break;
+            case "Checkout":
+                mainPane.setRight(null);
+                mainPane.setLeft(null);
+                mainPane.setCenter(checkout);
                 break;
         }
 
@@ -54,6 +64,7 @@ public class ParentController implements Initializable {
         cart = paneLoader.LoadPane("Cart.fxml");
         storePage = paneLoader.LoadPane("StorePage.fxml");
         userPage = paneLoader.LoadPane("UserPage.fxml");
+        checkout = paneLoader.LoadPane("Checkout.fxml");
 
         mainPane.setTop(toolBar);
         mainPane.setLeft(categoryList);

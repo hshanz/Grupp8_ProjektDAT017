@@ -29,6 +29,7 @@ public class CartController extends AnchorPane implements Initializable,Shopping
 
 
     private BackendControllerProducts bckEndP;
+    private ParentController parentController;
     ShoppingCart shoppingCart;
     List <CartItemController> cartItemList;
 
@@ -36,6 +37,7 @@ public class CartController extends AnchorPane implements Initializable,Shopping
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         bckEndP = BackendControllerProducts.getInstance();
+        parentController = ParentController.getInstance();
         shoppingCart =bckEndP.getShoppingCart();
         cartItemList = new CopyOnWriteArrayList<>();
         shoppingCart.addShoppingCartListener(this);
@@ -64,6 +66,11 @@ public class CartController extends AnchorPane implements Initializable,Shopping
             i.update();
             flowPane.getChildren().add(i);
         }
+    }
+
+    @FXML
+    public void checkout(){
+        parentController.setCenterPage("Checkout");
     }
 }
 

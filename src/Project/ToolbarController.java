@@ -53,23 +53,19 @@ public class ToolbarController implements Initializable {
     @FXML
     public void onClickUserPage() {
         parentController.setCenterPage("UserPage");
+        changeStylesheet(userButton);
     }
 
     @FXML
     public void onClickShop(){
         parentController.setCenterPage("StorePage");
+        changeStylesheet(shopButton);
     }
 
     public void onClickHistory(){
         parentController.setCenterPage(".fxml");
     }
 
-
-
-    @FXML
-    private void buttonPressed(Event event){
-        changeStylesheet((Button)event.getTarget());
-    }
 
     //Changes the pressed button's style, and resets the other buttons' style
     private void changeStylesheet(Button pressedButton){
