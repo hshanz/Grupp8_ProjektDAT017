@@ -8,24 +8,24 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.CartController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" styleClass="cart" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.CartController">
    <children>
-      <ScrollPane layoutX="4.0" layoutY="76.0" prefHeight="418.0" prefWidth="294.0">
-         <content>
-            <FlowPane fx:id="flowPane" prefHeight="416.0" prefWidth="284.0" />
-         </content>
-      </ScrollPane>
-      <Label fx:id="cartLabel" layoutX="69.0" layoutY="14.0" text="Varukorg">
+
+      <Label fx:id="cartLabel" layoutX="69.0" layoutY="4.0" text="Varukorg">
+
          <font>
             <Font size="40.0" />
          </font>
       </Label>
-      <Line endX="100.0" layoutX="150.0" layoutY="72.0" startX="-100.0" />
-      <Button fx:id="checkoutButton" layoutX="79.0" layoutY="528.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="140.0" text="Till kassa" />
-      <Label fx:id="priceLabel" layoutX="14.0" layoutY="498.0" prefHeight="27.0" prefWidth="85.0" text="= 226 kr">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
+      <Line endX="100.0" layoutX="150.0" layoutY="62.0" startX="-100.0" />
+      <Button fx:id="checkoutButton" layoutX="48.0" layoutY="528.0" mnemonicParsing="false" prefHeight="60.0" prefWidth="209.0" styleClass="cart-button" text="Till kassa" />
+      <Label fx:id="priceLabel" layoutX="159.0" layoutY="490.0" prefHeight="30.0" prefWidth="130.0" styleClass="cart-priceText" text="= 226 kr" AnchorPane.leftAnchor="156.0" />
+      <Label alignment="CENTER_RIGHT" layoutX="67.0" layoutY="489.0" prefHeight="30.0" prefWidth="127.0" styleClass="cart-priceText" text="Totalt pris:" textAlignment="RIGHT" AnchorPane.rightAnchor="150.0" />
+      <Line endX="100.0" layoutX="150.0" layoutY="482.0" startX="-100.0" />
+      <ScrollPane hbarPolicy="NEVER" layoutX="26.0" layoutY="71.0" prefHeight="400.0" prefWidth="260.0" AnchorPane.leftAnchor="20.0">
+         <content>
+            <FlowPane fx:id="flowPane" prefHeight="395.0" prefWidth="260.0" />
+         </content>
+      </ScrollPane>
    </children>
 </AnchorPane>
