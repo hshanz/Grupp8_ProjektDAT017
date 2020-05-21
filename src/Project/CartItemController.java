@@ -50,7 +50,7 @@ public class CartItemController extends AnchorPane {
 
 
     public void update(){
-        CartItemCount.setText(String.valueOf(shoppingItem.getAmount()));
+        CartItemCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 
     public ShoppingItem getShoppingItem() {

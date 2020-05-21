@@ -58,7 +58,7 @@ public class CartController extends AnchorPane implements Initializable,Shopping
     }
 
     private void updateList(){
-        priceLabel.setText(String.valueOf(shoppingCart.getTotal()));
+        priceLabel.setText("= " + String.valueOf(shoppingCart.getTotal()) + " kr");
         flowPane.getChildren().clear();
         for (CartItemController i:cartItemList) {
             i.update();
