@@ -18,9 +18,9 @@ public class HistoryAccordion implements Initializable {
     @FXML
     public AnchorPane base;
 
-    public FlowPane flow;
+    public FlowPane baseFlowPane;
     public ScrollPane scroll;
-    public GridPane grid;
+    public FlowPane flowPane;
 
     public Button expandButton;
 
@@ -32,28 +32,15 @@ public class HistoryAccordion implements Initializable {
         //Disable vertical scrolling
         scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
 
-        grid.setGridLinesVisible(true);
 
-        //Remove the initial row
-        grid.getRowConstraints().remove(0);
 
 
         //Set the gridlines' size (space between objects)
-        grid.setHgap(10);
-        grid.setVgap(10);
-
-
-        addRows(21);
-
-        //Add columns, each taking 25% of the available space
-        for (int i = 0; i < 4; i++) {
-            ColumnConstraints column = new ColumnConstraints();
-            column.setPercentWidth(25);
-
-            grid.getColumnConstraints().add(column);
-        }
+        flowPane.setHgap(10);
+        flowPane.setVgap(10);
 
         //Add products
+        flowPane.getChildren().add(new TestItemController());
             /*grid.add(new TestItemController(), 0,0);
             grid.add(new TestItemController(), 1,0);*/
 
@@ -79,17 +66,4 @@ public class HistoryAccordion implements Initializable {
 
 
     }
-
-    //Add rows depending on the number of items to be displayed
-    private void addRows(int numberOfItems){
-
-        int nRows = (numberOfItems /4);
-
-        //Add rows
-        for (int row = 0; row < nRows; row++) {
-            grid.getRowConstraints().add(new RowConstraints(125));
-        }
-    }
-
-
 }
