@@ -2,12 +2,13 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="175.0" stylesheets="@ProjectStylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="275.0" prefWidth="175.0" styleClass="shop-item" stylesheets="@ProjectStylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <ImageView fx:id="productImage" fitHeight="100.0" fitWidth="155.0" layoutX="12.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="10.0" />
       <Label fx:id="productName" alignment="CENTER" layoutX="34.0" layoutY="115.0" prefHeight="27.0" prefWidth="108.0" text="Produktnamn" textAlignment="CENTER">
@@ -15,12 +16,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="productPrice" alignment="CENTER" layoutX="39.0" layoutY="170.0" text="Pris/styck/kilo" textAlignment="CENTER">
+      <Label fx:id="productPrice" alignment="CENTER" layoutX="33.0" layoutY="170.0" prefHeight="25.0" prefWidth="114.0" text="Pris/styck/kilo" textAlignment="CENTER">
          <font>
             <Font size="16.0" />
          </font>
       </Label>
-      <Label fx:id="productCount" alignment="CENTER" layoutX="60.0" layoutY="228.0" prefHeight="25.0" prefWidth="55.0" text="0 st">
+      <Label fx:id="productCount" alignment="CENTER" disable="true" layoutX="62.0" layoutY="195.0" prefHeight="25.0" prefWidth="55.0" text="0 st">
          <font>
             <Font size="16.0" />
          </font>
@@ -28,5 +29,6 @@
       <Button fx:id="addButton" layoutX="120.0" layoutY="170.0" mnemonicParsing="false" onAction="#addToCart" prefHeight="40.0" prefWidth="40.0" styleClass="shop-item-plus-button" text="+" AnchorPane.bottomAnchor="15.0" />
       <Button fx:id="removebutton" layoutX="15.0" layoutY="170.0" mnemonicParsing="false" onAction="#removeFromCart" prefHeight="40.0" prefWidth="40.0" styleClass="shop-item-minus-button" text="-" AnchorPane.bottomAnchor="15.0" />
       <Line endX="65.0" layoutX="89.0" layoutY="150.0" startX="-65.0" />
+      <TextField fx:id="productCounter" alignment="CENTER" layoutX="60.0" layoutY="228.0" prefHeight="25.0" prefWidth="55.0" />
    </children>
 </fx:root>

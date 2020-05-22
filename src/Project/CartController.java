@@ -42,6 +42,9 @@ public class CartController extends AnchorPane implements Initializable,Shopping
         cartItemList = new CopyOnWriteArrayList<>();
         shoppingCart.addShoppingCartListener(this);
 
+        //Set Gap between products
+        flowPane.setVgap(10);
+
 
     }
 

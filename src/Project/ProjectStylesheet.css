@@ -90,14 +90,16 @@
 
 .shop-item-plus-button{
     -fx-background-color: #3CDC3C;
-    -fx-background-radius: 90;
+    -fx-background-radius: 0 10 0 0;
 }
 
 .shop-item-minus-button{
     -fx-background-color: #DC3C3C;
-    -fx-background-radius: 90;
-    
+    -fx-background-radius: 10 0 0 0;
+}
 
+.shop-item{
+    -fx-background-color: #DDDDDD;
 }
 
 

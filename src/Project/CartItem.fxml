@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="285.0" style="-fx-border-color: #000000;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="110.0" prefWidth="250.0" styleClass="shop-item" stylesheets="@ProjectStylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fx:id="CartItemImage" fitHeight="100.0" fitWidth="100.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true" />
-      <Label fx:id="CartItemName" layoutX="100.0" layoutY="5.0" text="Vara">
+      <ImageView fx:id="CartItemImage" fitHeight="86.0" fitWidth="86.0" layoutX="12.0" layoutY="7.0" pickOnBounds="true" AnchorPane.leftAnchor="12.0" AnchorPane.topAnchor="12.0" />
+      <Label fx:id="CartItemName" layoutX="107.0" layoutY="5.0" text="Vara" AnchorPane.leftAnchor="110.0">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label fx:id="CartItemPrice" layoutX="100.0" layoutY="38.0" text="Totalt pris (+pris/styck?)">
+      <Label fx:id="CartItemPrice" layoutX="112.0" layoutY="41.0" prefHeight="20.0" prefWidth="80.0" text="Totalt pris " AnchorPane.leftAnchor="111.0">
          <font>
             <Font size="14.0" />
          </font>
       </Label>
-      <Label fx:id="CartItemCount" layoutX="100.0" layoutY="71.0" text="Antal (Knappar vid sidorna)" />
+      <Label fx:id="CartItemCount" layoutX="176.0" layoutY="56.0" prefHeight="17.0" prefWidth="47.0" text="Antal" AnchorPane.leftAnchor="176.0" />
+      <Line endX="40.0" layoutX="191.0" layoutY="34.0" startX="-80.0" />
+      <Button fx:id="minusButton" layoutX="110.0" layoutY="73.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="shop-item-minus-button" text="-" />
+      <Button fx:id="plusButton" layoutX="210.0" layoutY="73.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="30.0" styleClass="shop-item-plus-button" text="+" />
+      <TextField fx:id="counter" alignment="CENTER" layoutX="145.0" layoutY="76.0" prefHeight="25.0" prefWidth="60.0" />
    </children>
 </fx:root>

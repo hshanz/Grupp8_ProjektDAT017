@@ -5,6 +5,8 @@ import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -40,6 +42,12 @@ public class StorePageController extends AnchorPane implements Initializable {
 
 
         searchField.textProperty().addListener((observableValue, s, t1) -> update(searchField.getText()));
+
+        //Some properties regarding the flowpane
+        flowPane.setVgap(10);
+        flowPane.setHgap(10);
+        flowPane.setPadding(new Insets(10));
+        flowPane.setAlignment(Pos.CENTER);
 
     }
 

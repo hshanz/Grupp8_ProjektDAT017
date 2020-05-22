@@ -5,9 +5,13 @@ import com.sun.media.jfxmediaimpl.platform.Platform;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingCart;
 import se.chalmers.cse.dat216.project.ShoppingItem;
@@ -22,6 +26,8 @@ public class MainShopItemController extends AnchorPane {
     @FXML private Label productName;
     @FXML private Label productPrice;
     @FXML private Label productCount;
+    @FXML private TextField productCounter;
+
 
     private ShoppingItem shoppingItem;
     private ShoppingCart shoppingCart;
@@ -45,6 +51,8 @@ public class MainShopItemController extends AnchorPane {
         productImage.setImage(bckEndP.getFXImage(p));
         productPrice.setText(String.valueOf(p.getPrice()) + " kr/" + shoppingItem.getProduct().getUnitSuffix());
         productCount.setText("0.0 " + shoppingItem.getProduct().getUnitSuffix());
+        productCounter.setText("0.0 " + shoppingItem.getProduct().getUnitSuffix());
+
     }
 
     @FXML
@@ -57,6 +65,7 @@ public class MainShopItemController extends AnchorPane {
             shoppingCart.fireShoppingCartChanged(null, false);
         }
         productCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+        productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 
     @FXML
@@ -68,6 +77,7 @@ public class MainShopItemController extends AnchorPane {
         }
         shoppingCart.fireShoppingCartChanged(null, false);
         productCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+        productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 
     private boolean isInCart(ShoppingItem sci){
