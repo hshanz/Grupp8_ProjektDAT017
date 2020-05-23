@@ -113,6 +113,18 @@
 
 
 
+/* History Settings*/
+
+.history-accordion-button{
+    -fx-background-color: #DC3C3C;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+}
+.history-accordion-button:hover{
+    -fx-background-color: #ba3329;
+}
+
+
 
 .important-element{
     -fx-background-color : #DC3C3C;
