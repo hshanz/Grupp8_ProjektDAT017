@@ -14,7 +14,6 @@ public class BackendControllerProducts {
     public BackendControllerProducts() {
         iM = IMatDataHandler.getInstance();
         bck = this;
-        iM.reset();
     }
 
     public static BackendControllerProducts getInstance(){

@@ -44,7 +44,9 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
         shoppingCart = bckEndP.getShoppingCart();
         shoppingCart.addShoppingCartListener(this);
         this.p = p;
-        shoppingItem = new ShoppingItem(p,1);
+        shoppingItem = new ShoppingItem(p,0);
+        checkSaveditems();
+
         productName.setText(p.getName());
         productImage.setImage(bckEndP.getFXImage(p));
         productPrice.setText(String.valueOf(p.getPrice()) + " kr/" + shoppingItem.getProduct().getUnitSuffix());
@@ -64,6 +66,16 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
                 shoppingCart.fireShoppingCartChanged(shoppingItem,false);
             }
         });
+
+    }
+
+    private void checkSaveditems(){
+        for (ShoppingItem sci:shoppingCart.getItems()) {
+                if (sci.getProduct().equals(p)){
+                    shoppingItem = sci;
+                    productCounter.setText(String.valueOf(shoppingItem.getAmount()));
+                }
+        }
 
     }
 
@@ -99,9 +111,6 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
-        if (shoppingItem.equals(cartEvent.getShoppingItem())){
-            System.out.println("222");
-            productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
-        }
+        productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 }

@@ -182,8 +182,8 @@
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                <TextField fx:id="expirationdate_mm_field" />
-                                                <TextField fx:id="expirationdate_yy_field" GridPane.columnIndex="2" />
+                                                <TextField fx:id="monthField" />
+                                                <TextField fx:id="yearField" GridPane.columnIndex="2" />
                                                 <Text strokeType="OUTSIDE" strokeWidth="0.0" text="-" wrappingWidth="11.59765625" GridPane.columnIndex="1" GridPane.halignment="CENTER">
                                                    <font>
                                                       <Font size="24.0" />
@@ -193,42 +193,42 @@
                                           </GridPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                              <left>
-                                                <TextField fx:id="cvc_field" prefHeight="25.0" prefWidth="53.0" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="cvcField" prefHeight="25.0" prefWidth="53.0" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                                              <left>
-                                                <TextField fx:id="first_name_field" prefHeight="25.0" prefWidth="213.0" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="firstNameField" prefHeight="25.0" prefWidth="213.0" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                              <left>
-                                                <TextField fx:id="surname_field" prefHeight="25.0" prefWidth="211.0" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="lastNameField" prefHeight="25.0" prefWidth="211.0" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                              <left>
-                                                <TextField fx:id="email_field" prefHeight="25.0" prefWidth="211.0" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="emailField" prefHeight="25.0" prefWidth="211.0" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="8">
                                              <left>
-                                                <TextField fx:id="delivery_adress_field" prefHeight="25.0" prefWidth="214.0" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="addressField" prefHeight="25.0" prefWidth="214.0" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
                                              <left>
-                                                <TextField fx:id="city_field" prefHeight="25.0" prefWidth="154.0" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="cityField" prefHeight="25.0" prefWidth="154.0" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
                                              <left>
-                                                <TextField fx:id="postal_number_field" prefHeight="25.0" prefWidth="154.0" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="zipCodeField" prefHeight="25.0" prefWidth="154.0" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                              <left>
-                                                <TextField fx:id="cardnumber_field" prefHeight="25.0" prefWidth="278.0" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="cardNumberField" prefHeight="25.0" prefWidth="278.0" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                        </children>

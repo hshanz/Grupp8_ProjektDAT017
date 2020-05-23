@@ -9,10 +9,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.text.Text;
-import se.chalmers.cse.dat216.project.CartEvent;
-import se.chalmers.cse.dat216.project.Order;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingCartListener;
+import se.chalmers.cse.dat216.project.*;
 
 import java.net.URL;
 import java.text.DecimalFormat;
@@ -45,16 +42,16 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     //region payment_wiz vars
     //Here is the payment information field. All information that we already have (from the profile) should be pre-written.
-    @FXML private TextField first_name_field;
-    @FXML private TextField surname_field;
-    @FXML private TextField email_field;
-    @FXML private TextField cardnumber_field;
-    @FXML private TextField expirationdate_mm_field;
-    @FXML private TextField expirationdate_yy_field;
-    @FXML private TextField cvc_field;
-    @FXML private TextField delivery_adress_field;
-    @FXML private TextField city_field;
-    @FXML private TextField postal_number_field;
+    @FXML private TextField firstNameField;
+    @FXML private TextField lastNameField;
+    @FXML private TextField emailField;
+    @FXML private TextField cardNumberField;
+    @FXML private TextField monthField;
+    @FXML private TextField yearField;
+    @FXML private TextField cvcField;
+    @FXML private TextField addressField;
+    @FXML private TextField cityField;
+    @FXML private TextField zipCodeField;
     //endregion
 
     //region confirm_wiz vars
@@ -81,6 +78,8 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     private String timeOfDelivery;
     private String dateOfDelivery;
     private Order order;
+    private CreditCard creditCard;
+    private Customer customer;
     private DecimalFormat df = new DecimalFormat("0.00");
 
     @Override
@@ -89,6 +88,8 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         bckEndU = BackendControllerUserInfo.getInstance();
         parentController = ParentController.getInstance();
         parentController.setCheckoutController(this);
+        creditCard = bckEndU.getCreditCard();
+        customer = bckEndU.getCustomer();
 
         shoppingCart = bckEndP.getShoppingCart();
         checkoutItemLargeList = new CopyOnWriteArrayList<>();
@@ -106,6 +107,47 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         currentStep = 0;
         wizSteps.get(currentStep).toFront();
         fillDateList();
+
+        firstNameField.setText(customer.getFirstName());
+        lastNameField.setText(customer.getLastName());
+        emailField.setText(customer.getEmail());
+        addressField.setText(customer.getAddress());
+        zipCodeField.setText(customer.getPostCode());
+        cityField.setText(customer.getPostCode());
+        cardNumberField.setText(creditCard.getCardNumber());
+        monthField.setText(String.valueOf(creditCard.getValidMonth()));
+        yearField.setText(String.valueOf(creditCard.getValidYear()));
+        cvcField.setText(String.valueOf(creditCard.getVerificationCode()));
+
+        firstNameField.textProperty().addListener((observableValue, s, t1) -> customer.setFirstName(firstNameField.getText()));
+        lastNameField.textProperty().addListener((observableValue, s, t1) -> customer.setLastName(lastNameField.getText()));
+        emailField.textProperty().addListener((observableValue, s, t1) -> customer.setEmail(emailField.getText()));
+        addressField.textProperty().addListener((observableValue, s, t1) -> customer.setAddress(addressField.getText()));
+        cityField.textProperty().addListener((observableValue, s, t1) -> customer.setPostAddress(cityField.getText()));
+        zipCodeField.textProperty().addListener((observableValue, s, t1) -> customer.setPostCode(zipCodeField.getText()));
+        cardNumberField.textProperty().addListener((observableValue, s, t1) -> creditCard.setCardNumber(cardNumberField.getText()));
+
+        monthField.textProperty().addListener((observableValue, s, t1) -> {
+            if (monthField.getText().equals("")) {
+                creditCard.setValidMonth(0);
+            } else if (!monthField.getText().matches("[0-9]+")) {
+                System.out.println("Invalid number");
+            } else creditCard.setValidMonth(Integer.parseInt(monthField.getText()));
+        });
+        yearField.textProperty().addListener((observableValue, s, t1) -> {
+            if (yearField.getText().equals("")) {
+                creditCard.setValidYear(0);
+            } else if (!yearField.getText().matches("[0-9]+")) {
+                System.out.println("Invalid number");
+            } else creditCard.setValidYear(Integer.parseInt(yearField.getText()));
+        });
+        cvcField.textProperty().addListener((observableValue, s, t1) -> {
+            if (cvcField.getText().equals("")) {
+                creditCard.setVerificationCode(0);
+            } else if (!cvcField.getText().matches("[0-9]+")) {
+                System.out.println("Invalid number");
+            } else creditCard.setVerificationCode(Integer.parseInt(cvcField.getText()));
+        });
 
     }
 
@@ -141,8 +183,11 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     public void confirmButtonPressed(){
         order.setItems(shoppingCart.getItems());
         order.setDate(new Date());
-        wares_to_dest.setText(order.getItems().size() + ":st varor är på väg till " + delivery_adress_field.getText() );
-
+        wares_to_dest.setText(order.getItems().size() + ":st varor är på väg till " + addressField.getText() );
+        date_and_time.setText(dateOfDelivery +" "+timeOfDelivery);
+        for (ShoppingItem sci:shoppingCart.getItems()) {
+            sci.setAmount(0);
+        }
         shoppingCart.clear();
         Finish.toFront();
     }
@@ -215,8 +260,6 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     public void setDelivery(String timeOfDelivery,String dateOfDelivery) {
         this.timeOfDelivery = timeOfDelivery;
         this.dateOfDelivery = dateOfDelivery;
-        System.out.println(dateOfDelivery);
-        System.out.println(this.timeOfDelivery);
 
     }
 }

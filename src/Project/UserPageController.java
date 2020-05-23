@@ -44,10 +44,22 @@ public class UserPageController implements Initializable {
 
 
 
+        firstNameField.setText(customer.getFirstName());
+        lastNameField.setText(customer.getLastName());
+        emailField.setText(customer.getEmail());
+        addressField.setText(customer.getAddress());
+        zipCodeField.setText(customer.getPostCode());
+        cityField.setText(customer.getPostCode());
+        cardNumberField.setText(creditCard.getCardNumber());
+        monthField.setText(String.valueOf(creditCard.getValidMonth()));
+        yearField.setText(String.valueOf(creditCard.getValidYear()));
+        cvcField.setText(String.valueOf(creditCard.getVerificationCode()));
+
         firstNameField.textProperty().addListener((observableValue, s, t1) -> customer.setFirstName(firstNameField.getText()));
         lastNameField.textProperty().addListener((observableValue, s, t1) -> customer.setLastName(lastNameField.getText()));
         emailField.textProperty().addListener((observableValue, s, t1) -> customer.setEmail(emailField.getText()));
         addressField.textProperty().addListener((observableValue, s, t1) -> customer.setAddress(addressField.getText()));
+        cityField.textProperty().addListener((observableValue, s, t1) -> customer.setPostAddress(cityField.getText()));
         zipCodeField.textProperty().addListener((observableValue, s, t1) -> customer.setPostCode(zipCodeField.getText()));
         cardNumberField.textProperty().addListener((observableValue, s, t1) -> creditCard.setCardNumber(cardNumberField.getText()));
 
