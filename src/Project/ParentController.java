@@ -18,6 +18,7 @@ public class ParentController implements Initializable {
     static ParentController parentController;
 
     @FXML BorderPane mainPane;
+    private CheckoutController checkoutController;
     private Pane toolBar;
     private Pane categoryList;
     private Pane cart;
@@ -31,6 +32,7 @@ public class ParentController implements Initializable {
 
 
     public void setCenterPage(String str){
+        checkoutController.resetWizard();
         switch (str) {
             case "StorePage":
                 mainPane.setCenter(storePage);
@@ -40,6 +42,7 @@ public class ParentController implements Initializable {
             case "UserPage":
                 mainPane.setCenter(userPage);
                 mainPane.setLeft(categoryList);
+
                 mainPane.setRight(cart);
                 break;
             case "Checkout":
@@ -58,7 +61,6 @@ public class ParentController implements Initializable {
         backendControllerProducts = new BackendControllerProducts();
         backendControllerUserInfo = new BackendControllerUserInfo();
         paneLoader = new PaneLoader();
-
         toolBar = paneLoader.LoadPane("Toolbar.fxml");
         categoryList = paneLoader.LoadPane("CategoryList.fxml");
         cart = paneLoader.LoadPane("Cart.fxml");
@@ -87,5 +89,9 @@ public class ParentController implements Initializable {
         }));
 
 
+    }
+
+    public void setCheckoutController(CheckoutController checkoutController) {
+        this.checkoutController = checkoutController;
     }
 }

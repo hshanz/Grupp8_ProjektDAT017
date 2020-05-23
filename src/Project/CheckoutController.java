@@ -88,6 +88,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         bckEndP = BackendControllerProducts.getInstance();
         bckEndU = BackendControllerUserInfo.getInstance();
         parentController = ParentController.getInstance();
+        parentController.setCheckoutController(this);
 
         shoppingCart = bckEndP.getShoppingCart();
         checkoutItemLargeList = new CopyOnWriteArrayList<>();
@@ -167,12 +168,15 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     }
 
-    @FXML
-    public void backToStore(){
+    public void resetWizard(){
         Finish.toBack();
         currentStep=0;
         wizSteps.get(currentStep).toFront();
         nextButton.setVisible(true);
+    }
+
+    @FXML
+    public void backToStore(){
         parentController.setCenterPage("StorePage");
     }
 
