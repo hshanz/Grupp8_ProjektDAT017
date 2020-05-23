@@ -12,20 +12,17 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainShopItemController extends AnchorPane {
+public class MainShopItemController extends AnchorPane implements ShoppingCartListener {
 
     @FXML private ImageView productImage;
     @FXML private Label productName;
     @FXML private Label productPrice;
-    @FXML private Label productCount;
     @FXML private TextField productCounter;
 
 
@@ -45,12 +42,12 @@ public class MainShopItemController extends AnchorPane {
         }
         bckEndP = BackendControllerProducts.getInstance();
         shoppingCart = bckEndP.getShoppingCart();
+        shoppingCart.addShoppingCartListener(this);
         this.p = p;
         shoppingItem = new ShoppingItem(p,1);
         productName.setText(p.getName());
         productImage.setImage(bckEndP.getFXImage(p));
         productPrice.setText(String.valueOf(p.getPrice()) + " kr/" + shoppingItem.getProduct().getUnitSuffix());
-        productCount.setText("0.0 " + shoppingItem.getProduct().getUnitSuffix());
         productCounter.setText("0.0 " + shoppingItem.getProduct().getUnitSuffix());
 
     }
@@ -64,7 +61,6 @@ public class MainShopItemController extends AnchorPane {
             shoppingItem.setAmount(shoppingItem.getAmount() + 1);
             shoppingCart.fireShoppingCartChanged(null, false);
         }
-        productCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
         productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 
@@ -76,7 +72,6 @@ public class MainShopItemController extends AnchorPane {
             shoppingCart.removeItem(shoppingItem);
         }
         shoppingCart.fireShoppingCartChanged(null, false);
-        productCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
         productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 
@@ -87,4 +82,10 @@ public class MainShopItemController extends AnchorPane {
         return false;
     }
 
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        if (shoppingItem.equals(cartEvent.getShoppingItem())){
+            productCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+        }
+    }
 }

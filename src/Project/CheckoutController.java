@@ -7,17 +7,21 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
+import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import se.chalmers.cse.dat216.project.CartEvent;
 import se.chalmers.cse.dat216.project.ShoppingCart;
+import se.chalmers.cse.dat216.project.ShoppingCartListener;
 
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-public class CheckoutController implements Initializable {
+public class CheckoutController implements Initializable, ShoppingCartListener {
 
 
 
@@ -28,6 +32,7 @@ public class CheckoutController implements Initializable {
     @FXML private AnchorPane Finish; // Last page of the checkout wizard. This page is shown after the checkout is finished.
 
     @FXML private Text Cost_text_1; // These texts should be updated with the complete cost of the purchase + "kr".
+    @FXML private FlowPane itemPane;
 
 
     @FXML private Text Delivery_date_1; //These texts should be updated with the with the delivery date. The "Delivery_date_1" should also change colour to black when first updated with a date.
@@ -79,11 +84,14 @@ public class CheckoutController implements Initializable {
     //endregion
 
     private List<AnchorPane> wizSteps;
+    private List<CheckoutItemLarge> checkoutItemLarges;
+
     private int currentStep;
     private ParentController parentController;
     private ShoppingCart shoppingCart;
     private BackendControllerProducts bckEndP;
     private BackendControllerUserInfo bckEndU;
+    private DecimalFormat df = new DecimalFormat("0.00");
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -92,6 +100,8 @@ public class CheckoutController implements Initializable {
         parentController = ParentController.getInstance();
 
         shoppingCart = bckEndP.getShoppingCart();
+        checkoutItemLarges = new CopyOnWriteArrayList<>();
+        shoppingCart.addShoppingCartListener(this);
 
         wizSteps = new ArrayList<>();
         wizSteps.add(wiz1_Check);
@@ -102,6 +112,17 @@ public class CheckoutController implements Initializable {
         currentStep = 0;
         wizSteps.get(currentStep).toFront();
 
+
+
+    }
+
+    private void updateList(){
+        Cost_text_1.setText(String.valueOf(df.format(shoppingCart.getTotal())));
+        itemPane.getChildren().clear();
+        for (CheckoutItemLarge cl: checkoutItemLarges) {
+            cl.update();
+            itemPane.getChildren().add(cl);
+        }
     }
 
     @FXML
@@ -116,6 +137,7 @@ public class CheckoutController implements Initializable {
         if (currentStep == 0 || currentStep == 4) {
             parentController.setCenterPage("StorePage");
             remove_goBack.setText("Avbryt");
+            return;
         }
         currentStep--;
         wizSteps.get(currentStep).toFront();
@@ -172,6 +194,20 @@ public class CheckoutController implements Initializable {
     //region choose_time_popup methods
     public void Change_day() {
         choose_time_popup.toBack();
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        if (cartEvent.isAddEvent()){
+            checkoutItemLarges.add(new CheckoutItemLarge(cartEvent.getShoppingItem()));
+        } else if (checkoutItemLarges.size() > shoppingCart.getItems().size()){
+            for (CheckoutItemLarge cl: checkoutItemLarges) {
+                if (cartEvent.getShoppingItem().equals(cl.getShoppingItem())) {
+                    checkoutItemLarges.remove(cl);
+                }
+            }
+        }
+        updateList();
     }
 }
     //endregion

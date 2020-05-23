@@ -12,6 +12,7 @@ import se.chalmers.cse.dat216.project.*;
 
 import java.awt.*;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.*;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
@@ -32,6 +33,7 @@ public class CartController extends AnchorPane implements Initializable,Shopping
     private ParentController parentController;
     ShoppingCart shoppingCart;
     List <CartItemController> cartItemList;
+    private DecimalFormat df = new DecimalFormat("0.00");
 
 
     @Override
@@ -63,7 +65,7 @@ public class CartController extends AnchorPane implements Initializable,Shopping
     }
 
     private void updateList(){
-        priceLabel.setText("= " + String.valueOf(shoppingCart.getTotal()) + " kr");
+        priceLabel.setText("= " + df.format(shoppingCart.getTotal()) + " kr");
         flowPane.getChildren().clear();
         for (CartItemController i:cartItemList) {
             i.update();

@@ -322,7 +322,11 @@
                                     </AnchorPane>
                                  </children>
                               </Pane>
-                              <FlowPane layoutY="155.0" prefHeight="413.0" prefWidth="832.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                              <ScrollPane layoutX="152.0" layoutY="153.0" prefHeight="447.0" prefWidth="694.0">
+                                 <content>
+                                    <FlowPane fx:id="itemPane" prefHeight="443.0" prefWidth="690.0" />
+                                 </content>
+                              </ScrollPane>
                            </children>
                         </AnchorPane>
                      </children>
