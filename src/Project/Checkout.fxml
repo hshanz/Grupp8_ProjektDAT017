@@ -237,7 +237,7 @@
                               </AnchorPane>
                               <AnchorPane fx:id="wiz2_Date" prefHeight="648.0" prefWidth="657.0" styleClass="grey-background-element">
                                  <children>
-                                    <FlowPane fx:id="datePane" layoutX="79.0" layoutY="237.0" prefHeight="224.0" prefWidth="742.0" style="-fx-border-color: #000000;" />
+                                    <FlowPane fx:id="dateFlowPane" layoutX="79.0" layoutY="237.0" prefHeight="224.0" prefWidth="742.0" style="-fx-border-color: #000000;" />
                                     <Pane layoutX="276.0" layoutY="44.0" prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="44.0">
                                        <children>
                                           <AnchorPane prefHeight="30.0" prefWidth="294.0">

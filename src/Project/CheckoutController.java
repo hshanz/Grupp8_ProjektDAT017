@@ -31,8 +31,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     @FXML private Text Cost_text_1; // These texts should be updated with the complete cost of the purchase + "kr".
     @FXML private FlowPane itemPane;
-    @FXML private FlowPane datePane;
-    @FXML private SplitPane splitPane;
+    @FXML private FlowPane dateFlowPane;
     @FXML private Button nextButton;
     @FXML private FlowPane smallItemPane;
 
@@ -59,7 +58,6 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     //endregion
 
     //region confirm_wiz vars
-    @FXML private ScrollPane checkout_cart_confirm_pane; //Should be populated with CheckoutItemSmall
     @FXML private Text confirm_name; //Should display the full name of the buyer, (first name + surname)
     @FXML private Text confirm_adress; //should display the delivery address of the buyer
     @FXML private Text confirm_cardnumber; //Should display 8 stars and then the 4 last numbers of the credit card number. (ex: **** **** 1234)
@@ -108,14 +106,12 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         wizSteps.get(currentStep).toFront();
         fillDateList();
 
-
-
     }
 
     private void updateDateList(){
-        datePane.getChildren().clear();
+        dateFlowPane.getChildren().clear();
         for (DateTimeItemController dti:dateTimeItemList) {
-            datePane.getChildren().add(dti);
+            dateFlowPane.getChildren().add(dti);
         }
     }
 
@@ -142,6 +138,11 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     @FXML
     public void confirmButtonPressed(){
+        order.setItems(shoppingCart.getItems());
+        order.setDate(new Date());
+        wares_to_dest.setText(order.getItems().size() + ":st varor är på väg till " + delivery_adress_field.getText() );
+
+        shoppingCart.clear();
         Finish.toFront();
     }
 
