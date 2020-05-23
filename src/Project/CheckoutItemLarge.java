@@ -56,10 +56,13 @@ public class CheckoutItemLarge extends AnchorPane {
         });
     }
 
+    @FXML
     public void AddWare () {
         shoppingItem.setAmount(shoppingItem.getAmount()+1);
         shoppingCart.fireShoppingCartChanged(shoppingItem,false);
     } //Should add 1 ware from the cart
+
+    @FXML
     public void RemoveWare () {
         shoppingItem.setAmount(shoppingItem.getAmount()-1);
         if (shoppingItem.getAmount() == 0){

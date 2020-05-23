@@ -50,6 +50,21 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
         productPrice.setText(String.valueOf(p.getPrice()) + " kr/" + shoppingItem.getProduct().getUnitSuffix());
         productCounter.setText("0.0 " + shoppingItem.getProduct().getUnitSuffix());
 
+        productCounter.focusedProperty().addListener((observableValue, s, t1) -> {
+            if (productCounter.getText().equals("")) {
+                productCounter.setText(String.valueOf(shoppingItem.getAmount()));
+            } else if (!productCounter.getText().matches("[0-9]+")) {
+                productCounter.setText(String.valueOf(shoppingItem.getAmount()));
+                System.out.println("Invalid number");
+            } else if (productCounter.getText().equals("0")){
+                shoppingItem.setAmount(1);
+                removeFromCart();
+            } else {
+                shoppingItem.setAmount(Double.parseDouble(productCounter.getText()));
+                shoppingCart.fireShoppingCartChanged(shoppingItem,false);
+            }
+        });
+
     }
 
     @FXML
@@ -85,7 +100,8 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         if (shoppingItem.equals(cartEvent.getShoppingItem())){
-            productCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+            System.out.println("222");
+            productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
         }
     }
 }

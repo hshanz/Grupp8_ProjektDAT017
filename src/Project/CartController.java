@@ -55,9 +55,15 @@ public class CartController extends AnchorPane implements Initializable,Shopping
         if (cartEvent.isAddEvent()){
             cartItemList.add(new CartItemController(cartEvent.getShoppingItem()));
         } else if (cartItemList.size() > shoppingCart.getItems().size()){
-            for (CartItemController c : cartItemList) {
-                if (cartEvent.getShoppingItem().equals(c.getShoppingItem())) {
+            if (shoppingCart.getItems().size() == 0){
+                for (CartItemController c : cartItemList) {
                     cartItemList.remove(c);
+                }
+            }else {
+                for (CartItemController c : cartItemList) {
+                    if (cartEvent.getShoppingItem().equals(c.getShoppingItem())) {
+                        cartItemList.remove(c);
+                    }
                 }
             }
         }
