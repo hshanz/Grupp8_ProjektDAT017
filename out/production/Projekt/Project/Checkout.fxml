@@ -234,6 +234,7 @@
                         </AnchorPane>
                         <AnchorPane fx:id="wiz2_Date" prefHeight="648.0" prefWidth="657.0" styleClass="grey-background-element">
                            <children>
+                              <FlowPane layoutX="79.0" layoutY="237.0" prefHeight="224.0" prefWidth="742.0" style="-fx-border-color: #000000;" />
                               <Pane layoutX="276.0" layoutY="44.0" prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="44.0">
                                  <children>
                                     <AnchorPane prefHeight="30.0" prefWidth="294.0">
@@ -266,29 +267,9 @@
                                     </AnchorPane>
                                  </children>
                               </Pane>
-                              <AnchorPane fx:id="next_month_pane" layoutX="156.0" layoutY="146.0" onMouseClicked="#SetMonthNext" prefHeight="38.0" prefWidth="130.0" style="-fx-background-color: ffd1d1;" AnchorPane.leftAnchor="156.0">
-                                 <children>
-                                    <Text fx:id="next_month_text" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Månad" textAlignment="CENTER" wrappingWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="this_month_pane" layoutX="16.0" layoutY="132.0" onMouseClicked="#SetMonthThis" prefHeight="53.0" prefWidth="100.0" style="-fx-background-color: EFEFEF;" AnchorPane.leftAnchor="16.0">
-                                 <children>
-                                    <Text fx:id="this_month_text" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Månad" textAlignment="CENTER" wrappingWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="after_next_month_pane" layoutX="296.0" layoutY="146.0" onMouseClicked="#SetMonthAfterNext" prefHeight="38.0" prefWidth="100.0" style="-fx-background-color: ffd1d1;" AnchorPane.leftAnchor="296.0">
-                                 <children>
-                                    <Text fx:id="after_next_month_text" layoutY="36.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Månad" textAlignment="CENTER" wrappingWidth="130.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="7.0" />
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane prefHeight="447.0" prefWidth="626.0" styleClass="background-element" AnchorPane.bottomAnchor="16.0" AnchorPane.leftAnchor="16.0" AnchorPane.rightAnchor="16.0" AnchorPane.topAnchor="185.0">
-                                 <children>
-                                    <ScrollPane fx:id="calendar_pane" prefHeight="200.0" prefWidth="200.0" styleClass="background-element" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                                 </children>
-                              </AnchorPane>
                            </children>
                         </AnchorPane>
-                        <AnchorPane fx:id="wiz1_Check" prefHeight="200.0" prefWidth="200.0" styleClass="grey-background-element">
+                        <AnchorPane fx:id="wiz1_Check" prefHeight="200.0" prefWidth="200.0" styleClass="grey-background-element" visible="false">
                            <children>
                               <Pane layoutX="300.0" layoutY="47.0" prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="47.0">
                                  <children>

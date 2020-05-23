@@ -85,7 +85,7 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
         if (shoppingItem.equals(cartEvent.getShoppingItem())){
-            productCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+            productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
         }
     }
 }
