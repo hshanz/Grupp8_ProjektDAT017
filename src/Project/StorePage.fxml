@@ -11,9 +11,9 @@
             <Font size="20.0" />
          </font>
       </TextField>
-      <ScrollPane hbarPolicy="NEVER" layoutX="50.0" layoutY="115.0" prefHeight="485.0" prefWidth="680.0">
+      <ScrollPane hbarPolicy="NEVER" layoutX="50.0" layoutY="115.0" prefHeight="485.0" prefWidth="750.0" AnchorPane.leftAnchor="15.0">
          <content>
-            <FlowPane fx:id="flowPane" prefHeight="482.0" prefWidth="680.0" style="-fx-background-color: #EFEFEF;" />
+            <FlowPane fx:id="flowPane" prefHeight="482.0" prefWidth="750.0" style="-fx-background-color: #EFEFEF;" />
          </content>
       </ScrollPane>
    </children>

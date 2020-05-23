@@ -46,8 +46,8 @@ public class StorePageController extends AnchorPane implements Initializable {
         //Some properties regarding the flowpane
         flowPane.setVgap(10);
         flowPane.setHgap(10);
-        flowPane.setPadding(new Insets(10));
-        flowPane.setAlignment(Pos.CENTER);
+        flowPane.setPadding(new Insets(5));
+
 
     }
 

@@ -93,10 +93,19 @@
     -fx-background-radius: 0 10 0 0;
 }
 
+.shop-item-plus-button:hover{
+    -fx-background-color: #2da82d;
+}
+
 .shop-item-minus-button{
     -fx-background-color: #DC3C3C;
     -fx-background-radius: 10 0 0 0;
 }
+
+.shop-item-minus-button:hover{
+    -fx-background-color: #b33030;
+}
+
 
 .shop-item{
     -fx-background-color: #DDDDDD;
