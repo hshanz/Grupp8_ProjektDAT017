@@ -8,9 +8,9 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="980.0" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.UserPageController">
+<AnchorPane prefHeight="600.0" prefWidth="1280.0" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.UserPageController">
    <children>
-      <ScrollPane hbarPolicy="NEVER" layoutX="200.0" prefHeight="600.0" prefWidth="580.0">
+      <ScrollPane hbarPolicy="NEVER" layoutX="350.0" prefHeight="600.0" prefWidth="580.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="816.0" prefWidth="580.0">
                <children>
@@ -60,6 +60,6 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button fx:id="saveButton" layoutX="817.0" layoutY="527.0" mnemonicParsing="false" onAction="#save" prefHeight="59.0" prefWidth="138.0" styleClass="user-page-button" text="Spara och uppdatera information" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <Button fx:id="saveButton" layoutX="952.0" layoutY="527.0" mnemonicParsing="false" onAction="#save" prefHeight="59.0" prefWidth="138.0" styleClass="user-page-button" text="Spara och uppdatera information" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="952.0" />
    </children>
 </AnchorPane>

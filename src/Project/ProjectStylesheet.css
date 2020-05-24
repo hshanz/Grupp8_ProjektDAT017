@@ -164,6 +164,11 @@
     -fx-background-radius: 0 10 0 0;
 }
 
+.user-page-button:hover{
+    -fx-background-color: #2da82d;
+}
+
+
 
 
 
