@@ -28,6 +28,7 @@ public class ParentController implements Initializable {
     private Pane cart;
     private Pane storePage;
     private Pane userPage;
+    private Pane historyPage;
 
     public static ParentController getInstance(){
         return parentController;
@@ -35,7 +36,6 @@ public class ParentController implements Initializable {
 
 
     public void setCenterPage(String str){
-        checkoutController.resetWizard();
         checkoutPaneParent.toBack();
         switch (str) {
             case "StorePage":
@@ -45,12 +45,16 @@ public class ParentController implements Initializable {
                 break;
             case "UserPage":
                 mainPane.setCenter(userPage);
-                mainPane.setLeft(categoryList);
-
-                mainPane.setRight(cart);
+                mainPane.setLeft(null);
+                mainPane.setRight(null);
                 break;
             case "Checkout":
+                checkoutController.resetWizard();
                 checkoutPaneParent.toFront();
+                break;
+            case "HistoryPage":
+                System.out.println("123123123");
+                mainPane.setCenter(historyPage);
                 break;
         }
 
@@ -68,6 +72,7 @@ public class ParentController implements Initializable {
         storePage = paneLoader.LoadPane("StorePage.fxml");
         userPage = paneLoader.LoadPane("UserPage.fxml");
         checkoutPane.getChildren().add(paneLoader.LoadPane("Checkout.fxml"));
+        historyPage = paneLoader.LoadPane("HistoryPage.fxml");
         cart = paneLoader.LoadPane("Cart.fxml");
 
         System.out.println(checkoutPane);
@@ -85,14 +90,7 @@ public class ParentController implements Initializable {
 
 
 
-        Runtime.getRuntime().addShutdownHook(new Thread(new Runnable() {
-            @Override
-            public void run() {
-                backendControllerProducts.shutDown();
-            }
-        }));
-
-
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> backendControllerProducts.shutDown()));
     }
 
     public void setCheckoutController(CheckoutController checkoutController) {

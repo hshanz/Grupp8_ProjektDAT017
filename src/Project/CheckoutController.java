@@ -77,7 +77,6 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     private BackendControllerUserInfo bckEndU;
     private String timeOfDelivery;
     private String dateOfDelivery;
-    private Order order;
     private CreditCard creditCard;
     private Customer customer;
     private DecimalFormat df = new DecimalFormat("0.00");
@@ -96,7 +95,6 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         checkoutItemSmallList = new CopyOnWriteArrayList<>();
         dateTimeItemList = new CopyOnWriteArrayList<>();
         shoppingCart.addShoppingCartListener(this);
-        order = new Order();
 
         wizSteps = new ArrayList<>();
         wizSteps.add(wiz1_Check);
@@ -181,13 +179,15 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     @FXML
     public void confirmButtonPressed(){
-        order.setItems(shoppingCart.getItems());
+        Order order = bckEndP.placeOrder();
         order.setDate(new Date());
+        order.setOrderNumber(bckEndP.getOrders().size()+1);
         wares_to_dest.setText(order.getItems().size() + ":st varor är på väg till " + addressField.getText() );
         date_and_time.setText(dateOfDelivery +" "+timeOfDelivery);
         for (ShoppingItem sci:shoppingCart.getItems()) {
             sci.setAmount(0);
         }
+        System.out.println(bckEndP.getOrders().size());
         shoppingCart.clear();
         Finish.toFront();
     }

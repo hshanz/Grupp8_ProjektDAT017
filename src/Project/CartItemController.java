@@ -27,7 +27,7 @@ public class CartItemController extends AnchorPane {
 
     @FXML private Button plusButton;
     @FXML private Button minusButton;
-    @FXML private TextField counter;
+    @FXML private TextField productCounter;
 
     private ShoppingCart shoppingCart;
     private ShoppingItem shoppingItem;
@@ -51,14 +51,45 @@ public class CartItemController extends AnchorPane {
         CartItemName.setText(product.getName());
         CartItemPrice.setText(String.valueOf(product.getPrice()) + " kr");
         CartItemCount.setText(String.valueOf(shoppingItem.getAmount()));
-        counter.setText(String.valueOf(shoppingItem.getAmount()));
+        productCounter.setText(String.valueOf(shoppingItem.getAmount()));
         CartItemImage.setImage(bckEndP.getFXImage(product));
+
+        productCounter.focusedProperty().addListener((observableValue, s, t1) -> {
+            if (productCounter.getText().equals("")) {
+                productCounter.setText(String.valueOf(shoppingItem.getAmount()));
+            } else if (!productCounter.getText().matches("[0-9]+")) {
+                productCounter.setText(String.valueOf(shoppingItem.getAmount()));
+                System.out.println("Invalid number");
+            } else if (productCounter.getText().equals("0")){
+                shoppingItem.setAmount(1);
+                removeItem();
+            } else {
+                shoppingItem.setAmount(Double.parseDouble(productCounter.getText()));
+                shoppingCart.fireShoppingCartChanged(shoppingItem,false);
+
+            }
+        });
+    }
+    @FXML
+    public void decItem(){
+        shoppingItem.setAmount(shoppingItem.getAmount()-1);
+        shoppingCart.fireShoppingCartChanged(shoppingItem,false);
     }
 
+    private void removeItem(){
+        shoppingItem.setAmount(0);
+        shoppingCart.removeItem(shoppingItem);
+    }
+
+    @FXML
+    public void addItem(){
+        shoppingItem.setAmount(shoppingItem.getAmount()+1);
+        shoppingCart.fireShoppingCartChanged(shoppingItem,false);
+    }
 
     public void update(){
         CartItemCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
-        counter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+        productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 
     public ShoppingItem getShoppingItem() {

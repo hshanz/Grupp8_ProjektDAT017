@@ -62,8 +62,10 @@ public class ToolbarController implements Initializable {
         changeStylesheet(shopButton);
     }
 
+    @FXML
     public void onClickHistory(){
-        parentController.setCenterPage(".fxml");
+        parentController.setCenterPage("HistoryPage");
+        changeStylesheet(historyButton);
     }
 
 

@@ -14,17 +14,16 @@ public class BackendControllerProducts {
     public BackendControllerProducts() {
         iM = IMatDataHandler.getInstance();
         bck = this;
+        System.out.println(iM.getOrders().size());
     }
 
     public static BackendControllerProducts getInstance(){
         return bck;
     }
 
-   public ShoppingCart getShoppingCart(){
+    public ShoppingCart getShoppingCart(){
         return iM.getShoppingCart();
    }
-
-
 
     public void shutDown(){
         iM.shutDown();

@@ -15,12 +15,17 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import se.chalmers.cse.dat216.project.Order;
+import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Calendar;
+import java.util.List;
 import java.util.ResourceBundle;
+import java.util.concurrent.CopyOnWriteArrayList;
 
-public class HistoryAccordion extends AnchorPane implements Initializable {
+public class HistoryAccordion extends AnchorPane {
 
 
     //Labels
@@ -38,43 +43,56 @@ public class HistoryAccordion extends AnchorPane implements Initializable {
     public Button expandButton;
     public boolean expanded = false;
 
-    public HistoryAccordion() {
+    private Order order;
+    private List<HistoryItemController> itemList;
+    private Calendar calendar = Calendar.getInstance();
 
+
+
+    public HistoryAccordion(Order order) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HistoryAccordion.fxml"));
-
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
-
-
         try {
             fxmlLoader.load();
         } catch (IOException e) {
-            //e.printStackTrace();
+            e.printStackTrace();
         }
-    }
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-
         //Disable vertical scrolling
         scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-
         //Set the gridlines' size (space between objects)
         flowPane.setHgap(10);
         flowPane.setVgap(10);
-
         flowPane.setPadding(new Insets(10));
-
-        //Add products
-        for (int i = 0; i < 10; i++) {
-            flowPane.getChildren().add(new TestItemController());
-        }
-
         setArrowProperties();
-
         expandButton.setOnAction(this::expand);
 
+        this.order = order;
+        calendar.setTimeInMillis(order.getDate().getTime());
+        dateLabel.setText(String.valueOf(calendar.get(Calendar.DATE))+ ": " + calendar.get(Calendar.HOUR_OF_DAY));
+        int temp = 0;
+        for (ShoppingItem sci:order.getItems()) {
+            temp += sci.getTotal();
+        }
+        priceLabel.setText(String.valueOf(temp));
+        itemList = new CopyOnWriteArrayList<>();
+        fillPane();
+        updateList();
     }
+
+    private void updateList() {
+        flowPane.getChildren().clear();
+        for (HistoryItemController i:itemList) {
+            flowPane.getChildren().add(i);
+        }
+    }
+
+    private void fillPane() {
+        for (ShoppingItem sci:order.getItems()) {
+            itemList.add(new HistoryItemController(sci));
+        }
+    }
+
 
     private void setArrowProperties(){
         //Create new Effect

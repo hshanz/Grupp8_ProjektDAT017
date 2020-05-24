@@ -63,7 +63,11 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
                 removeFromCart();
             } else {
                 shoppingItem.setAmount(Double.parseDouble(productCounter.getText()));
+                if (!isInCart(shoppingItem)){
+                    shoppingCart.addItem(shoppingItem);
+                }
                 shoppingCart.fireShoppingCartChanged(shoppingItem,false);
+
             }
         });
 

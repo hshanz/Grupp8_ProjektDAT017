@@ -1,4 +1,49 @@
 package Project;
 
-public class HistoryPage {
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.layout.FlowPane;
+import se.chalmers.cse.dat216.project.Order;
+
+import java.net.URL;
+import java.util.List;
+import java.util.ResourceBundle;
+import java.util.concurrent.CopyOnWriteArrayList;
+
+public class HistoryPage implements Initializable {
+
+    @FXML
+    private FlowPane accordionFlowPane;
+
+    private BackendControllerProducts bckEndP;
+    private List<Order> orders;
+    private List<HistoryAccordion> accordions;
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        bckEndP = BackendControllerProducts.getInstance();
+
+        orders = new CopyOnWriteArrayList<>();
+        orders = bckEndP.getOrders();
+        accordions = new CopyOnWriteArrayList<>();
+        if (orders.size() !=0) {
+            fillAccordionList();
+            updateList();
+        }
+
+
+    }
+
+    private void updateList() {
+        accordionFlowPane.getChildren().clear();
+        for (HistoryAccordion h:accordions) {
+            accordionFlowPane.getChildren().add(h);
+        }
+    }
+
+    private void fillAccordionList(){
+        for (Order o:orders) {
+            accordions.add(new HistoryAccordion(o));
+        }
+    }
 }
