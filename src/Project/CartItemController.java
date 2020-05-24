@@ -72,6 +72,10 @@ public class CartItemController extends AnchorPane {
     }
     @FXML
     public void decItem(){
+        if (shoppingItem.getAmount() == 1) {
+            removeItem();
+            return;
+        }
         shoppingItem.setAmount(shoppingItem.getAmount()-1);
         shoppingCart.fireShoppingCartChanged(shoppingItem,false);
     }
