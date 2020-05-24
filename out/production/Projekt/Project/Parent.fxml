@@ -7,7 +7,7 @@
    <children>
       <AnchorPane fx:id="checkoutPaneParent" prefHeight="720.0" prefWidth="1280.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
          <children>
-            <AnchorPane fx:id="checkoutPane" layoutX="245.0" layoutY="115.0" prefHeight="490.0" prefWidth="790.0" />
+            <AnchorPane fx:id="checkoutPane" layoutX="140.0" layoutY="115.0" prefHeight="700.0" prefWidth="1000.0" AnchorPane.topAnchor="10.0" />
          </children>
       </AnchorPane>
       <BorderPane fx:id="mainPane" prefHeight="658.0" prefWidth="1206.0" style="-fx-background-color: #EFEFEF;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
