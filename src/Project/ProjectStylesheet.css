@@ -1,6 +1,6 @@
 
 
-/* Category list*/
+    /* Category list*/
 
 .list-cell{
     -fx-background-color: #FFD1D1;
@@ -27,7 +27,7 @@
 }
 
 
-/* Toolbar Settings */
+    /* Toolbar Settings */
 
 .toolbar-background{
     -fx-background-color: #DC3C3C;
@@ -56,7 +56,7 @@
 }
 
 
-/* Cart settings*/
+    /* Cart settings*/
 
 .cart{
     -fx-border-width: 0 0 0 3;
@@ -86,7 +86,7 @@
 }
 
 
-/*Shop Item*/
+    /*Shop Item*/
 
 .shop-item-plus-button{
     -fx-background-color: #3CDC3C;
@@ -113,8 +113,9 @@
 
 
 
-/* History Settings*/
+    /* History Settings*/
 
+/*Accordion*/
 .history-accordion-button{
     -fx-background-color: #DC3C3C;
     -fx-font-size: 15px;
@@ -123,6 +124,43 @@
 .history-accordion-button:hover{
     -fx-background-color: #ba3329;
 }
+
+/*History Item*/
+
+.history-item-main-pane{
+    -fx-background-color: #DDDDDD;
+}
+
+.history-item-small-pane{
+    -fx-background-color: white;
+}
+
+.history-item-button{
+    -fx-background-color: #3CDC3C;
+    -fx-background-radius: 0 10 0 0;
+    -fx-font-weight: bold;
+}
+
+.history-item-button:hover{
+    -fx-background-color: #2da82d;
+}
+
+
+.history-item-headline{
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+}
+
+.history-item-detail{
+    -fx-font-size: 16px;
+
+}
+
+
+
+
+
+
 
 
 
