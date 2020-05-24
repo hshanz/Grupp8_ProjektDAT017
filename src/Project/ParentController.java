@@ -1,5 +1,6 @@
 package Project;
 
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
@@ -8,6 +9,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
+import se.chalmers.cse.dat216.project.ProductCategory;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.net.URL;
@@ -25,6 +27,8 @@ public class ParentController implements Initializable {
 
     private CheckoutController checkoutController;
     private HistoryPage historyPageController;
+    private StorePageController storePageController;
+
     private Pane toolBar;
     private Pane categoryList;
     private Pane cart;
@@ -80,10 +84,11 @@ public class ParentController implements Initializable {
 
         System.out.println(checkoutPane);
 
+        mainPane.setCenter(storePage);
         mainPane.setTop(toolBar);
         mainPane.setLeft(categoryList);
         mainPane.setRight(cart);
-        mainPane.setCenter(storePage);
+
 
 
 
@@ -106,5 +111,14 @@ public class ParentController implements Initializable {
 
     public void addNewOrder(Order order){
         historyPageController.addOrder(order);
+    }
+
+    public void loadCatergory(ProductCategory productCategory) {
+        System.out.println(productCategory);
+        storePageController.update(productCategory);
+    }
+
+    public void setStorePagecontroller(StorePageController storePageController) {
+        this.storePageController = storePageController;
     }
 }

@@ -33,10 +33,13 @@ public class StorePageController extends AnchorPane implements Initializable {
 
     BackendControllerProducts bckEndP;
     HashMap<Product,MainShopItemController> productMap = new HashMap<>();
+    ParentController parentController;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         bckEndP = BackendControllerProducts.getInstance();
+        parentController = ParentController.getInstance();
+        parentController.setStorePagecontroller(this);
         fillMap();
         update();
 
