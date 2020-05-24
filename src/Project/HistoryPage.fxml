@@ -19,7 +19,7 @@
          <children>
             <ScrollPane prefHeight="200.0" prefWidth="200.0" styleClass="background-element" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                <content>
-                  <FlowPane prefHeight="598.0" prefWidth="197.0" styleClass="background-element" />
+                  <FlowPane fx:id="months_list" prefHeight="598.0" prefWidth="197.0" styleClass="background-element" />
                </content>
             </ScrollPane>
          </children>
