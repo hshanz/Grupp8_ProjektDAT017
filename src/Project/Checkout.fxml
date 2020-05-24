@@ -18,66 +18,63 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="602.0" prefWidth="1280.0" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.CheckoutController">
+<AnchorPane prefHeight="700.0" prefWidth="1000.0" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.CheckoutController">
    <children>
       <StackPane prefHeight="150.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <AnchorPane fx:id="Finish" prefHeight="200.0" prefWidth="200.0" styleClass="background-element">
                <children>
-                  <Button layoutX="887.0" layoutY="445.0" mnemonicParsing="false" onAction="#backToStore" prefHeight="104.0" prefWidth="287.0" styleClass="important-button" text="Till Affär" AnchorPane.bottomAnchor="53.0" AnchorPane.rightAnchor="34.0" />
-                  <Text layoutX="443.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="large-text" text="Köp klart!" textAlignment="CENTER" AnchorPane.topAnchor="25.9375" />
-                  <Circle fill="#2a9a2a" layoutX="571.0" layoutY="272.0" radius="112.0" stroke="TRANSPARENT" strokeType="INSIDE" />
-                  <Polyline fill="#3cdc3c" layoutX="409.0" layoutY="291.0" points="-50.0, -40.0, 19.0, -85.0, 85.0, 19.0, 371.0, -211.0, 440.0, -125.0, 74.0, 93.0, -50.0, -40.0" strokeType="INSIDE" strokeWidth="3.0" />
-                  <Text fx:id="wares_to_dest" layoutX="432.0" layoutY="470.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="-st varor är påväg mot --." wrappingWidth="294.0" AnchorPane.bottomAnchor="125.9765625" />
-                  <Text layoutX="423.0" layoutY="506.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="De kommer att vara framme " wrappingWidth="311.0" AnchorPane.bottomAnchor="89.9765625" />
-                  <Text fx:id="date_and_time" layoutX="544.0" layoutY="542.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="-- kl--" wrappingWidth="69.62109375" AnchorPane.bottomAnchor="53.9765625" />
+                  <Button layoutX="683.0" layoutY="549.0" mnemonicParsing="false" onAction="#backToStore" prefHeight="104.0" prefWidth="287.0" styleClass="important-button" text="Till Affär" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0" />
+                  <Text layoutX="364.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="large-text" text="Köp klart!" textAlignment="CENTER" AnchorPane.topAnchor="45.0" />
+                  <Circle fill="#2a9a2a" layoutX="500.0" layoutY="342.0" radius="112.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+                  <Polyline fill="#3cdc3c" layoutX="340.0" layoutY="389.0" points="-50.0, -40.0, 19.0, -85.0, 85.0, 19.0, 371.0, -211.0, 440.0, -125.0, 74.0, 93.0, -50.0, -40.0" strokeType="INSIDE" strokeWidth="3.0" />
+                  <Text fx:id="wares_to_dest" layoutX="353.0" layoutY="591.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="-st varor är påväg mot --." wrappingWidth="294.0" AnchorPane.bottomAnchor="102.9765625" />
+                  <Text layoutX="344.0" layoutY="627.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="De kommer att vara framme " wrappingWidth="311.0" AnchorPane.bottomAnchor="66.9765625" />
+                  <Text fx:id="date_and_time" layoutX="465.0" layoutY="663.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="-- kl--" wrappingWidth="69.62109375" AnchorPane.bottomAnchor="30.9765625" />
                </children>
             </AnchorPane>
-            <SplitPane fx:id="splitPane" dividerPositions="0.770735524256651" prefHeight="600.0" prefWidth="1280.0">
+            <SplitPane fx:id="splitPane" dividerPositions="0.682" prefHeight="700.0" prefWidth="1000.0">
               <items>
-                <AnchorPane minHeight="600.0" minWidth="900.0" prefHeight="600.0" prefWidth="961.0">
+                <AnchorPane minHeight="600.0" minWidth="591.0" prefHeight="798.0" prefWidth="621.0">
                      <children>
                         <StackPane fx:id="mainStackPane" prefHeight="582.0" prefWidth="847.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
                               <AnchorPane fx:id="wiz4_Confirm" prefHeight="200.0" prefWidth="200.0" styleClass="grey-background-element">
                                  <children>
-                                    <Pane layoutX="300.0" layoutY="44.0" prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="44.0">
+                                    <AnchorPane layoutX="189.0" layoutY="43.0" prefHeight="30.0" prefWidth="294.0" AnchorPane.topAnchor="45.0">
                                        <children>
-                                          <AnchorPane prefHeight="30.0" prefWidth="294.0">
-                                             <children>
-                                                <Circle fill="#ababab" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="-40.0" />
-                                                <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                                   <font>
-                                                      <Font size="48.0" />
-                                                   </font>
-                                                </Text>
-                                                <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.rightAnchor="-50.0" />
-                                                <Circle fill="#ababab" layoutX="122.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="58.0" />
-                                                <Circle fill="#5ca1ff" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
-                                                <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                                   <font>
-                                                      <Font size="48.0" />
-                                                   </font>
-                                                </Text>
-                                                <Text layoutX="167.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                                   <font>
-                                                      <Font size="48.0" />
-                                                   </font>
-                                                </Text>
-                                                <Text layoutX="275.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
-                                                   <font>
-                                                      <Font size="64.0" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                          </AnchorPane>
+                                          <Pane prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="0.0" />
+                                          <Circle fill="#ababab" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="-40.0" />
+                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.rightAnchor="-50.0" />
+                                          <Circle fill="#ababab" layoutX="122.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="58.0" />
+                                          <Circle fill="#5ca1ff" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
+                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="167.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="275.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
+                                             <font>
+                                                <Font size="64.0" />
+                                             </font>
+                                          </Text>
                                        </children>
-                                    </Pane>
+                                    </AnchorPane>
                                     <AnchorPane layoutY="117.0" prefHeight="531.0" prefWidth="651.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="117.0">
                                        <children>
                                           <ScrollPane fx:id="checkout_cart_confirm_pane" layoutX="226.0" layoutY="7.0" prefHeight="200.0" prefWidth="200.0" styleClass="background-element" AnchorPane.bottomAnchor="331.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                              <content>
-                                                <FlowPane fx:id="smallItemPane" prefHeight="148.0" prefWidth="845.0" />
+                                                <FlowPane fx:id="smallItemPane" prefHeight="248.0" prefWidth="675.0" />
                                              </content>
                                           </ScrollPane>
                                           <VBox layoutY="216.0" prefHeight="138.0" prefWidth="651.0" AnchorPane.bottomAnchor="177.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
@@ -102,46 +99,43 @@
                                                 </Pane>
                                              </children>
                                           </VBox>
-                                          <Button alignment="CENTER" layoutX="246.0" layoutY="318.0" mnemonicParsing="false" onAction="#confirmButtonPressed" prefHeight="149.0" prefWidth="356.0" styleClass="important-button" text="Bekräfta köp" AnchorPane.bottomAnchor="14.0" />
+                                          <Button alignment="CENTER" layoutX="161.0" layoutY="418.0" mnemonicParsing="false" onAction="#confirmButtonPressed" prefHeight="149.0" prefWidth="356.0" styleClass="important-button" text="Bekräfta köp" AnchorPane.bottomAnchor="15.0" />
                                        </children>
                                     </AnchorPane>
                                  </children>
                               </AnchorPane>
                               <AnchorPane fx:id="wiz3_Payment" prefHeight="200.0" prefWidth="200.0" styleClass="grey-background-element">
                                  <children>
-                                    <Pane layoutX="300.0" layoutY="48.0" prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="48.0">
+                                    <AnchorPane layoutX="189.0" layoutY="57.0" prefHeight="30.0" prefWidth="294.0" AnchorPane.topAnchor="45.0">
                                        <children>
-                                          <AnchorPane prefHeight="30.0" prefWidth="294.0">
-                                             <children>
-                                                <Circle fill="#ababab" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="-40.0" />
-                                                <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                                   <font>
-                                                      <Font size="48.0" />
-                                                   </font>
-                                                </Text>
-                                                <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="-40.0" />
-                                                <Circle fill="#ababab" layoutX="122.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="58.0" />
-                                                <Circle fill="#5ca1ff" layoutX="198.0" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.rightAnchor="48.0" />
-                                                <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                                   <font>
-                                                      <Font size="48.0" />
-                                                   </font>
-                                                </Text>
-                                                <Text layoutX="167.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                                   <font>
-                                                      <Font size="64.0" />
-                                                   </font>
-                                                </Text>
-                                                <Text layoutX="280.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
-                                                   <font>
-                                                      <Font size="48.0" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                          </AnchorPane>
+                                          <Pane prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="0.0" />
+                                          <Circle fill="#ababab" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="-40.0" />
+                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="-40.0" />
+                                          <Circle fill="#ababab" layoutX="122.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="58.0" />
+                                          <Circle fill="#5ca1ff" layoutX="198.0" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.rightAnchor="48.0" />
+                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="167.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="64.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="280.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
                                        </children>
-                                    </Pane>
-                                    <GridPane layoutY="162.0" prefHeight="425.0" prefWidth="651.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="162.0">
+                                    </AnchorPane>
+                                    <GridPane layoutY="162.0" prefHeight="425.0" prefWidth="651.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="130.0">
                                       <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" maxWidth="316.0" minWidth="10.0" prefWidth="311.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="212.0" minWidth="10.0" prefWidth="27.0" />
@@ -235,80 +229,74 @@
                                     </GridPane>
                                  </children>
                               </AnchorPane>
-                              <AnchorPane fx:id="wiz2_Date" prefHeight="648.0" prefWidth="657.0" styleClass="grey-background-element">
+                              <AnchorPane fx:id="wiz2_Date" prefHeight="698.0" prefWidth="788.0" styleClass="grey-background-element">
                                  <children>
-                                    <FlowPane fx:id="dateFlowPane" layoutX="79.0" layoutY="237.0" prefHeight="224.0" prefWidth="742.0" style="-fx-border-color: #000000;" />
-                                    <Pane layoutX="276.0" layoutY="44.0" prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="44.0">
+                                    <FlowPane fx:id="dateFlowPane" layoutX="79.0" layoutY="237.0" prefHeight="224.0" prefWidth="742.0" style="-fx-border-color: #000000;" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="130.0" />
+                                    <AnchorPane layoutX="189.0" layoutY="43.0" prefHeight="30.0" prefWidth="294.0" AnchorPane.topAnchor="45.0">
                                        <children>
-                                          <AnchorPane prefHeight="30.0" prefWidth="294.0">
-                                             <children>
-                                                <Circle fill="#ababab" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="-40.0" />
-                                                <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                                   <font>
-                                                      <Font size="48.0" />
-                                                   </font>
-                                                </Text>
-                                                <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="-40.0" />
-                                                <Circle fill="#5ca1ff" layoutX="122.0" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.leftAnchor="48.0" />
-                                                <Circle fill="#ababab" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
-                                                <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                                   <font>
-                                                      <Font size="64.0" />
-                                                   </font>
-                                                </Text>
-                                                <Text layoutX="167.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                                   <font>
-                                                      <Font size="48.0" />
-                                                   </font>
-                                                </Text>
-                                                <Text layoutX="280.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
-                                                   <font>
-                                                      <Font size="48.0" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                          </AnchorPane>
+                                          <Pane prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="0.0" />
+                                          <Circle fill="#ababab" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="-40.0" />
+                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="-40.0" />
+                                          <Circle fill="#5ca1ff" layoutX="122.0" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.leftAnchor="48.0" />
+                                          <Circle fill="#ababab" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
+                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="64.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="167.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="280.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
                                        </children>
-                                    </Pane>
+                                    </AnchorPane>
                                  </children>
                               </AnchorPane>
                               <AnchorPane fx:id="wiz1_Check" prefHeight="200.0" prefWidth="200.0" styleClass="grey-background-element">
                                  <children>
-                                    <Pane layoutX="300.0" layoutY="47.0" prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="47.0">
+                                    <AnchorPane layoutX="189.0" layoutY="48.0" prefHeight="64.0" prefWidth="254.0" AnchorPane.topAnchor="45.0">
                                        <children>
-                                          <AnchorPane prefHeight="30.0" prefWidth="294.0">
-                                             <children>
-                                                <Circle fill="#5ca1ff" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.leftAnchor="-50.0" />
-                                                <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                                   <font>
-                                                      <Font size="64.0" />
-                                                   </font>
-                                                </Text>
-                                                <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="-40.0" />
-                                                <Circle fill="#ababab" layoutX="122.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="58.0" />
-                                                <Circle fill="#ababab" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
-                                                <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                                   <font>
-                                                      <Font size="48.0" />
-                                                   </font>
-                                                </Text>
-                                                <Text layoutX="167.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                                   <font>
-                                                      <Font size="48.0" />
-                                                   </font>
-                                                </Text>
-                                                <Text layoutX="280.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
-                                                   <font>
-                                                      <Font size="48.0" />
-                                                   </font>
-                                                </Text>
-                                             </children>
-                                          </AnchorPane>
+                                          <Pane prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="0.0" />
+                                          <Circle fill="#5ca1ff" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.leftAnchor="-50.0" />
+                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="64.0" />
+                                             </font>
+                                          </Text>
+                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="-40.0" />
+                                          <Circle fill="#ababab" layoutX="122.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="58.0" />
+                                          <Circle fill="#ababab" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
+                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="173.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="286.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
                                        </children>
-                                    </Pane>
-                                    <ScrollPane layoutX="152.0" layoutY="153.0" prefHeight="447.0" prefWidth="694.0">
+                                    </AnchorPane>
+                                    <ScrollPane layoutX="152.0" layoutY="153.0" prefHeight="447.0" prefWidth="694.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="130.0">
                                        <content>
-                                          <FlowPane fx:id="itemPane" prefHeight="443.0" prefWidth="690.0" />
+                                          <FlowPane fx:id="itemPane" prefHeight="549.0" prefWidth="645.0" />
                                        </content>
                                     </ScrollPane>
                                  </children>
@@ -325,12 +313,12 @@
                           </columnConstraints>
                           <rowConstraints>
                             <RowConstraints maxHeight="276.0" minHeight="10.0" prefHeight="200.0" vgrow="SOMETIMES" />
-                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="121.0" vgrow="SOMETIMES" />
-                            <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="192.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="109.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="406.0" minHeight="10.0" prefHeight="216.0" vgrow="SOMETIMES" />
                             <RowConstraints maxHeight="250.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <AnchorPane prefHeight="218.0" prefWidth="342.0" styleClass="dark-background-element" GridPane.vgrow="NEVER">
+                              <AnchorPane prefHeight="190.0" prefWidth="284.0" styleClass="dark-background-element" GridPane.vgrow="NEVER">
                                  <children>
                                     <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#backToStore" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Avbryt" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
                                     <Button fx:id="remove_goBack" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#goBackStep" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Ta bort allt" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
