@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
-<fx:root prefHeight="80.0" prefWidth="620.0" style="-fx-border-color: #000000;" styleClass="background-element" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" type="AnchorPane" >
+<fx:root prefHeight="80.0" prefWidth="645.0" style="-fx-border-color: #000000;" styleClass="background-element" stylesheets="@ProjectStylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text fx:id="name_text" layoutX="14.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Testtextlångochjobbig" AnchorPane.leftAnchor="15.0" />
       <Button layoutX="268.0" layoutY="11.0" mnemonicParsing="false" onAction="#RemoveWare" prefHeight="60.0" prefWidth="60.0" styleClass="sub-item-button" text="-" AnchorPane.leftAnchor="270.0" />
