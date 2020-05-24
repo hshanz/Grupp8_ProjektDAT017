@@ -67,7 +67,7 @@ public class HistoryAccordion extends AnchorPane implements Initializable {
 
         //Add products
         for (int i = 0; i < 10; i++) {
-            flowPane.getChildren().add(new TestItemController());
+            flowPane.getChildren().add(new HistoryItemController());
         }
 
         setArrowProperties();
