@@ -5,15 +5,16 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="980.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.UserPageController">
+<AnchorPane prefHeight="600.0" prefWidth="980.0" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.UserPageController">
    <children>
       <ScrollPane hbarPolicy="NEVER" layoutX="200.0" prefHeight="600.0" prefWidth="580.0">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="816.0" prefWidth="580.0">
                <children>
-                  <Label layoutX="152.0" layoutY="13.0" text="Personuppgifter">
+                  <Label layoutX="153.0" layoutY="14.0" text="Personuppgifter">
                      <font>
                         <Font size="39.0" />
                      </font>
@@ -24,7 +25,7 @@
                   <TextField fx:id="lastNameField" layoutX="300.0" layoutY="127.0" AnchorPane.leftAnchor="290.0" />
                   <Label alignment="CENTER_RIGHT" layoutX="197.0" layoutY="166.0" prefHeight="17.0" prefWidth="73.0" text="E-Post:" AnchorPane.rightAnchor="310.0" />
                   <TextField fx:id="emailField" layoutX="290.0" layoutY="162.0" AnchorPane.leftAnchor="290.0" />
-                  <Label layoutX="107.0" layoutY="232.0" text="Leverans-information">
+                  <Label layoutX="108.0" layoutY="233.0" text="Leverans-information">
                      <font>
                         <Font size="39.0" />
                      </font>
@@ -35,27 +36,30 @@
                   <TextField fx:id="cityField" layoutX="297.0" layoutY="353.0" AnchorPane.leftAnchor="290.0" />
                   <Label alignment="CENTER_RIGHT" layoutX="189.0" layoutY="392.0" prefHeight="17.0" prefWidth="81.0" text="Postnummer:" AnchorPane.rightAnchor="310.0" />
                   <TextField fx:id="zipCodeField" layoutX="290.0" layoutY="388.0" AnchorPane.leftAnchor="290.0" />
-                  <Label layoutX="174.0" layoutY="450.0" text="Kortuppgifter">
+                  <Label layoutX="191.0" layoutY="471.0" text="Kortuppgifter">
                      <font>
                         <Font size="39.0" />
                      </font>
                   </Label>
-                  <Label alignment="CENTER_RIGHT" layoutX="178.0" layoutY="510.0" prefHeight="17.0" prefWidth="82.0" text="Kortnummer:" AnchorPane.rightAnchor="310.0" />
-                  <TextField fx:id="cardNumberField" layoutX="280.0" layoutY="506.0" AnchorPane.leftAnchor="290.0" />
-                  <Label alignment="CENTER_RIGHT" layoutX="200.0" layoutY="546.0" prefHeight="17.0" prefWidth="60.0" text="MM/ÅÅ:" AnchorPane.rightAnchor="310.0" />
-                  <TextField fx:id="monthField" layoutX="280.0" layoutY="542.0" prefHeight="25.0" prefWidth="33.0" AnchorPane.leftAnchor="290.0" />
-                  <Label alignment="CENTER_RIGHT" layoutX="189.0" layoutY="581.0" prefHeight="17.0" prefWidth="81.0" text="CVC:" AnchorPane.rightAnchor="310.0" />
-                  <TextField fx:id="cvcField" layoutX="291.0" layoutY="577.0" prefHeight="25.0" prefWidth="44.0" AnchorPane.leftAnchor="291.0" />
-                  <Label layoutX="326.0" layoutY="536.0" text="/">
+                  <Label alignment="CENTER_RIGHT" layoutX="188.0" layoutY="543.0" prefHeight="17.0" prefWidth="82.0" text="Kortnummer:" AnchorPane.rightAnchor="310.0" />
+                  <TextField fx:id="cardNumberField" layoutX="290.0" layoutY="539.0" AnchorPane.leftAnchor="290.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="210.0" layoutY="579.0" prefHeight="17.0" prefWidth="60.0" text="MM/ÅÅ:" AnchorPane.rightAnchor="310.0" />
+                  <TextField fx:id="monthField" layoutX="290.0" layoutY="575.0" prefHeight="25.0" prefWidth="33.0" AnchorPane.leftAnchor="290.0" />
+                  <Label alignment="CENTER_RIGHT" layoutX="189.0" layoutY="614.0" prefHeight="17.0" prefWidth="81.0" text="CVC:" AnchorPane.rightAnchor="310.0" />
+                  <TextField fx:id="cvcField" layoutX="291.0" layoutY="610.0" prefHeight="25.0" prefWidth="44.0" AnchorPane.leftAnchor="291.0" />
+                  <Label layoutX="326.0" layoutY="569.0" text="/">
                      <font>
                         <Font size="23.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="yearField" layoutX="338.0" layoutY="541.0" prefHeight="25.0" prefWidth="33.0" />
+                  <TextField fx:id="yearField" layoutX="338.0" layoutY="574.0" prefHeight="25.0" prefWidth="33.0" />
+                  <Line endX="140.0" layoutX="290.0" layoutY="70.0" startX="-140.0" />
+                  <Line endX="190.0" layoutX="290.0" layoutY="290.0" startX="-185.0" />
+                  <Line endX="135.0" layoutX="290.0" layoutY="527.0" startX="-100.0" />
                </children>
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button fx:id="saveButton" layoutX="817.0" layoutY="527.0" mnemonicParsing="false" onAction="#save" prefHeight="59.0" prefWidth="138.0" text="Spara och uppdatera information" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
+      <Button fx:id="saveButton" layoutX="817.0" layoutY="527.0" mnemonicParsing="false" onAction="#save" prefHeight="59.0" prefWidth="138.0" styleClass="user-page-button" text="Spara och uppdatera information" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="15.0" />
    </children>
 </AnchorPane>

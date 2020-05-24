@@ -3,17 +3,19 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="160.0" style="-fx-border-color: #000000;" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="267.0" prefWidth="160.0" style="-fx-border-color: #000000;" styleClass="background-element" stylesheets="@ProjectStylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label fx:id="dateLabel" alignment="TOP_CENTER" layoutX="-1.0" prefHeight="38.0" prefWidth="206.0" style="-fx-border-color: #000000;" text="dateLabel" textAlignment="CENTER" AnchorPane.bottomAnchor="228.0" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label fx:id="dateLabel" alignment="TOP_CENTER" layoutX="-1.0" prefHeight="38.0" prefWidth="206.0" styleClass="normal-text" text="dateLabel" textAlignment="CENTER" AnchorPane.bottomAnchor="228.0" AnchorPane.leftAnchor="-0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font size="25.0" />
          </font>
       </Label>
-      <Button fx:id="timeButton1" layoutX="6.0" layoutY="55.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="194.0" text="8-12" AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="55.0" />
-      <Button fx:id="timeButton2" layoutX="6.0" layoutY="121.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="194.0" text="12-16" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-      <Button fx:id="timeButton3" layoutX="6.0" layoutY="187.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="194.0" text="16-20" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+      <Button fx:id="timeButton1" layoutX="3.0" layoutY="51.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="194.0" styleClass="normal-button" text="8-12" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="45.0" />
+      <Button fx:id="timeButton2" layoutX="2.0" layoutY="119.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="194.0" styleClass="normal-button" text="12-16" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="120.0" />
+      <Button fx:id="timeButton3" layoutX="2.0" layoutY="193.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="194.0" styleClass="normal-button" text="16-20" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="195.0" />
+      <Line endX="79.0" layoutX="80.0" layoutY="38.0" startX="-79.0" style="-fx-fill: #000000; -fx-stroke: #000000;" />
    </children>
 </fx:root>
