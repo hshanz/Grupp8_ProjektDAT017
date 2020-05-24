@@ -22,7 +22,7 @@ public class CartItemController extends AnchorPane {
     @FXML private ImageView CartItemImage;
     @FXML private Label CartItemName;
     @FXML private Label CartItemPrice;
-    @FXML private Label CartItemCount;
+    //@FXML private Label CartItemCount;
     @FXML private AnchorPane pane;
 
     @FXML private Button plusButton;
@@ -50,7 +50,7 @@ public class CartItemController extends AnchorPane {
 
         CartItemName.setText(product.getName());
         CartItemPrice.setText(String.valueOf(product.getPrice()) + " kr");
-        CartItemCount.setText(String.valueOf(shoppingItem.getAmount()));
+        // CartItemCount.setText(String.valueOf(shoppingItem.getAmount()));
         productCounter.setText(String.valueOf(shoppingItem.getAmount()));
         CartItemImage.setImage(bckEndP.getFXImage(product));
 
@@ -92,7 +92,7 @@ public class CartItemController extends AnchorPane {
     }
 
     public void update(){
-        CartItemCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+        //CartItemCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
         productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
     }
 

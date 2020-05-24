@@ -10,7 +10,7 @@
 
 <fx:root prefHeight="80.0" prefWidth="645.0" style="-fx-border-color: #000000;" styleClass="background-element" stylesheets="@ProjectStylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Text fx:id="name_text" layoutX="14.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Testtextlångochjobbig" AnchorPane.leftAnchor="15.0" />
+      <Text fx:id="name_text" layoutX="8.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-large-text" text="Testtextlångoc" wrappingWidth="262.240234375" AnchorPane.leftAnchor="5.0" />
       <Button layoutX="268.0" layoutY="11.0" mnemonicParsing="false" onAction="#RemoveWare" prefHeight="60.0" prefWidth="60.0" styleClass="shop-item-minus-button" AnchorPane.leftAnchor="270.0">
          <font>
             <Font size="28.0" />
@@ -33,7 +33,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <TextField fx:id="number_of_wares" layoutX="341.0" layoutY="17.0" prefHeight="50.0" prefWidth="50.0" AnchorPane.leftAnchor="340.0" />
-      <Text fx:id="cost_text" layoutX="471.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="1000kr" AnchorPane.leftAnchor="471.0" />
+      <TextField fx:id="number_of_wares" layoutX="343.0" layoutY="11.0" prefHeight="60.0" prefWidth="50.0" styleClass="small-text-field" AnchorPane.leftAnchor="343.0" />
+      <Text fx:id="cost_text" layoutX="480.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-large-text" text="1000kr" AnchorPane.leftAnchor="480.0" />
    </children>
 </fx:root>
