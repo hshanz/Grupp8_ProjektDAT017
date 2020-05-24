@@ -3,6 +3,7 @@ package Project;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import se.chalmers.cse.dat216.project.Product;
@@ -18,11 +19,13 @@ public class ParentController implements Initializable {
     static ParentController parentController;
 
     @FXML BorderPane mainPane;
+    @FXML private AnchorPane checkoutPane;
+    @FXML private AnchorPane checkoutPaneParent;
+
     private CheckoutController checkoutController;
     private Pane toolBar;
     private Pane categoryList;
     private Pane cart;
-    private Pane checkout;
     private Pane storePage;
     private Pane userPage;
 
@@ -33,6 +36,7 @@ public class ParentController implements Initializable {
 
     public void setCenterPage(String str){
         checkoutController.resetWizard();
+        checkoutPaneParent.toBack();
         switch (str) {
             case "StorePage":
                 mainPane.setCenter(storePage);
@@ -46,9 +50,7 @@ public class ParentController implements Initializable {
                 mainPane.setRight(cart);
                 break;
             case "Checkout":
-                mainPane.setRight(null);
-                mainPane.setLeft(null);
-                mainPane.setCenter(checkout);
+                checkoutPaneParent.toFront();
                 break;
         }
 
@@ -65,8 +67,10 @@ public class ParentController implements Initializable {
         categoryList = paneLoader.LoadPane("CategoryList.fxml");
         storePage = paneLoader.LoadPane("StorePage.fxml");
         userPage = paneLoader.LoadPane("UserPage.fxml");
-        checkout = paneLoader.LoadPane("Checkout.fxml");
+        checkoutPane.getChildren().add(paneLoader.LoadPane("Checkout.fxml"));
         cart = paneLoader.LoadPane("Cart.fxml");
+
+        System.out.println(checkoutPane);
 
         mainPane.setTop(toolBar);
         mainPane.setLeft(categoryList);
