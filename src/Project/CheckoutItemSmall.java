@@ -18,7 +18,7 @@ public class CheckoutItemSmall extends AnchorPane {
 
     @FXML Text name_text; //Should show the name of the wares
     @FXML Text cost_text; //Should show the cost of the wares
-    @FXML Text number_of_wares; //should show the number of these wares in the cart. This can also be edited
+    @FXML TextField number_of_wares; //should show the number of these wares in the cart. This can also be edited
     private DecimalFormat df = new DecimalFormat("0.00");
 
 
