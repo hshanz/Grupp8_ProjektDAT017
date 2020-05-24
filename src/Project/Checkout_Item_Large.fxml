@@ -11,7 +11,7 @@
 <fx:root prefHeight="80.0" prefWidth="645.0" style="-fx-border-color: #000000;" styleClass="background-element" stylesheets="@ProjectStylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Text fx:id="name_text" layoutX="14.0" layoutY="49.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Testtextlångochjobbig" AnchorPane.leftAnchor="15.0" />
-      <Button layoutX="268.0" layoutY="11.0" mnemonicParsing="false" onAction="#RemoveWare" prefHeight="60.0" prefWidth="60.0" style="-fx-text-fill: #000000; -fx-font-weight: bold;" styleClass="shop-item-minus-button" AnchorPane.leftAnchor="270.0">
+      <Button layoutX="268.0" layoutY="11.0" mnemonicParsing="false" onAction="#RemoveWare" prefHeight="60.0" prefWidth="60.0" styleClass="shop-item-minus-button" AnchorPane.leftAnchor="270.0">
          <font>
             <Font size="28.0" />
          </font>
@@ -22,7 +22,7 @@
                </image>
             </ImageView>
          </graphic></Button>
-      <Button layoutX="400.0" layoutY="11.0" mnemonicParsing="false" onAction="#AddWare" prefHeight="60.0" prefWidth="60.0" style="-fx-text-fill: #000000; -fx-font-weight: bold;" styleClass="shop-item-plus-button" AnchorPane.leftAnchor="400.0">
+      <Button layoutX="400.0" layoutY="11.0" mnemonicParsing="false" onAction="#AddWare" prefHeight="60.0" prefWidth="60.0" styleClass="shop-item-plus-button" AnchorPane.leftAnchor="400.0">
          <font>
             <Font name="System Bold" size="28.0" />
          </font>

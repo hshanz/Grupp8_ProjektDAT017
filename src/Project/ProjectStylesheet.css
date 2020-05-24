@@ -76,6 +76,7 @@
 
 .shop-item-plus-button:hover{
     -fx-background-color: #76e376;
+    -fx-border-width : 2;
 }
 
 .shop-item-minus-button{
@@ -87,6 +88,7 @@
 
 .shop-item-minus-button:hover{
     -fx-background-color: #f58484;
+    -fx-border-width : 2;
 }
 
 
@@ -170,6 +172,7 @@
 .important-button:hover{
     -fx-background-color : #76e376;
     -fx-font-size : 50;
+    -fx-border-width : 2;
 }
 
 .important-button-small{
@@ -184,6 +187,7 @@
 .important-button-small:hover{
     -fx-background-color : #76e376;
     -fx-font-size : 26;
+    -fx-border-width : 2;
 }
 
 .background-element{
@@ -203,6 +207,9 @@
     -fx-font-size : 36;
     -fx-text-fill : #000000;
     -fx-border-color: black;
+    -fx-background-radius : 0px 0px 20px 0px;
+    -fx-border-radius : 0px 0px 20px 0px;
+
 }
 
 .caution-button-small{
@@ -214,6 +221,7 @@
 
 .caution-button:hover{
     -fx-background-color: #ff8866;
+    -fx-border-width : 2;
 }
 
 .normal-text{
