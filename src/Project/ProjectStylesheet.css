@@ -292,6 +292,10 @@
 
 }
 
+.small-text{
+    -fx-font-size : 18;
+    -fx-font-fill : #000000;
+}
 .normal-text{
     -fx-font-size: 24;
     -fx-text-fill : #000000;
@@ -305,4 +309,17 @@
 .medium-large-text{
     -fx-font-size: 36;
     -fx-text-fill : #000000;
+}
+
+.small-text-field{
+    -fx-font-size : 18;
+    -fx-text-fill : #000000;
+
+    -fx-background-radius : 5px 5px 5px 5px;
+    -fx-border-radius : 5px 5px 5px 5px;
+}
+
+.small-text-field:hover{
+    -fx-border-width : 2;
+    -fx-border-color : #000000;
 }

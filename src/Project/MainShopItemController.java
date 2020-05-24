@@ -24,6 +24,7 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
     @FXML private Label productName;
     @FXML private Label productPrice;
     @FXML private TextField productCounter;
+    @FXML private Label priceUnit;
 
 
     private ShoppingItem shoppingItem;
@@ -51,6 +52,7 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
         productImage.setImage(bckEndP.getFXImage(p));
         productPrice.setText(String.valueOf(p.getPrice()) + " kr/" + shoppingItem.getProduct().getUnitSuffix());
         productCounter.setText("0.0 " + shoppingItem.getProduct().getUnitSuffix());
+        priceUnit.setText(shoppingItem.getProduct().getUnitSuffix() + ":");
 
         productCounter.focusedProperty().addListener((observableValue, s, t1) -> {
             if (productCounter.getText().equals("")) {
