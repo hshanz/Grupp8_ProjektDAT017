@@ -2,6 +2,7 @@ package Project;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.geometry.Insets;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Order;
 
@@ -18,20 +19,28 @@ public class HistoryPage implements Initializable {
     private BackendControllerProducts bckEndP;
     private List<Order> orders;
     private List<HistoryAccordion> accordions;
+    private ParentController parentController;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         bckEndP = BackendControllerProducts.getInstance();
+        parentController = ParentController.getInstance();
+        parentController.setHistoryPageController(this);
 
         orders = new CopyOnWriteArrayList<>();
         orders = bckEndP.getOrders();
         accordions = new CopyOnWriteArrayList<>();
+        accordionFlowPane.setVgap(10);
         if (orders.size() !=0) {
             fillAccordionList();
-            updateList();
         }
 
 
+    }
+
+    public void addOrder(Order order){
+        accordions.add(new HistoryAccordion(order));
+        updateList();
     }
 
     private void updateList() {
@@ -45,5 +54,6 @@ public class HistoryPage implements Initializable {
         for (Order o:orders) {
             accordions.add(new HistoryAccordion(o));
         }
+        updateList();
     }
 }

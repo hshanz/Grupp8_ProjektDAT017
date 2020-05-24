@@ -6,6 +6,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
+import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.Product;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
@@ -23,6 +24,7 @@ public class ParentController implements Initializable {
     @FXML private AnchorPane checkoutPaneParent;
 
     private CheckoutController checkoutController;
+    private HistoryPage historyPageController;
     private Pane toolBar;
     private Pane categoryList;
     private Pane cart;
@@ -54,6 +56,7 @@ public class ParentController implements Initializable {
                 break;
             case "HistoryPage":
                 System.out.println("123123123");
+                mainPane.setRight(cart);
                 mainPane.setCenter(historyPage);
                 break;
         }
@@ -95,5 +98,13 @@ public class ParentController implements Initializable {
 
     public void setCheckoutController(CheckoutController checkoutController) {
         this.checkoutController = checkoutController;
+    }
+
+    public void setHistoryPageController(HistoryPage historyPageController) {
+        this.historyPageController = historyPageController;
+    }
+
+    public void addNewOrder(Order order){
+        historyPageController.addOrder(order);
     }
 }

@@ -46,6 +46,7 @@ public class HistoryAccordion extends AnchorPane {
     private Order order;
     private List<HistoryItemController> itemList;
     private Calendar calendar = Calendar.getInstance();
+    private String [] months ={"Januari","Februari","Mars","April","Maj","Juni","Juli","Augusti","September","Oktober","November","December"};
 
 
 
@@ -69,12 +70,12 @@ public class HistoryAccordion extends AnchorPane {
 
         this.order = order;
         calendar.setTimeInMillis(order.getDate().getTime());
-        dateLabel.setText(String.valueOf(calendar.get(Calendar.DATE))+ ": " + calendar.get(Calendar.HOUR_OF_DAY));
+        dateLabel.setText(String.valueOf(calendar.get(Calendar.DATE))+ ": " + months[calendar.get(Calendar.MONTH)]);
         int temp = 0;
         for (ShoppingItem sci:order.getItems()) {
             temp += sci.getTotal();
         }
-        priceLabel.setText(String.valueOf(temp));
+        priceLabel.setText(String.valueOf(temp) + " Kr");
         itemList = new CopyOnWriteArrayList<>();
         fillPane();
         updateList();

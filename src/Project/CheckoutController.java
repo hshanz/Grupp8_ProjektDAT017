@@ -184,10 +184,10 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         order.setOrderNumber(bckEndP.getOrders().size()+1);
         wares_to_dest.setText(order.getItems().size() + ":st varor är på väg till " + addressField.getText() );
         date_and_time.setText(dateOfDelivery +" "+timeOfDelivery);
+        parentController.addNewOrder(order);
         for (ShoppingItem sci:shoppingCart.getItems()) {
             sci.setAmount(0);
         }
-        System.out.println(bckEndP.getOrders().size());
         shoppingCart.clear();
         Finish.toFront();
     }
