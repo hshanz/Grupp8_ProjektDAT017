@@ -54,7 +54,9 @@ public class ParentController implements Initializable {
                 break;
             case "HistoryPage":
                 System.out.println("123123123");
-                mainPane.setCenter(historyPage);
+                mainPane.setLeft(historyPage);
+                mainPane.setCenter(null);
+                mainPane.setRight(cart);
                 break;
         }
 
