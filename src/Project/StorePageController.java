@@ -17,6 +17,7 @@ import se.chalmers.cse.dat216.project.ProductCategory;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ResourceBundle;
@@ -41,7 +42,7 @@ public class StorePageController extends AnchorPane implements Initializable {
         parentController = ParentController.getInstance();
         parentController.setStorePagecontroller(this);
         fillMap();
-        update();
+        update(Arrays.asList(ProductCategory.values()));
 
 
         searchField.textProperty().addListener((observableValue, s, t1) -> update(searchField.getText()));

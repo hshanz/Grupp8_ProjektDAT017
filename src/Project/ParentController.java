@@ -118,7 +118,6 @@ public class ParentController implements Initializable {
     }
 
     public void loadCatergory(List<ProductCategory> pcl) {
-        System.out.println(pcl);
         storePageController.update(pcl);
     }
 

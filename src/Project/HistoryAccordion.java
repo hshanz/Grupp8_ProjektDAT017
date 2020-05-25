@@ -62,13 +62,15 @@ public class HistoryAccordion extends AnchorPane {
             e.printStackTrace();
         }
         //Disable vertical scrolling
-//        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-  /*      scroll.addEventFilter(ScrollEvent.ANY, new EventHandler<ScrollEvent>() {
+        /*
+        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scroll.addEventFilter(ScrollEvent.SCROLL, new EventHandler<ScrollEvent>() {
             @Override
             public void handle(ScrollEvent scrollEvent) {
                 scrollEvent.consume();
             }
-        });*/
+        });
+        */
 
 
         //Set the gridlines' size (space between objects)

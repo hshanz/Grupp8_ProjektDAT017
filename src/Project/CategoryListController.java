@@ -16,6 +16,7 @@ import se.chalmers.cse.dat216.project.ProductCategory;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.ResourceBundle;
 
@@ -28,7 +29,7 @@ public class CategoryListController extends AnchorPane implements Initializable 
 
 
     //Write all categories in this list
-    ObservableList<String> categories = FXCollections.observableArrayList("Baljväxter","Bröd","Bär och Frukt","Grönsaker","Dryck","Mejeri","Fisk","Skafferi",
+    ObservableList<String> categories = FXCollections.observableArrayList("Hela sortimentet","Baljväxter","Bröd","Bär och Frukt","Grönsaker","Dryck","Mejeri","Fisk","Skafferi",
             "Örter","Kött och Kyckling","Frön och Nötter","Pasta","Ris och Potatis","Godis");
 
     @FXML
@@ -41,8 +42,15 @@ public class CategoryListController extends AnchorPane implements Initializable 
         parentController = ParentController.getInstance();
         list.setItems(categories);
 
+        list.getSelectionModel().selectFirst();
 
-        list.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> parentController.loadCatergory(findCatergorys(list.getSelectionModel().getSelectedItem())));
+
+
+        list.getSelectionModel().selectedItemProperty().addListener((observableValue, s, t1) -> {
+            if ("[Hela sortimentet]".equals(String.valueOf(list.getSelectionModel().getSelectedItems()))){
+                parentController.loadCatergory(Arrays.asList(ProductCategory.values()));
+            }else parentController.loadCatergory(findCatergorys(list.getSelectionModel().getSelectedItem()));
+        });
 
 
         
