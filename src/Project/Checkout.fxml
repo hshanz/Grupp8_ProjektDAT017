@@ -269,7 +269,7 @@
                               </AnchorPane>
                               <AnchorPane fx:id="wiz2_Date" prefHeight="698.0" prefWidth="788.0" styleClass="grey-background-element">
                                  <children>
-                                    <FlowPane fx:id="dateFlowPane" layoutX="79.0" layoutY="152.0" prefHeight="270.0" prefWidth="640.0" style="-fx-border-color: #000000;" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="200.0" />
+                                    <FlowPane fx:id="dateFlowPane" layoutX="18.0" layoutY="214.0" prefHeight="270.0" prefWidth="640.0" style="-fx-border-color: #000000;" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0" />
                                     <AnchorPane layoutX="189.0" layoutY="43.0" prefHeight="30.0" prefWidth="294.0" AnchorPane.topAnchor="45.0">
                                        <children>
                                           <Pane prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="0.0" />
@@ -299,8 +299,8 @@
                                           </Text>
                                        </children>
                                     </AnchorPane>
-                                    <Text layoutX="18.0" layoutY="158.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-large-text" text="Välj leveranstid" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="116.0" />
-                                    <GridPane layoutX="19.0" layoutY="213.0" prefHeight="30.0" prefWidth="640.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="163.0">
+                                    <Text layoutX="18.0" layoutY="148.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-large-text" text="Välj leveranstid" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="108.0" />
+                                    <GridPane layoutX="19.0" layoutY="213.0" prefHeight="30.0" prefWidth="640.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0" AnchorPane.topAnchor="147.0">
                                       <columnConstraints>
                                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
