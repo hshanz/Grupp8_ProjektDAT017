@@ -274,6 +274,10 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         nextButton.setVisible(true);
         this.dateOfDelivery = dateOfDelivery;
 
+        for(DateTimeItemController d:dateTimeItemList)
+        {
+            d.resetButtonStyles();
+        }
     }
 }
     //endregion
