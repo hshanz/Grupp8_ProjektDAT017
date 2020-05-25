@@ -273,11 +273,15 @@
     -fx-border-width : 2;
 }
 
-.normal-button:selected{
+.normal-button-selected{
     -fx-background-color : #DC3C3C;
     -fx-border-width : 2;
 }
 
+.normal-button-selected:hover{
+    -fx-background-color: #f58484;
+    -fx-border-width : 2;
+}
 
 
 .background-element{

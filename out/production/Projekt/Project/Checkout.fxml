@@ -372,7 +372,7 @@
                                           <Font size="36.0" />
                                        </font>
                                     </Text>
-                                    <Text fx:id="Delivery_date_1" strokeType="OUTSIDE" strokeWidth="0.0" text="datum" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                    <Text fx:id="Delivery_date_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Ej valt!" textAlignment="CENTER" wrappingWidth="280.673828125">
                                        <font>
                                           <Font size="25.0" />
                                        </font>
