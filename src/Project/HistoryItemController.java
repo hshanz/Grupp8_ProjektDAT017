@@ -41,9 +41,10 @@ public class HistoryItemController extends AnchorPane {
         this.shoppingItem = shoppingItem;
         productImage.setImage(bckEndP.getFXImage(shoppingItem.getProduct()));
         productName.setText(shoppingItem.getProduct().getName());
-        historyCount.setText(String.valueOf(shoppingItem.getAmount()));
-        historyPrice.setText(String.valueOf(shoppingItem.getTotal()));
-
+        historyCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+        historyPrice.setText(String.valueOf(shoppingItem.getTotal() + " kr"));
+        singleItem.setText("1 " + shoppingItem.getProduct().getUnitSuffix());
+        currentPrice.setText(String.valueOf(shoppingItem.getProduct().getPrice()) + " kr");
 
     }
 }
