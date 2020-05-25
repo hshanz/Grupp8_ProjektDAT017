@@ -8,6 +8,7 @@ import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
+import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.*;
 
@@ -34,8 +35,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
 
     @FXML private Text Delivery_date_1; //These texts should be updated with the with the delivery date. The "Delivery_date_1" should also change colour to black when first updated with a date.
-    @FXML private Text Delivery_date_2;
-    @FXML private Text Delivery_date_3;
+    @FXML private Text Delivery;
 
     @FXML private Button remove_goBack;
 
@@ -102,9 +102,8 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         wizSteps.add(wiz3_Payment);
         wizSteps.add(wiz4_Confirm);
         wizSteps.add(Finish);
-        currentStep = 0;
-        wizSteps.get(currentStep).toFront();
         fillDateList();
+        resetWizard();
 
         firstNameField.setText(customer.getFirstName());
         lastNameField.setText(customer.getLastName());
@@ -197,7 +196,17 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         currentStep++;
         wizSteps.get(currentStep).toFront();
         remove_goBack.setText("Tillbaka");
-        if (currentStep == 3) nextButton.setVisible(false);
+        if (currentStep == 1 && dateOfDelivery == null){
+            Delivery.setVisible(true);
+            Delivery.setFill(Color.RED);
+            nextButton.setVisible(false);
+        }
+        if (currentStep == 3) {
+            nextButton.setVisible(false);
+            confirm_adress.setText(customer.getAddress());
+            confirm_cardnumber.setText(creditCard.getCardNumber());
+            confirm_name.setText(customer.getFirstName() + " " + customer.getLastName());
+        }
     }
 
     @FXML
@@ -215,6 +224,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     public void resetWizard(){
         Finish.toBack();
+        Delivery.setVisible(false);
         currentStep=0;
         wizSteps.get(currentStep).toFront();
         nextButton.setVisible(true);
@@ -259,6 +269,9 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     public void setDelivery(String timeOfDelivery,String dateOfDelivery) {
         this.timeOfDelivery = timeOfDelivery;
+        Delivery_date_1.setText(dateOfDelivery);
+        Delivery.setFill(Color.BLACK);
+        nextButton.setVisible(true);
         this.dateOfDelivery = dateOfDelivery;
 
     }
