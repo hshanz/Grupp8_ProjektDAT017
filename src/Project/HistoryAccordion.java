@@ -2,6 +2,7 @@ package Project;
 
 import javafx.beans.binding.Bindings;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,6 +14,7 @@ import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.Effect;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Order;
@@ -61,6 +63,13 @@ public class HistoryAccordion extends AnchorPane {
         }
         //Disable vertical scrolling
         scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scroll.addEventFilter(ScrollEvent.ANY, new EventHandler<ScrollEvent>() {
+            @Override
+            public void handle(ScrollEvent scrollEvent) {
+                scrollEvent.consume();
+            }
+        });
+
 
         //Set the gridlines' size (space between objects)
         flowPane.setHgap(10);
@@ -118,6 +127,9 @@ public class HistoryAccordion extends AnchorPane {
     private int calcSize(int numberOfObjects){
 
         int rows = numberOfObjects/4;
+        /*if(rows > 0){
+            rows--;
+        }*/
 
         return rows * 200;
 
@@ -128,8 +140,10 @@ public class HistoryAccordion extends AnchorPane {
 
         //Expand the scroll-pane
         if(!expanded){
-            setPrefHeight(500);
-            scroll.setPrefHeight(400);
+            int expandSize = calcSize(flowPane.getChildren().size());
+            scroll.setPrefHeight(240 + expandSize);
+            setPrefHeight(scroll.getPrefHeight() + 100);
+
             //scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
             arrow.setRotate(180);
             expanded = true;

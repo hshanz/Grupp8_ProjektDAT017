@@ -9,7 +9,7 @@
 <fx:root fx:id="base" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="760.0" style="-fx-background-color: #DDDDDD;" stylesheets="@ProjectStylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane layoutX="266.0" prefHeight="40.0" prefWidth="494.0" style="-fx-background-color: #EFEFEF;" />
-      <FlowPane fx:id="baseFlowPane" alignment="TOP_RIGHT" columnHalignment="CENTER" layoutX="6.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="289.0" prefWidth="740.0" AnchorPane.leftAnchor="10.0">
+      <FlowPane fx:id="baseFlowPane" alignment="TOP_RIGHT" columnHalignment="CENTER" layoutX="6.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="740.0" AnchorPane.leftAnchor="10.0">
          <children>
             <ScrollPane fx:id="scroll" hbarPolicy="NEVER" prefHeight="240.0" prefWidth="740.0">
                <content>
