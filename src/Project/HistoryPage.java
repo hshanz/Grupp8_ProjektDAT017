@@ -53,9 +53,10 @@ public class HistoryPage implements Initializable {
     }
 
     private void fillAccordionList(){
-        for (Order o:orders) {
-            accordions.add(new HistoryAccordion(o));
+        for (int i = orders.size()-1; i >= 0 ; i--) {
+            accordions.add(new HistoryAccordion(orders.get(i)));
         }
+
         updateList();
     }
 }
