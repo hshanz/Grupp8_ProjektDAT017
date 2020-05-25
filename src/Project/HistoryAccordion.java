@@ -33,7 +33,7 @@ public class HistoryAccordion extends AnchorPane {
     public Label priceLabel;
 
 
-    public ScrollPane scroll;
+    //public ScrollPane scroll;
 
     //Add Items to this one
     public FlowPane flowPane;
@@ -60,7 +60,7 @@ public class HistoryAccordion extends AnchorPane {
             e.printStackTrace();
         }
         //Disable vertical scrolling
-        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        //scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         //Set the gridlines' size (space between objects)
         flowPane.setHgap(10);
         flowPane.setVgap(10);
@@ -114,16 +114,16 @@ public class HistoryAccordion extends AnchorPane {
 
         //Expand the scroll-pane
         if(!expanded){
-            scroll.setPrefHeight(300);
+            //scroll.setPrefHeight(300);
             setPrefHeight(400);
-            scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+            //scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
             arrow.setRotate(180);
             expanded = true;
         }else{
-            scroll.setPrefHeight(240);
+            //scroll.setPrefHeight(240);
             setPrefHeight(340);
-            scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-            scroll.setVvalue(0);
+            //scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+            //scroll.setVvalue(0);
             arrow.setRotate(0);
             expanded = false;
         }
