@@ -10,7 +10,7 @@
    <children>
       <Pane fx:id="escapeHatch" prefHeight="120.0" prefWidth="200.0" styleClass="toolbar-background">
          <children>
-            <ImageView fitHeight="120.0" fitWidth="212.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="120.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/Imat_logga.png" />
                </image>
