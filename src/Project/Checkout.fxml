@@ -342,8 +342,8 @@
                                     <Button fx:id="remove_goBack" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#goBackStep" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Ta bort allt" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
                                  </children>
                               </AnchorPane>
-                              <Button fx:id="nextButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nextStep" prefHeight="149.0" prefWidth="281.0" styleClass="important-button" text="Fortsätt" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
-                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
+                              <Button fx:id="nextButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nextStep" prefHeight="184.0" prefWidth="281.0" styleClass="important-button" text="Fortsätt" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                              <VBox fillWidth="false" prefHeight="182.0" prefWidth="224.0" GridPane.halignment="CENTER" GridPane.rowIndex="2">
                                  <children>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Att betala:" textAlignment="CENTER" wrappingWidth="280.673828125">
                                        <font>
@@ -353,6 +353,20 @@
                                     <Text fx:id="Cost_text_1" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="---kr" textAlignment="CENTER" wrappingWidth="280.673828125">
                                        <font>
                                           <Font size="64.0" />
+                                       </font>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Text fx:id="Delivery" strokeType="OUTSIDE" strokeWidth="0.0" text="Leverans:" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="36.0" />
+                                       </font>
+                                    </Text>
+                                    <Text fx:id="Delivery_date_1" strokeType="OUTSIDE" strokeWidth="0.0" text="datum" textAlignment="CENTER" wrappingWidth="280.673828125">
+                                       <font>
+                                          <Font size="25.0" />
                                        </font>
                                     </Text>
                                  </children>
