@@ -49,22 +49,19 @@ public class DateTimeItemController extends AnchorPane {
 
         timeButton1.setOnAction(event -> {
             onButtonPressed((Button) event.getSource());
-            resetButtonStyles();
             timeButton1.getStyleClass().add("normal-button-selected");
         });
         timeButton2.setOnAction(event -> {
             onButtonPressed((Button) event.getSource());
-            resetButtonStyles();
             timeButton2.getStyleClass().add("normal-button-selected");
         });
         timeButton3.setOnAction(event -> {
             onButtonPressed((Button) event.getSource());
-            resetButtonStyles();
             timeButton3.getStyleClass().add("normal-button-selected");
         });
     }
 
-    private void resetButtonStyles ()
+    public void resetButtonStyles ()
     {
         timeButton1.getStyleClass().remove("normal-button-selected");
         timeButton2.getStyleClass().remove("normal-button-selected");

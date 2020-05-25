@@ -196,9 +196,11 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         currentStep++;
         wizSteps.get(currentStep).toFront();
         remove_goBack.setText("Tillbaka");
+        sanityChecks();
+    }
+
+    private void sanityChecks(){
         if (currentStep == 1 && dateOfDelivery == null){
-            Delivery.setVisible(true);
-            Delivery.setFill(Color.RED);
             nextButton.setVisible(false);
         }
         if (currentStep == 3) {
@@ -223,8 +225,15 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     }
 
     public void resetWizard(){
+        for(DateTimeItemController d:dateTimeItemList)
+        {
+            d.resetButtonStyles();
+        }
         Finish.toBack();
-        Delivery.setVisible(false);
+        Delivery.setFill(Color.RED);
+        Delivery_date_1.setText("Ej valt");
+        timeOfDelivery = null;
+        dateOfDelivery = null;
         currentStep=0;
         wizSteps.get(currentStep).toFront();
         nextButton.setVisible(true);
@@ -269,11 +278,15 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     public void setDelivery(String timeOfDelivery,String dateOfDelivery) {
         this.timeOfDelivery = timeOfDelivery;
-        Delivery_date_1.setText(dateOfDelivery);
-        Delivery.setFill(Color.BLACK);
-        nextButton.setVisible(true);
         this.dateOfDelivery = dateOfDelivery;
 
+        Delivery_date_1.setText(this.dateOfDelivery + "\n kl:" + this.timeOfDelivery );
+        Delivery.setFill(Color.BLACK);
+        nextButton.setVisible(true);
+
+        for(DateTimeItemController d:dateTimeItemList) {
+            d.resetButtonStyles();
+        }
     }
 }
     //endregion
