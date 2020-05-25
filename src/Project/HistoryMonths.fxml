@@ -4,8 +4,8 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="50.0" prefWidth="200.0" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.HistoryMonths">
+<fx:root prefHeight="50.0" prefWidth="200.0" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" type="AnchorPane">
    <children>
       <Button fx:id="month_button" mnemonicParsing="false" onAction="#Pressed" styleClass="list-cell" text="Button" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
    </children>
-</AnchorPane>
+</fx:root>

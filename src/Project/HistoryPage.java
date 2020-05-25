@@ -16,7 +16,6 @@ public class HistoryPage implements Initializable {
     @FXML
     private FlowPane accordionFlowPane;
 
-    @FXML FlowPane months_list;
 
     private BackendControllerProducts bckEndP;
     private List<Order> orders;
@@ -59,4 +58,9 @@ public class HistoryPage implements Initializable {
 
         updateList();
     }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
 }
