@@ -35,7 +35,7 @@ public class HistoryAccordion extends AnchorPane {
     public Label priceLabel;
 
 
-//    public ScrollPane scroll;
+    public ScrollPane scroll;
 
     //Add Items to this one
     public FlowPane flowPane;
@@ -148,14 +148,14 @@ public class HistoryAccordion extends AnchorPane {
         //Expand the scroll-pane
         if(!expanded){
             int expandSize = calcSize(flowPane.getChildren().size());
-//            scroll.setPrefHeight(240 + expandSize);
-//            setPrefHeight(scroll.getPrefHeight() + 100);
+           scroll.setPrefHeight(240 + expandSize);
+            setPrefHeight(scroll.getPrefHeight() + 100);
             expandButton.setText("Se mindre:");
             expandButton.setPrefWidth(100);
             arrow.setRotate(180);
         }else{
             setPrefHeight(340);
-//            scroll.setPrefHeight(240);
+           scroll.setPrefHeight(240);
             expandButton.setText("Se mer:");
             expandButton.setPrefWidth(80);
             arrow.setRotate(0);
