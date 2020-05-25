@@ -13,7 +13,7 @@
 <fx:root fx:id="base" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="760.0" styleClass="grey-background-element" stylesheets="@ProjectStylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <Pane layoutX="266.0" prefHeight="40.0" prefWidth="494.0" styleClass="background-element" />
-      <FlowPane fx:id="baseFlowPane" alignment="TOP_RIGHT" columnHalignment="CENTER" layoutX="10.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="289.0" prefWidth="739.0" AnchorPane.leftAnchor="10.0">
+      <FlowPane fx:id="baseFlowPane" alignment="TOP_RIGHT" columnHalignment="CENTER" layoutX="10.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="289.0" prefWidth="740.0" AnchorPane.leftAnchor="10.0">
          <children>
             <FlowPane fx:id="flowPane" prefHeight="235.0" prefWidth="740.0" styleClass="background-element" stylesheets="@ProjectStylesheet.css" />
             <Button fx:id="expandButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="83.0" styleClass="history-accordion-button" text="Se mer:">
