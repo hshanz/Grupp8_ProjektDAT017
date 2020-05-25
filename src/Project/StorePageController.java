@@ -54,10 +54,12 @@ public class StorePageController extends AnchorPane implements Initializable {
 
     }
 
-    public void update(ProductCategory pc){
+    public void update(List<ProductCategory> pcl){
         flowPane.getChildren().clear();
-        for (Product p:bckEndP.getProducts(pc)) {
-            flowPane.getChildren().add(productMap.get(p));
+        for (ProductCategory pc:pcl) {
+            for (Product p:bckEndP.getProducts(pc)) {
+                flowPane.getChildren().add(productMap.get(p));
+            }
         }
     }
 

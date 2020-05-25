@@ -13,6 +13,7 @@ import se.chalmers.cse.dat216.project.ProductCategory;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 public class ParentController implements Initializable {
@@ -114,9 +115,9 @@ public class ParentController implements Initializable {
         historyPageController.addOrder(order);
     }
 
-    public void loadCatergory(ProductCategory productCategory) {
-        System.out.println(productCategory);
-        storePageController.update(productCategory);
+    public void loadCatergory(List<ProductCategory> pcl) {
+        System.out.println(pcl);
+        storePageController.update(pcl);
     }
 
     public void setStorePagecontroller(StorePageController storePageController) {
