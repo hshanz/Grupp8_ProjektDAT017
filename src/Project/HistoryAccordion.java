@@ -2,6 +2,7 @@ package Project;
 
 import javafx.beans.binding.Bindings;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -13,6 +14,7 @@ import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.Effect;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Order;
@@ -33,7 +35,7 @@ public class HistoryAccordion extends AnchorPane {
     public Label priceLabel;
 
 
-    //public ScrollPane scroll;
+    public ScrollPane scroll;
 
     //Add Items to this one
     public FlowPane flowPane;
@@ -60,13 +62,26 @@ public class HistoryAccordion extends AnchorPane {
             e.printStackTrace();
         }
         //Disable vertical scrolling
-        //scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        scroll.addEventFilter(ScrollEvent.ANY, new EventHandler<ScrollEvent>() {
+            @Override
+            public void handle(ScrollEvent scrollEvent) {
+                scrollEvent.consume();
+            }
+        });
+
+
         //Set the gridlines' size (space between objects)
         flowPane.setHgap(10);
         flowPane.setVgap(10);
         flowPane.setPadding(new Insets(10));
         setArrowProperties();
         expandButton.setOnAction(this::expand);
+
+
+
+
+
 
         this.order = order;
         calendar.setTimeInMillis(order.getDate().getTime());
@@ -79,6 +94,13 @@ public class HistoryAccordion extends AnchorPane {
         itemList = new CopyOnWriteArrayList<>();
         fillPane();
         updateList();
+
+
+        if(flowPane.getChildren().size() <= 4){
+            expandButton.setVisible(false);
+            arrow.setVisible(false);
+        }
+
     }
 
     private void updateList() {
@@ -109,25 +131,36 @@ public class HistoryAccordion extends AnchorPane {
     }
 
 
+    private int calcSize(int numberOfObjects){
+
+        int rows = numberOfObjects/4;
+        /*if(rows > 0){
+            rows--;
+        }*/
+
+        return rows * 200;
+
+    }
+
     @FXML
     protected void expand(Event event){
 
         //Expand the scroll-pane
         if(!expanded){
-            //scroll.setPrefHeight(300);
-            setPrefHeight(400);
-            //scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+            int expandSize = calcSize(flowPane.getChildren().size());
+            scroll.setPrefHeight(240 + expandSize);
+            setPrefHeight(scroll.getPrefHeight() + 100);
+            expandButton.setText("Se mindre:");
+            expandButton.setPrefWidth(100);
             arrow.setRotate(180);
-            expanded = true;
         }else{
-            //scroll.setPrefHeight(240);
             setPrefHeight(340);
-            //scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-            //scroll.setVvalue(0);
+            scroll.setPrefHeight(240);
+            expandButton.setText("Se mer:");
+            expandButton.setPrefWidth(80);
             arrow.setRotate(0);
-            expanded = false;
         }
-
+        expanded = !expanded;
 
 
     }
