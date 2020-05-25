@@ -16,7 +16,7 @@
                   <FlowPane fx:id="flowPane" prefHeight="235.0" prefWidth="740.0" />
                </content>
             </ScrollPane>
-            <Button fx:id="expandButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="83.0" styleClass="history-accordion-button" text="Se mer:">
+            <Button fx:id="expandButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="80.0" styleClass="history-accordion-button" text="Se mer:">
                <FlowPane.margin>
                   <Insets bottom="5.0" top="10.0" />
                </FlowPane.margin></Button>

@@ -94,6 +94,13 @@ public class HistoryAccordion extends AnchorPane {
         itemList = new CopyOnWriteArrayList<>();
         fillPane();
         updateList();
+
+
+        if(flowPane.getChildren().size() <= 4){
+            expandButton.setVisible(false);
+            arrow.setVisible(false);
+        }
+
     }
 
     private void updateList() {
@@ -143,20 +150,17 @@ public class HistoryAccordion extends AnchorPane {
             int expandSize = calcSize(flowPane.getChildren().size());
             scroll.setPrefHeight(240 + expandSize);
             setPrefHeight(scroll.getPrefHeight() + 100);
-
-            //scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.ALWAYS);
+            expandButton.setText("Se mindre:");
+            expandButton.setPrefWidth(100);
             arrow.setRotate(180);
-            expanded = true;
         }else{
-
             setPrefHeight(340);
             scroll.setPrefHeight(240);
-            scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-            scroll.setVvalue(0);
+            expandButton.setText("Se mer:");
+            expandButton.setPrefWidth(80);
             arrow.setRotate(0);
-            expanded = false;
         }
-
+        expanded = !expanded;
 
 
     }
