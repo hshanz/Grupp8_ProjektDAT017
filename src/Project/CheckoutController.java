@@ -182,7 +182,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         order.setDate(new Date());
         order.setOrderNumber(bckEndP.getOrders().size()+1);
         wares_to_dest.setText(order.getItems().size() + ":st varor är på väg till " + addressField.getText() );
-        date_and_time.setText(dateOfDelivery +" "+timeOfDelivery);
+        date_and_time.setText(dateOfDelivery +" kl: "+timeOfDelivery);
         parentController.addNewOrder(order);
         for (ShoppingItem sci:shoppingCart.getItems()) {
             sci.setAmount(0);
@@ -230,7 +230,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
             d.resetButtonStyles();
         }
         Finish.toBack();
-        Delivery.setFill(Color.RED);
+        Delivery_date_1.setFill(Color.RED);
         Delivery_date_1.setText("Ej valt");
         timeOfDelivery = null;
         dateOfDelivery = null;
@@ -281,7 +281,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         this.dateOfDelivery = dateOfDelivery;
 
         Delivery_date_1.setText(this.dateOfDelivery + "\n kl:" + this.timeOfDelivery );
-        Delivery.setFill(Color.BLACK);
+        Delivery_date_1.setFill(Color.BLACK);
         nextButton.setVisible(true);
 
         for(DateTimeItemController d:dateTimeItemList) {
