@@ -11,20 +11,20 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<fx:root fx:id="base" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="760.0" style="-fx-background-color: #DDDDDD;" stylesheets="@ProjectStylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<fx:root fx:id="base" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="345.0" prefWidth="760.0" styleClass="grey-background-element" stylesheets="@ProjectStylesheet.css" type="AnchorPane" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Pane layoutX="266.0" prefHeight="40.0" prefWidth="494.0" style="-fx-background-color: #EFEFEF;">
+      <Pane layoutX="266.0" prefHeight="40.0" prefWidth="494.0" styleClass="background-element">
          <padding>
             <Insets top="10.0" />
          </padding></Pane>
-      <FlowPane fx:id="baseFlowPane" alignment="TOP_RIGHT" columnHalignment="CENTER" layoutX="6.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="289.0" prefWidth="740.0" AnchorPane.leftAnchor="10.0">
+      <FlowPane fx:id="baseFlowPane" alignment="TOP_RIGHT" columnHalignment="CENTER" layoutX="6.0" layoutY="50.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="290.0" prefWidth="740.0" AnchorPane.leftAnchor="10.0">
          <children>
-            <ScrollPane fx:id="scroll" hbarPolicy="NEVER" prefHeight="240.0" prefWidth="740.0">
+            <ScrollPane fx:id="scroll" hbarPolicy="NEVER" prefHeight="240.0" prefWidth="740.0" styleClass="background-element">
                <content>
-                  <FlowPane fx:id="flowPane" prefHeight="235.0" prefWidth="740.0" />
+                  <FlowPane fx:id="flowPane" prefHeight="235.0" prefWidth="740.0" styleClass="background-element" />
                </content>
             </ScrollPane>
-            <Button fx:id="expandButton" mnemonicParsing="false" prefHeight="31.0" prefWidth="83.0" styleClass="history-accordion-button" text="Se mer:">
+            <Button fx:id="expandButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="100.0" style="-fx-font-size: 16; -fx-font-weight: bold;" styleClass="normal-button" text="Se mer:" textAlignment="CENTER">
                <FlowPane.margin>
                   <Insets bottom="5.0" top="10.0" />
                </FlowPane.margin></Button>
@@ -38,14 +38,14 @@
             </ImageView>
          </children>
       </FlowPane>
-      <Pane prefHeight="50.0" prefWidth="265.0" style="-fx-background-color: #DDDDDD;">
+      <Pane prefHeight="50.0" prefWidth="265.0" styleClass="grey-background-element">
          <children>
-            <Label fx:id="dateLabel" layoutX="12.0" prefHeight="51.0" prefWidth="147.0" text="3:e Mars  " textAlignment="RIGHT">
+            <Label fx:id="dateLabel" layoutX="12.0" prefHeight="51.0" prefWidth="147.0" styleClass="normal-text" text="3:e Mars  " textAlignment="RIGHT">
                <font>
                   <Font size="25.0" />
                </font>
             </Label>
-            <Label fx:id="priceLabel" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="7.0" prefHeight="36.0" prefWidth="98.0" text="500 kr">
+            <Label fx:id="priceLabel" alignment="CENTER_RIGHT" layoutX="160.0" layoutY="7.0" prefHeight="36.0" prefWidth="98.0" styleClass="normal-text" text="500 kr">
                <font>
                   <Font size="25.0" />
                </font>

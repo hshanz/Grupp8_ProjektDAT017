@@ -9,7 +9,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" styleClass="cart" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.CartController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="300.0" styleClass="background-element" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.CartController">
    <children>
 
       <Label fx:id="cartLabel" layoutX="69.0" layoutY="4.0" styleClass="medium-large-text" text="Varukorg">
@@ -25,7 +25,7 @@
       <Line endX="100.0" layoutX="150.0" layoutY="482.0" startX="-100.0" style="-fx-fill: #000000;" />
       <ScrollPane hbarPolicy="NEVER" layoutX="26.0" layoutY="71.0" prefHeight="400.0" prefWidth="260.0" AnchorPane.leftAnchor="20.0">
          <content>
-            <FlowPane fx:id="flowPane" alignment="TOP_CENTER" prefHeight="395.0" prefWidth="260.0">
+            <FlowPane fx:id="flowPane" alignment="TOP_CENTER" prefHeight="395.0" prefWidth="260.0" styleClass="background-element">
                <padding>
                   <Insets top="5.0" />
                </padding></FlowPane>
