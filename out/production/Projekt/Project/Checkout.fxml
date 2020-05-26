@@ -366,7 +366,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <VBox prefHeight="200.0" prefWidth="100.0" GridPane.rowIndex="1">
+                              <VBox prefHeight="103.0" prefWidth="284.0" GridPane.rowIndex="1">
                                  <children>
                                     <Text fx:id="Delivery" strokeType="OUTSIDE" strokeWidth="0.0" text="Leveranstid:" textAlignment="CENTER" wrappingWidth="280.673828125">
                                        <font>

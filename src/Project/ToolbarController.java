@@ -47,6 +47,7 @@ public class ToolbarController implements Initializable {
         buttonList.add(historyButton);
         buttonList.add(helpButton);
         buttonList.add(userButton);
+        changeStylesheet(shopButton);
 
     }
 
