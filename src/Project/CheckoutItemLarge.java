@@ -1,8 +1,11 @@
 package Project;
 
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.ShoppingCart;
@@ -54,6 +57,17 @@ public class CheckoutItemLarge extends AnchorPane {
                 shoppingCart.fireShoppingCartChanged(shoppingItem,false);
             }
         });
+
+
+        number_of_wares.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if (keyEvent.getCode().equals(KeyCode.ENTER)){
+                    number_of_wares.getParent().requestFocus();
+                }
+            }
+        });
+
     }
 
     @FXML
