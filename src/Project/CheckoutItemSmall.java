@@ -37,12 +37,9 @@ public class CheckoutItemSmall extends AnchorPane {
             throw new RuntimeException(exception);
         }
 
-        number_of_wares.setOnKeyPressed(new EventHandler<KeyEvent>() {
-            @Override
-            public void handle(KeyEvent keyEvent) {
-                if (keyEvent.getCode().equals(KeyCode.ENTER)){
-                    number_of_wares.getParent().requestFocus();
-                }
+        number_of_wares.setOnKeyPressed(keyEvent -> {
+            if (keyEvent.getCode().equals(KeyCode.ENTER)){
+                number_of_wares.getParent().requestFocus();
             }
         });
 
