@@ -2,9 +2,12 @@ package Project;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
@@ -155,6 +158,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
                 creditCard.setValidMonth(0);
             } else if (!monthField.getText().matches("[0-9]+")) {
                 System.out.println("Invalid number");
+                monthField.setText(String.valueOf(0));
             } else creditCard.setValidMonth(Integer.parseInt(monthField.getText()));
         });
         yearField.textProperty().addListener((observableValue, s, t1) -> {
@@ -162,6 +166,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
                 creditCard.setValidYear(0);
             } else if (!yearField.getText().matches("[0-9]+")) {
                 System.out.println("Invalid number");
+                yearField.setText(String.valueOf(0));
             } else creditCard.setValidYear(Integer.parseInt(yearField.getText()));
         });
         cvcField.textProperty().addListener((observableValue, s, t1) -> {
@@ -169,7 +174,17 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
                 creditCard.setVerificationCode(0);
             } else if (!cvcField.getText().matches("[0-9]+")) {
                 System.out.println("Invalid number");
+                cvcField.setText(String.valueOf(0));
             } else creditCard.setVerificationCode(Integer.parseInt(cvcField.getText()));
+        });
+
+        firstNameField.getParent().getParent().getParent().setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if (keyEvent.getCode().equals(KeyCode.ENTER)){
+                    firstNameField.getParent().getParent().getParent().requestFocus();
+                }
+            }
         });
 
         scrollPane1.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
@@ -229,6 +244,8 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     private void sanityChecks(){
         if (currentStep == 1 && dateOfDelivery == null){
+            Delivery_date_1.setVisible(true);
+            Delivery.setVisible(true);
             nextButton.setVisible(false);
         }
         if (currentStep == 3) {
@@ -257,9 +274,12 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         {
             d.resetButtonStyles();
         }
+
         Finish.toBack();
         Delivery_date_1.setFill(Color.RED);
         Delivery_date_1.setText("Ej valt");
+        Delivery_date_1.setVisible(false);
+        Delivery.setVisible(false);
         timeOfDelivery = null;
         dateOfDelivery = null;
         currentStep=0;

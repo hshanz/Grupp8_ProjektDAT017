@@ -2,7 +2,7 @@ package Project;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.geometry.Insets;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Order;
 
@@ -13,8 +13,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class HistoryPage implements Initializable {
 
-    @FXML
-    private FlowPane accordionFlowPane;
+    @FXML private FlowPane accordionFlowPane;
+    @FXML private ScrollPane mainScroll;
 
 
     private BackendControllerProducts bckEndP;
@@ -40,7 +40,7 @@ public class HistoryPage implements Initializable {
     }
 
     public void addOrder(Order order){
-        accordions.add(new HistoryAccordion(order));
+        accordions.add(new HistoryAccordion(order,mainScroll));
         updateList();
     }
 
@@ -53,7 +53,7 @@ public class HistoryPage implements Initializable {
 
     private void fillAccordionList(){
         for (int i = orders.size()-1; i >= 0 ; i--) {
-            accordions.add(new HistoryAccordion(orders.get(i)));
+            accordions.add(new HistoryAccordion(orders.get(i), mainScroll));
         }
 
         updateList();

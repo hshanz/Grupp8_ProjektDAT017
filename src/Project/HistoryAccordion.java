@@ -5,14 +5,12 @@ import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.effect.ColorAdjust;
 import javafx.scene.effect.Effect;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.ScrollEvent;
 import javafx.scene.layout.AnchorPane;
@@ -21,29 +19,29 @@ import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
-import java.net.URL;
 import java.util.Calendar;
 import java.util.List;
-import java.util.ResourceBundle;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class HistoryAccordion extends AnchorPane {
 
 
     //Labels
-    public Label dateLabel;
-    public Label priceLabel;
+
+    @FXML private Label dateLabel;
+    @FXML private Label priceLabel;
 
 
-    public ScrollPane scroll;
+    @FXML private ScrollPane scroll;
+    private ScrollPane parentScroll;
 
     //Add Items to this one
-    public FlowPane flowPane;
+    @FXML private FlowPane flowPane;
 
-    @FXML public ImageView arrow;
+    @FXML private ImageView arrow;
 
-    public Button expandButton;
-    public boolean expanded = false;
+    @FXML private Button expandButton;
+    @FXML private boolean expanded = false;
 
     private Order order;
     private List<HistoryItemController> itemList;
@@ -52,7 +50,7 @@ public class HistoryAccordion extends AnchorPane {
 
 
 
-    public HistoryAccordion(Order order) {
+    public HistoryAccordion(Order order, ScrollPane parentScroll) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HistoryAccordion.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
@@ -61,16 +59,14 @@ public class HistoryAccordion extends AnchorPane {
         } catch (IOException e) {
             e.printStackTrace();
         }
+
+        this.parentScroll = parentScroll;
+
         //Disable vertical scrolling
-        /*
         scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        scroll.addEventFilter(ScrollEvent.SCROLL, new EventHandler<ScrollEvent>() {
-            @Override
-            public void handle(ScrollEvent scrollEvent) {
-                scrollEvent.consume();
-            }
-        });
-        */
+        scroll.addEventFilter(ScrollEvent.SCROLL, parentScroll::fireEvent);
+
+
 
 
         //Set the gridlines' size (space between objects)

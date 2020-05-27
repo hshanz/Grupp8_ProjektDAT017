@@ -63,7 +63,6 @@ public class HistoryItemController extends AnchorPane {
                 return;
             }
         }
-        System.out.println("3333");
         shoppingItemCopy.setAmount(1);
         shoppingCart.addItem(shoppingItemCopy);
 

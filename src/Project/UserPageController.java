@@ -1,17 +1,22 @@
 package Project;
 
+import com.sun.javafx.css.StyleCache;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.CreditCard;
 import se.chalmers.cse.dat216.project.Customer;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class UserPageController implements Initializable {
+public class UserPageController extends AnchorPane implements Initializable {
 
 
     @FXML public TextField firstNameField;
@@ -88,6 +93,7 @@ public class UserPageController implements Initializable {
                 creditCard.setValidMonth(0);
             } else if (!monthField.getText().matches("[0-9]+")) {
                 System.out.println("Invalid number");
+                monthField.setText(String.valueOf(0));
             } else creditCard.setValidMonth(Integer.parseInt(monthField.getText()));
         });
         yearField.textProperty().addListener((observableValue, s, t1) -> {
@@ -95,6 +101,7 @@ public class UserPageController implements Initializable {
                 creditCard.setValidYear(0);
             } else if (!yearField.getText().matches("[0-9]+")) {
                 System.out.println("Invalid number");
+                yearField.setText(String.valueOf(0));
             } else creditCard.setValidYear(Integer.parseInt(yearField.getText()));
         });
         cvcField.textProperty().addListener((observableValue, s, t1) -> {
@@ -102,9 +109,20 @@ public class UserPageController implements Initializable {
                 creditCard.setVerificationCode(0);
             } else if (!cvcField.getText().matches("[0-9]+")) {
                 System.out.println("Invalid number");
+                cvcField.setText(String.valueOf(0));
             } else creditCard.setVerificationCode(Integer.parseInt(cvcField.getText()));
         });
 
+
+
+        firstNameField.getParent().setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                if (keyEvent.getCode().equals(KeyCode.ENTER)){
+                    firstNameField.getParent().requestFocus();
+                }
+            }
+        });
     }
 
     private void getSelectedCardType() {

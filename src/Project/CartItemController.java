@@ -1,6 +1,7 @@
 package Project;
 
 import javafx.beans.property.Property;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -9,6 +10,8 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.*;
@@ -67,6 +70,17 @@ public class CartItemController extends AnchorPane {
                 shoppingItem.setAmount(Double.parseDouble(productCounter.getText()));
                 shoppingCart.fireShoppingCartChanged(shoppingItem,false);
 
+            }
+        });
+
+        productCounter.setOnKeyPressed(new EventHandler<KeyEvent>() {
+            @Override
+            public void handle(KeyEvent keyEvent) {
+                System.out.println("nnnnnn");
+                if (keyEvent.getCode().equals(KeyCode.ENTER)){
+                    System.out.println("sdsd");
+                    productCounter.getParent().requestFocus();
+                }
             }
         });
     }
