@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.shape.Line?>
@@ -17,11 +18,23 @@
          <font>
             <Font size="40.0" />
          </font>
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Här listas de varor som du har i varukorgen." />
+         </tooltip>
       </Label>
       <Line endX="100.0" fill="BLACK" layoutX="150.0" layoutY="62.0" startX="-100.0" style="-fx-fill: #000000;" />
-      <Button fx:id="checkoutButton" layoutX="48.0" layoutY="528.0" mnemonicParsing="false" onAction="#checkout" prefHeight="60.0" prefWidth="209.0" styleClass="important-button-small" text="Till kassa" />
-      <Label fx:id="priceLabel" layoutX="159.0" layoutY="490.0" prefHeight="30.0" prefWidth="130.0" styleClass="normal-text" text="= 0 kr" AnchorPane.leftAnchor="156.0" />
-      <Label alignment="CENTER_RIGHT" layoutX="67.0" layoutY="489.0" prefHeight="30.0" prefWidth="127.0" styleClass="normal-text" text="Totalt pris:" textAlignment="RIGHT" AnchorPane.rightAnchor="150.0" />
+      <Button fx:id="checkoutButton" layoutX="48.0" layoutY="528.0" mnemonicParsing="false" onAction="#checkout" prefHeight="60.0" prefWidth="209.0" styleClass="important-button-small" text="Till kassa">
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Gå vidare till kassan med denna varukorg." />
+         </tooltip></Button>
+      <Label fx:id="priceLabel" layoutX="159.0" layoutY="490.0" prefHeight="30.0" prefWidth="130.0" styleClass="normal-text" text="= 0 kr" AnchorPane.leftAnchor="156.0">
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Den sammanlagda kostnaden för varorna i varukorgen." />
+         </tooltip></Label>
+      <Label alignment="CENTER_RIGHT" layoutX="67.0" layoutY="489.0" prefHeight="30.0" prefWidth="127.0" styleClass="normal-text" text="Totalt pris:" textAlignment="RIGHT" AnchorPane.rightAnchor="150.0">
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Den sammanlagda kostnaden för varorna i varukorgen." />
+         </tooltip></Label>
       <Line endX="100.0" layoutX="150.0" layoutY="482.0" startX="-100.0" style="-fx-fill: #000000;" />
       <ScrollPane hbarPolicy="NEVER" layoutX="26.0" layoutY="71.0" prefHeight="400.0" prefWidth="260.0" AnchorPane.leftAnchor="20.0">
          <content>

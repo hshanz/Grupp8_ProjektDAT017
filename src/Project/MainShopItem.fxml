@@ -3,6 +3,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -21,11 +22,17 @@
          <font>
             <Font size="16.0" />
          </font>
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Priset för denna vara till förhållande till en enhet. " />
+         </tooltip>
       </Label>
       <Label fx:id="priceUnit" alignment="CENTER" disable="true" layoutX="62.0" layoutY="187.0" prefHeight="25.0" prefWidth="55.0" styleClass="small-text" text="förp:">
          <font>
             <Font size="16.0" />
          </font>
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Enheten för denna vara. " />
+         </tooltip>
       </Label>
       <Button fx:id="addButton" layoutX="120.0" layoutY="170.0" mnemonicParsing="false" onAction="#addToCart" prefHeight="40.0" prefWidth="40.0" styleClass="shop-item-plus-button" AnchorPane.bottomAnchor="15.0">
          <graphic>
@@ -33,15 +40,24 @@
                <image>
                   <Image url="@Images/baseline_add_black_48dp.png" />
                </image></ImageView>
-         </graphic></Button>
+         </graphic>
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Lägg till vara av denna typ till varukorgen." />
+         </tooltip></Button>
       <Button fx:id="removebutton" layoutX="15.0" layoutY="170.0" mnemonicParsing="false" onAction="#removeFromCart" prefHeight="40.0" prefWidth="40.0" styleClass="shop-item-minus-button" AnchorPane.bottomAnchor="15.0">
          <graphic>
             <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@Images/baseline_remove_black_48dp.png" />
                </image></ImageView>
-         </graphic></Button>
+         </graphic>
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Ta bort vara av denna typ från varukorgen." />
+         </tooltip></Button>
       <Line endX="65.0" layoutX="89.0" layoutY="150.0" startX="-65.0" />
-      <TextField fx:id="productCounter" alignment="CENTER" layoutX="60.0" layoutY="220.0" prefHeight="40.0" prefWidth="57.0" styleClass="small-text-field" />
+      <TextField fx:id="productCounter" alignment="CENTER" layoutX="60.0" layoutY="220.0" prefHeight="40.0" prefWidth="57.0" styleClass="small-text-field">
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Mängden varor av denna typ i varukorgen." />
+         </tooltip></TextField>
    </children>
 </fx:root>

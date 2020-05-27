@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -12,14 +13,26 @@
    <children>
       <ImageView fx:id="productImage" fitHeight="88.0" fitWidth="150.0" layoutX="13.0" layoutY="54.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
       <Label fx:id="productName" alignment="CENTER" layoutX="1.0" layoutY="2.0" prefHeight="35.0" prefWidth="174.0" styleClass="normal-text" text="Köttfärslimpa" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="2.0" />
-      <Label fx:id="historyCount" layoutX="14.0" layoutY="31.0" styleClass="small-text" text="3 st" AnchorPane.leftAnchor="12.0" />
+      <Label fx:id="historyCount" layoutX="14.0" layoutY="31.0" styleClass="small-text" text="3 st" AnchorPane.leftAnchor="12.0">
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Mängden varor som köptes under detta köp." />
+         </tooltip></Label>
       <Pane layoutX="3.0" layoutY="126.0" prefHeight="45.0" prefWidth="97.0" style="-fx-border-color: #000000; -fx-background-radius: 0px 0px 0px 10px; -fx-border-radius: 0px 0px 0px 10px;" styleClass="background-element" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0">
          <children>
-            <Label fx:id="currentPrice" layoutX="21.0" layoutY="18.0" styleClass="small-text" text="42 kr" textAlignment="CENTER" />
-            <Label fx:id="singleItem" layoutX="21.0" layoutY="1.0" styleClass="small-text" text="1 st/kg" textAlignment="CENTER" />
+            <Label fx:id="currentPrice" layoutX="21.0" layoutY="18.0" styleClass="small-text" text="42 kr" textAlignment="CENTER">
+               <tooltip>
+                  <Tooltip styleClass="tooltip-style" text="Den nuvarande kostnaden för en av dessa varor." />
+               </tooltip></Label>
+            <Label fx:id="singleItem" layoutX="21.0" layoutY="1.0" styleClass="small-text" text="1 st/kg" textAlignment="CENTER">
+               <tooltip>
+                  <Tooltip styleClass="tooltip-style" text="Den nuvarande kostnaden för en av dessa varor." />
+               </tooltip></Label>
          </children>
       </Pane>
-      <Label fx:id="historyPrice" layoutX="111.0" layoutY="31.0" styleClass="small-text" text="126 kr" textAlignment="RIGHT" AnchorPane.rightAnchor="12.0" />
+      <Label fx:id="historyPrice" layoutX="111.0" layoutY="31.0" styleClass="small-text" text="126 kr" textAlignment="RIGHT" AnchorPane.rightAnchor="12.0">
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Den sammanlagda kostnaden för dessa varor under detta köp." />
+         </tooltip></Label>
       <Button fx:id="addButton" layoutX="66.0" layoutY="129.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="74.0" styleClass="shop-item-plus-button" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="6.0">
          <graphic>
             <ImageView fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
@@ -27,7 +40,10 @@
                   <Image url="@Images/shopping_cart-24px.png" />
                </image>
             </ImageView>
-         </graphic></Button>
+         </graphic>
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Lägg till vara av denna typ i den nuvarande varukorgen." />
+         </tooltip></Button>
       <Line endX="75.5" endY="1.0" layoutX="91.0" layoutY="30.0" startX="-74.0" startY="1.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="30.5" />
    </children>
 </fx:root>

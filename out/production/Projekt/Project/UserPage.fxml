@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -44,15 +45,24 @@
                   <Label alignment="CENTER_RIGHT" layoutX="188.0" layoutY="548.0" prefHeight="35.0" prefWidth="163.0" styleClass="normal-text" text="Kortnummer:" AnchorPane.rightAnchor="300.0" />
                   <TextField fx:id="cardNumberField" layoutX="290.0" layoutY="548.0" styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
                   <Label alignment="CENTER_RIGHT" layoutX="87.0" layoutY="592.0" prefHeight="35.0" prefWidth="193.0" styleClass="normal-text" text="Utgångsdatum:" AnchorPane.rightAnchor="300.0" />
-                  <TextField fx:id="monthField" layoutX="288.0" layoutY="591.0" prefHeight="37.0" prefWidth="42.0" styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
+                  <TextField fx:id="monthField" layoutX="288.0" layoutY="591.0" prefHeight="37.0" prefWidth="42.0" styleClass="large-text-field" AnchorPane.leftAnchor="290.0">
+                     <tooltip>
+                        <Tooltip styleClass="tooltip-style" text="Månaden då ditt kort går ut." />
+                     </tooltip></TextField>
                   <Label alignment="CENTER_RIGHT" layoutX="202.0" layoutY="637.0" prefHeight="17.0" prefWidth="81.0" styleClass="normal-text" text="CVC:" AnchorPane.rightAnchor="300.0" />
-                  <TextField fx:id="cvcField" layoutX="292.0" layoutY="636.0" prefHeight="37.0" prefWidth="62.0" styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
+                  <TextField fx:id="cvcField" layoutX="292.0" layoutY="636.0" prefHeight="37.0" prefWidth="62.0" styleClass="large-text-field" AnchorPane.leftAnchor="290.0">
+                     <tooltip>
+                        <Tooltip styleClass="tooltip-style" text="Tresiffrig säkerhetskod." />
+                     </tooltip></TextField>
                   <Label layoutX="336.0" layoutY="591.0" style="-fx-font-weight: regular;" styleClass="normal-text" text="-">
                      <font>
                         <Font size="23.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="yearField" layoutX="350.0" layoutY="590.0" prefHeight="37.0" prefWidth="46.0" styleClass="large-text-field" />
+                  <TextField fx:id="yearField" layoutX="350.0" layoutY="590.0" prefHeight="37.0" prefWidth="46.0" styleClass="large-text-field">
+                     <tooltip>
+                        <Tooltip styleClass="tooltip-style" text="Året då ditt kort går ut." />
+                     </tooltip></TextField>
                   <Line endX="140.0" layoutX="290.0" layoutY="70.0" startX="-140.0" />
                   <Line endX="190.0" layoutX="290.0" layoutY="290.0" startX="-185.0" />
                   <Line endX="135.0" layoutX="290.0" layoutY="527.0" startX="-100.0" />
@@ -60,6 +70,9 @@
             </AnchorPane>
         </content>
       </ScrollPane>
-      <Button fx:id="saveButton" layoutX="952.0" layoutY="527.0" mnemonicParsing="false" onAction="#save" prefHeight="128.0" prefWidth="314.0" styleClass="important-button-small" text="Spara och uppdatera information" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="952.0" AnchorPane.rightAnchor="15.0" />
+      <Button fx:id="saveButton" layoutX="952.0" layoutY="527.0" mnemonicParsing="false" onAction="#save" prefHeight="128.0" prefWidth="314.0" styleClass="important-button-small" text="Spara och uppdatera information" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="952.0" AnchorPane.rightAnchor="15.0">
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Uppdatera och spara informationen om dig." />
+         </tooltip></Button>
    </children>
 </AnchorPane>

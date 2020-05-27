@@ -309,3 +309,10 @@
     -fx-background-radius : 5px 5px 5px 5px;
     -fx-border-radius : 5px 5px 5px 5px;
 }
+
+
+.tooltip-style{
+    -fx-font-size : 18;
+    -fx-text-fill : #FFFFFF;
+    -fx-background-color : #605040;
+}

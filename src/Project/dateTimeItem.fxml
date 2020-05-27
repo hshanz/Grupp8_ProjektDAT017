@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
@@ -13,9 +14,18 @@
             <Font size="25.0" />
          </font>
       </Label>
-      <Button fx:id="timeButton1" layoutX="3.0" layoutY="51.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="194.0" styleClass="normal-button" text="8-12" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="45.0" />
-      <Button fx:id="timeButton2" layoutX="2.0" layoutY="119.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="194.0" styleClass="normal-button" text="12-16" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="120.0" />
-      <Button fx:id="timeButton3" layoutX="2.0" layoutY="193.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="194.0" styleClass="normal-button" text="16-20" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="195.0" />
+      <Button fx:id="timeButton1" layoutX="3.0" layoutY="51.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="194.0" styleClass="normal-button" text="8-12" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="45.0">
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Välj tiden 8:00 - 12:00 som leveranstid." />
+         </tooltip></Button>
+      <Button fx:id="timeButton2" layoutX="2.0" layoutY="119.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="194.0" styleClass="normal-button" text="12-16" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="120.0">
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Välj tiden 12:00 -16:00 som leveranstid." />
+         </tooltip></Button>
+      <Button fx:id="timeButton3" layoutX="2.0" layoutY="193.0" mnemonicParsing="false" prefHeight="66.0" prefWidth="194.0" styleClass="normal-button" text="16-20" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="195.0">
+         <tooltip>
+            <Tooltip styleClass="tooltip-style" text="Välj tiden 16:00 - 20:00 som leveranstid." />
+         </tooltip></Button>
       <Line endX="79.0" layoutX="80.0" layoutY="38.0" startX="-79.0" style="-fx-fill: #000000; -fx-stroke: #000000;" />
    </children>
 </fx:root>
