@@ -38,6 +38,8 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     @FXML private Button remove_goBack;
 
+    @FXML private ScrollPane scrollPane1;
+
 
     //region payment_wiz vars
     //Here is the payment information field. All information that we already have (from the profile) should be pre-written.
@@ -61,6 +63,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     @FXML private Text confirm_name; //Should display the full name of the buyer, (first name + surname)
     @FXML private Text confirm_adress; //should display the delivery address of the buyer
     @FXML private Text confirm_cardnumber; //Should display 8 stars and then the 4 last numbers of the credit card number. (ex: **** **** 1234)
+    @FXML private ScrollPane checkout_cart_confirm_pane;
     //endregion
 
     //region Finnish vars
@@ -169,6 +172,8 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
             } else creditCard.setVerificationCode(Integer.parseInt(cvcField.getText()));
         });
 
+        scrollPane1.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        checkout_cart_confirm_pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
     }
 
     private void updateDateList(){
