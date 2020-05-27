@@ -71,6 +71,7 @@ public class CategoryListController extends AnchorPane implements Initializable 
                 return categories;
             case "Pasta, Ris & Potatis":
                 categories.add(ProductCategory.POTATO_RICE);
+                categories.add(ProductCategory.PASTA);
                 return categories;
             case "Skafferi och Örter":
                 categories.add(ProductCategory.FLOUR_SUGAR_SALT);
