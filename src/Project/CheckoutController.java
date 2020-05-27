@@ -163,7 +163,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     }
 
     private void updateList(){
-        Cost_text_1.setText(String.valueOf(df.format(shoppingCart.getTotal())));
+        Cost_text_1.setText(String.valueOf(df.format(shoppingCart.getTotal()) + " kr"));
         itemPane.getChildren().clear();
         smallItemPane.getChildren().clear();
         for (CheckoutItemLarge cl: checkoutItemLargeList) {
