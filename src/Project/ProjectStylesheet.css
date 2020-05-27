@@ -319,9 +319,11 @@
 
 .scroll-bar:vertical{
     -fx-background-color : #f4f4f0;
+    -fx-border-color : #d8d8d0;
+    -fx-border-width : 2;
     -fx-fill-color : #f3b9b7;
     -fx-pref-width : 30;
-    -fx-padding : 1;
+    -fx-padding : 0;
 }
 .scroll-bar:vertical .thumb{
     -fx-background-color : #f3b9b7;
