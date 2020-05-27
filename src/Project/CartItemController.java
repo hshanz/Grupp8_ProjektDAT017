@@ -49,7 +49,7 @@ public class CartItemController extends AnchorPane {
         product = shoppingItem.getProduct();
 
         CartItemName.setText(product.getName());
-        CartItemPrice.setText(String.valueOf(product.getPrice()) + " kr");
+        CartItemPrice.setText(String.valueOf(product.getPrice()) + " kr/"+product.getUnitSuffix());
         // CartItemCount.setText(String.valueOf(shoppingItem.getAmount()));
         productCounter.setText(String.valueOf(shoppingItem.getAmount()));
         CartItemImage.setImage(bckEndP.getFXImage(product));
@@ -93,7 +93,7 @@ public class CartItemController extends AnchorPane {
 
     public void update(){
         //CartItemCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
-        productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+        productCounter.setText(String.valueOf(shoppingItem.getAmount()));
     }
 
     public ShoppingItem getShoppingItem() {

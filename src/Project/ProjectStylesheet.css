@@ -3,9 +3,9 @@
     /* Category list*/
 
 .list-cell{
-    -fx-background-color: #FFD1D1;
+    -fx-background-color: #f3b9b7;
     -fx-padding: 10px;
-    -fx-border-color: #EFEFEF;
+    -fx-border-color: #f4f4f0;
     -fx-border-width: 10 0 0 0;
     -fx-background-insets: 0 20 0 0;
     -fx-font-size: 15px;
@@ -20,7 +20,7 @@
 }
 
 .list-cell:selected{
-    -fx-background-color: #DC3C3C;
+    -fx-background-color: #d22d3e;
     -fx-text-fill: black;
     -fx-background-insets: 0 0 0 0;
 
@@ -30,11 +30,11 @@
     /* Toolbar Settings */
 
 .toolbar-background{
-    -fx-background-color: #DC3C3C;
+    -fx-background-color: #d22d3e;
 }
 
 .toolbar-button{
-    -fx-background-color: #FFD1D1;
+    -fx-background-color: #f3b9b7;
     -fx-pref-height: 80px;
     -fx-background-radius: 0 10 0 0 ;
     -fx-alignment: center;
@@ -42,7 +42,7 @@
 }
 
 .toolbar-button-selected{
-    -fx-background-color: #EFEFEF;
+    -fx-background-color: #f4f4f0;
     -fx-pref-height: 100px;
     -fx-background-radius: 0 10 0 0 ;
     -fx-alignment: center;
@@ -60,26 +60,17 @@
 }
 
 
-    /* Cart settings*/
-
-.cart{
-    -fx-border-width: 0 0 0 3;
-    -fx-border-color: black;
-    -fx-background-color: #EFEFEF;
-}
-
-
     /*Shop Item*/
 
 .shop-item-plus-button{
-    -fx-background-color: #3CDC3C;
+    -fx-background-color: #8ec516;
     -fx-background-radius : 0 10 0 0;
     -fx-border-color : #000000;
     -fx-border-radius : 0 10 0 0;
 }
 
 .shop-item-plus-button:hover{
-    -fx-background-color: #76e376;
+    -fx-background-color: #c9f075;
     -fx-border-width : 2;
 }
 .shop-item-plus-button:pressed{
@@ -88,7 +79,7 @@
 }
 
 .shop-item-minus-button{
-    -fx-background-color: #DC3C3C;
+    -fx-background-color: #d22d3e;
     -fx-background-radius : 10 0 0 0;
     -fx-border-color : #000000;
     -fx-border-radius : 10 0 0 0;
@@ -105,7 +96,7 @@
 
 
 .shop-item{
-    -fx-background-color: #DDDDDD;
+    -fx-background-color: #d8d8d0;
 }
 
 
@@ -114,7 +105,7 @@
 
 /*Accordion*/
 .history-accordion-button{
-    -fx-background-color: #DC3C3C;
+    -fx-background-color: #d22d3e;
     -fx-font-size: 15px;
     -fx-font-weight: bold;
 }
@@ -125,32 +116,11 @@
 /*History Item*/
 
 .history-item-main-pane{
-    -fx-background-color: #DDDDDD;
+    -fx-background-color: #d8d8d0;
 }
 
 .history-item-small-pane{
     -fx-background-color: white;
-}
-
-.history-item-button{
-    -fx-background-color: #3CDC3C;
-    -fx-background-radius: 0 10 0 0;
-    -fx-font-weight: bold;
-}
-
-.history-item-button:hover{
-    -fx-background-color: #2da82d;
-}
-
-
-.history-item-headline{
-    -fx-font-size: 16px;
-    -fx-font-weight: bold;
-}
-
-.history-item-detail{
-    -fx-font-size: 16px;
-
 }
 
 
@@ -158,7 +128,7 @@
 /*User Page*/
 
 .user-page-button{
-    -fx-background-color: #3CDC3C;
+    -fx-background-color: #8ec516;
     -fx-font-size: 12px;
     -fx-font-weight: bold;
     -fx-background-radius: 0 10 0 0;
@@ -168,35 +138,28 @@
     -fx-background-color: #2da82d;
 }
 
-
-
-
-
-
-
-
 .important-element{
-    -fx-background-color : #DC3C3C;
-    -fx-fill : #DC3C3C;
+    -fx-background-color : #d22d3e;
+    -fx-fill : #d22d3e;
 }
 
 .unimportant-element{
-    -fx-fill : #ffd1d1;
-    -fx-background-color : #ffd1d1;
+    -fx-fill : #f3b9b7;
+    -fx-background-color : #f3b9b7;
     -fx-border-color : #000000
 }
 
 .important-button{
     -fx-background-radius : 0px 0px 20px 0px;
     -fx-border-radius : 0px 0px 20px 0px;
-    -fx-background-color : #3cdc3c;
+    -fx-background-color : #8ec516;
     -fx-font-size : 48;
     -fx-text-fill : #000000;
     -fx-border-color : black;
 }
 
 .important-button:hover{
-    -fx-background-color : #76e376;
+    -fx-background-color : #c9f075;
     -fx-font-size : 50;
     -fx-border-width : 2;
 }
@@ -210,14 +173,14 @@
 .important-button-small{
     -fx-background-radius : 0px 0px 10px 0px;
     -fx-border-radius : 0px 0px 10px 0px;
-    -fx-background-color : #3cdc3c;
+    -fx-background-color : #8ec516;
     -fx-font-size : 24;
     -fx-text-fill : #000000;
     -fx-border-color : black;
 }
 
 .important-button-small:hover{
-    -fx-background-color : #76e376;
+    -fx-background-color : #c9f075;
     -fx-font-size : 26;
     -fx-border-width : 2;
 }
@@ -228,7 +191,7 @@
 }
 
 .caution-button{
-    -fx-background-color: #9a2a2a;
+    -fx-background-color: #8e333c;
     -fx-font-size : 36;
     -fx-text-fill : #000000;
     -fx-border-color: black;
@@ -238,7 +201,7 @@
 }
 
 .caution-button-small{
-    -fx-background-color: #9a2a2a;
+    -fx-background-color: #8e333c;
     -fx-font-size : 18;
     -fx-text-fill : #000000;
     -fx-border-color: black;
@@ -255,7 +218,7 @@
 }
 
 .normal-button{
-    -fx-background-color : #ffd1d1;
+    -fx-background-color : #f3b9b7;
     -fx-border-color : #000000;
     -fx-background-radius : 0px 0px 10px 0px;
     -fx-border-radius : 0px 0px 10px 0px;
@@ -274,7 +237,7 @@
 }
 
 .normal-button-selected{
-    -fx-background-color : #DC3C3C;
+    -fx-background-color : #d22d3e;
     -fx-border-width : 2;
 }
 
@@ -285,15 +248,26 @@
 
 
 .background-element{
-    -fx-background-color : #efefef;
-    -fx-fill : #efefef;
+    -fx-background-color : #f4f4f0;
+    -fx-fill : #f4f4f0;
 }
 .dark-background-element{
-    -fx-background-color : #888888;
+    -fx-background-color : #605040;
 }
 .grey-background-element{
-    -fx-background-color : #DDDDDD;
+    -fx-background-color : #d8d8d0;
 
+}
+
+.green-item{
+    -fx-background-color : #8ec516;
+    -fx-fill : #8ec516;
+    -fx-border-width : 3;
+}
+
+.dark-green-item{
+    -fx-background-color : #528f3d;
+    -fx-fill : #528f3d;
 }
 
 .small-text{
@@ -334,4 +308,11 @@
 
     -fx-background-radius : 5px 5px 5px 5px;
     -fx-border-radius : 5px 5px 5px 5px;
+}
+
+
+.tooltip-style{
+    -fx-font-size : 18;
+    -fx-text-fill : #FFFFFF;
+    -fx-background-color : #605040;
 }

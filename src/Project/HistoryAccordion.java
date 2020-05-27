@@ -150,16 +150,16 @@ public class HistoryAccordion extends AnchorPane {
         //Expand the scroll-pane
         if(!expanded){
             int expandSize = calcSize(flowPane.getChildren().size());
-           scroll.setPrefHeight(240 + expandSize);
-            setPrefHeight(scroll.getPrefHeight() + 100);
+            scroll.setPrefHeight(240 + expandSize);
+            setPrefHeight(scroll.getPrefHeight() + 105);
             expandButton.setText("Se mindre:");
-            expandButton.setPrefWidth(100);
+            expandButton.setPrefWidth(120);
             arrow.setRotate(180);
         }else{
-            setPrefHeight(340);
-           scroll.setPrefHeight(240);
+            setPrefHeight(345);
+            scroll.setPrefHeight(240);
             expandButton.setText("Se mer:");
-            expandButton.setPrefWidth(80);
+            expandButton.setPrefWidth(100);
             arrow.setRotate(0);
         }
         expanded = !expanded;

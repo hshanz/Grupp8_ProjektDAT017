@@ -29,8 +29,8 @@ public class CategoryListController extends AnchorPane implements Initializable 
 
 
     //Write all categories in this list
-    ObservableList<String> categories = FXCollections.observableArrayList("Hela sortimentet","Baljväxter","Bröd","Bär och Frukt","Grönsaker","Dryck","Mejeri","Fisk","Skafferi",
-            "Örter","Kött och Kyckling","Frön och Nötter","Pasta","Ris och Potatis","Godis");
+    ObservableList<String> categories = FXCollections.observableArrayList("Hela sortimentet","Frukt & Grönt","Pasta, Ris & Potatis"
+            ,"Skafferi och Örter","Bröd","Mejeri","Kött, Kyckling & Fisk","Baljväxter","Frön och Nötter","Dryck","Godis");
 
     @FXML
     private ListView<String> list;
@@ -59,51 +59,42 @@ public class CategoryListController extends AnchorPane implements Initializable 
     private List<ProductCategory> findCatergorys(String str){
         List<ProductCategory> categories = new ArrayList<>();
         switch (str){
-            case "Baljväxter":
-                categories.add(ProductCategory.POD);
-                return categories;
-            case "Bröd":
-                categories.add(ProductCategory.BREAD);
-                return categories;
-            case "Bär och Frukt":
+            case "Frukt & Grönt":
                 categories.add(ProductCategory.CITRUS_FRUIT);
                 categories.add(ProductCategory.EXOTIC_FRUIT);
                 categories.add(ProductCategory.BERRY);
                 categories.add(ProductCategory.FRUIT);
                 categories.add(ProductCategory.MELONS);
-                return categories;
-            case "Grönsaker":
                 categories.add(ProductCategory.CABBAGE);
                 categories.add(ProductCategory.ROOT_VEGETABLE);
                 categories.add(ProductCategory.VEGETABLE_FRUIT);
                 return categories;
-            case "Dryck":
-                categories.add(ProductCategory.COLD_DRINKS);
-                categories.add(ProductCategory.HOT_DRINKS);
+            case "Pasta, Ris & Potatis":
+                categories.add(ProductCategory.POTATO_RICE);
+                return categories;
+            case "Skafferi och Örter":
+                categories.add(ProductCategory.FLOUR_SUGAR_SALT);
+                categories.add(ProductCategory.HERB);
+                return categories;
+            case "Bröd":
+                categories.add(ProductCategory.BREAD);
                 return categories;
             case"Mejeri":
                 categories.add(ProductCategory.DAIRIES);
                 return categories;
-            case "Fisk":
+            case "Kött, Kyckling & Fisk":
+                categories.add(ProductCategory.MEAT);
                 categories.add(ProductCategory.FISH);
                 return categories;
-            case "Skafferi":
-                categories.add(ProductCategory.FLOUR_SUGAR_SALT);
-                return categories;
-            case "Örter":
-                categories.add(ProductCategory.HERB);
-                return categories;
-            case "Kött och Kyckling":
-                categories.add(ProductCategory.MEAT);
+            case "Baljväxter":
+                categories.add(ProductCategory.POD);
                 return categories;
             case "Frön och Nötter":
                 categories.add(ProductCategory.NUTS_AND_SEEDS);
                 return categories;
-            case "Pasta":
-                categories.add(ProductCategory.PASTA);
-                return categories;
-            case "Ris och Potatis":
-                categories.add(ProductCategory.POTATO_RICE);
+            case "Dryck":
+                categories.add(ProductCategory.COLD_DRINKS);
+                categories.add(ProductCategory.HOT_DRINKS);
                 return categories;
             case "Godis":
                 categories.add(ProductCategory.SWEET);

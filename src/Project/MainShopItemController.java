@@ -51,7 +51,7 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
         productName.setText(p.getName());
         productImage.setImage(bckEndP.getFXImage(p));
         productPrice.setText(String.valueOf(p.getPrice()) + " kr/" + shoppingItem.getProduct().getUnitSuffix());
-        productCounter.setText("0.0 " + shoppingItem.getProduct().getUnitSuffix());
+        productCounter.setText("0.0");
         priceUnit.setText(shoppingItem.getProduct().getUnitSuffix() + ":");
 
         productCounter.focusedProperty().addListener((observableValue, s, t1) -> {
@@ -94,7 +94,7 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
             shoppingItem.setAmount(shoppingItem.getAmount() + 1);
             shoppingCart.fireShoppingCartChanged(null, false);
         }
-        productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+        productCounter.setText(String.valueOf(shoppingItem.getAmount()));
     }
 
     @FXML
@@ -105,7 +105,7 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
             shoppingCart.removeItem(shoppingItem);
         }
         shoppingCart.fireShoppingCartChanged(null, false);
-        productCounter.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
+        productCounter.setText(String.valueOf(shoppingItem.getAmount()));
     }
 
     private boolean isInCart(ShoppingItem sci){
