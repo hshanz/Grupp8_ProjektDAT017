@@ -39,6 +39,8 @@ public class HistoryPage implements Initializable {
 
     }
 
+
+
     public void addOrder(Order order){
         accordions.add(new HistoryAccordion(order,mainScroll));
         updateList();
@@ -46,16 +48,15 @@ public class HistoryPage implements Initializable {
 
     private void updateList() {
         accordionFlowPane.getChildren().clear();
-        for (HistoryAccordion h:accordions) {
-            accordionFlowPane.getChildren().add(h);
+        for (int i = accordions.size()-1; i > -1 ; i--) {
+            accordionFlowPane.getChildren().add(accordions.get(i));
         }
     }
 
     private void fillAccordionList(){
-        for (int i = orders.size()-1; i >= 0 ; i--) {
-            accordions.add(new HistoryAccordion(orders.get(i), mainScroll));
+        for (Order o:orders) {
+            accordions.add(new HistoryAccordion(o, mainScroll));
         }
-
         updateList();
     }
 

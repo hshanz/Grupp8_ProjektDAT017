@@ -44,8 +44,6 @@ public class DateTimeItemController extends AnchorPane {
 
         dateLabel.setText(weekdays[calendar.get(Calendar.DAY_OF_WEEK)-1] + calendar.get(Calendar.DATE)+ "/" + (calendar.get(Calendar.MONTH)+1));
 
-        System.out.println(dateLabel.getText());
-        System.out.println(timeButton1.getText());
 
         timeButton1.setOnAction(event -> {
             onButtonPressed((Button) event.getSource());
