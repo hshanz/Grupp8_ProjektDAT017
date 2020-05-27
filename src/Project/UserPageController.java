@@ -4,8 +4,7 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import se.chalmers.cse.dat216.project.CreditCard;
 import se.chalmers.cse.dat216.project.Customer;
 
@@ -15,18 +14,21 @@ import java.util.ResourceBundle;
 public class UserPageController implements Initializable {
 
 
-    public TextField firstNameField;
-    public TextField lastNameField;
-    public TextField emailField;
+    @FXML public TextField firstNameField;
+    @FXML public TextField lastNameField;
+    @FXML public TextField emailField;
 
-    public TextField addressField;
-    public TextField cityField;
-    public TextField zipCodeField;
+    @FXML public TextField addressField;
+    @FXML public TextField cityField;
+    @FXML public TextField zipCodeField;
 
-    public TextField cardNumberField;
-    public TextField monthField;
-    public TextField yearField;
-    public TextField cvcField;
+    @FXML public TextField cardNumberField;
+    @FXML public TextField monthField;
+    @FXML public TextField yearField;
+    @FXML public TextField cvcField;
+
+    @FXML private RadioButton visaButton;
+    @FXML private RadioButton masterCardButton;
 
 
     public Button saveButton;
@@ -42,7 +44,24 @@ public class UserPageController implements Initializable {
         customer = bckEndU.getCustomer();
         creditCard = bckEndU.getCreditCard();
 
+        ToggleGroup group = new ToggleGroup();
 
+        visaButton.setToggleGroup(group);
+        masterCardButton.setToggleGroup(group);
+
+        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle toggle, Toggle t1) {
+                if (group.getSelectedToggle() != null){
+                    RadioButton button = (RadioButton) group.getSelectedToggle();
+                    if (button.equals(visaButton)){
+                        creditCard.setCardType("Visa");
+                    }else {
+                        creditCard.setCardType("MasterCard");
+                    }
+                }
+            }
+        });
 
         firstNameField.setText(customer.getFirstName());
         lastNameField.setText(customer.getLastName());

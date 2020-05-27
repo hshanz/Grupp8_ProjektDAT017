@@ -37,8 +37,7 @@ public class HistoryItemController extends AnchorPane {
             fxmlLoader.load();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-        bckEndP = BackendControllerProducts.getInstance();
+        }bckEndP = BackendControllerProducts.getInstance();
         shoppingCart = bckEndP.getShoppingCart();
         this.shoppingItem = shoppingItem;
 
