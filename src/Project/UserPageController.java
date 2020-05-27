@@ -48,6 +48,7 @@ public class UserPageController implements Initializable {
 
         visaButton.setToggleGroup(group);
         masterCardButton.setToggleGroup(group);
+        getSelectedCardType();
 
         group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
@@ -106,6 +107,16 @@ public class UserPageController implements Initializable {
 
     }
 
+    private void getSelectedCardType() {
+        if ("Visa".equals(creditCard.getCardType())){
+            System.out.println("2222");
+            visaButton.setSelected(true);
+        } else if (creditCard.getCardType().equals("MasterCard")){
+            masterCardButton.setSelected(true);
+        }
+    }
+
+
     @FXML
     public void save(){
         System.out.println(customer.getFirstName());
@@ -113,6 +124,7 @@ public class UserPageController implements Initializable {
         System.out.println(customer.getEmail());
         System.out.println(customer.getAddress());
         System.out.println(customer.getPostCode());
+        System.out.println(creditCard.getCardType());
         System.out.println(creditCard.getCardNumber());
         System.out.println(creditCard.getValidMonth());
         System.out.println(creditCard.getValidYear());

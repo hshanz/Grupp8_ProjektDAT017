@@ -1,11 +1,10 @@
 package Project;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.ScrollPane;
-import javafx.scene.control.SplitPane;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
@@ -52,6 +51,10 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     @FXML private TextField addressField;
     @FXML private TextField cityField;
     @FXML private TextField zipCodeField;
+
+    @FXML private RadioButton visaButton;
+    @FXML private RadioButton masterCardButton;
+
     //endregion
 
     //region confirm_wiz vars
@@ -104,6 +107,26 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         wizSteps.add(Finish);
         fillDateList();
         resetWizard();
+
+        ToggleGroup group = new ToggleGroup();
+
+        visaButton.setToggleGroup(group);
+        masterCardButton.setToggleGroup(group);
+        getSelectedCardType();
+
+        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            @Override
+            public void changed(ObservableValue<? extends Toggle> observableValue, Toggle toggle, Toggle t1) {
+                if (group.getSelectedToggle() != null){
+                    RadioButton button = (RadioButton) group.getSelectedToggle();
+                    if (button.equals(visaButton)){
+                        creditCard.setCardType("Visa");
+                    }else {
+                        creditCard.setCardType("MasterCard");
+                    }
+                }
+            }
+        });
 
         firstNameField.setText(customer.getFirstName());
         lastNameField.setText(customer.getLastName());
@@ -244,7 +267,14 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         parentController.setCenterPage("StorePage");
     }
 
-
+    private void getSelectedCardType() {
+        if ("Visa".equals(creditCard.getCardType())){
+            System.out.println("2222");
+            visaButton.setSelected(true);
+        } else if (creditCard.getCardType().equals("MasterCard")){
+            masterCardButton.setSelected(true);
+        }
+    }
 
     @Override
     public void shoppingCartChanged(CartEvent cartEvent) {
