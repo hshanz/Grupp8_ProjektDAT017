@@ -18,6 +18,7 @@ import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
+import java.awt.desktop.SystemSleepEvent;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
@@ -99,6 +100,20 @@ public class HistoryAccordion extends AnchorPane {
             arrow.setVisible(false);
         }
 
+        /*scroll.addEventFilter(ScrollEvent.SCROLL,new EventHandler<ScrollEvent>() {
+            @Override
+            public void handle(ScrollEvent event) {
+                if (event.getDeltaY() != 0) {
+                    //parentScroll.vvalueProperty().bindBidirectional(scroll.vvalueProperty());
+                    //parentScroll.setVvalue(-event.getDeltaY()/(parentScroll.getVmax() - parentScroll.getVmin()));
+                    //event.consume();
+                   //scroll.addEventHandler().consume();
+                }
+            }
+        });*/
+
+        //scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+        //scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
     }
 
     private void updateList() {
