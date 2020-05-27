@@ -20,7 +20,7 @@
          </children>
       </Pane>
       <Label fx:id="historyPrice" layoutX="111.0" layoutY="31.0" styleClass="small-text" text="126 kr" textAlignment="RIGHT" AnchorPane.rightAnchor="12.0" />
-      <Button fx:id="addButton" layoutX="66.0" layoutY="129.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="74.0" styleClass="shop-item-plus-button" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="6.0">
+      <Button fx:id="addButton" layoutX="66.0" layoutY="129.0" mnemonicParsing="false" onAction="#addItem" prefHeight="27.0" prefWidth="74.0" styleClass="shop-item-plus-button" textAlignment="CENTER" wrapText="true" AnchorPane.bottomAnchor="5.0" AnchorPane.rightAnchor="6.0">
          <graphic>
             <ImageView fitHeight="35.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                <image>
