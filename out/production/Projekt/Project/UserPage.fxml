@@ -7,6 +7,7 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
@@ -57,7 +58,7 @@
                         <Tooltip styleClass="tooltip-style" text="Tresiffrig säkerhetskod." />
                      </tooltip>
                   </TextField>
-                  <Label layoutX="336.0" layoutY="591.0" style="-fx-font-weight: regular;" styleClass="normal-text" text="-">
+                  <Label layoutX="338.0" layoutY="635.0" style="-fx-font-weight: regular;" styleClass="normal-text" text="-">
                      <font>
                         <Font size="23.0" />
                      </font>
@@ -70,9 +71,15 @@
                   <Line endX="140.0" layoutX="290.0" layoutY="70.0" startX="-140.0" />
                   <Line endX="190.0" layoutX="290.0" layoutY="290.0" startX="-185.0" />
                   <Line endX="135.0" layoutX="290.0" layoutY="527.0" startX="-100.0" />
-                  <Label alignment="CENTER_RIGHT" layoutX="120.0" layoutY="545.0" prefHeight="35.0" prefWidth="163.0" styleClass="normal-text" text="Korttyp:" />
-                  <RadioButton fx:id="visaButton" layoutX="298.0" layoutY="554.0" mnemonicParsing="false" text="Visa" />
-                  <RadioButton fx:id="masterCardButton" layoutX="366.0" layoutY="554.0" mnemonicParsing="false" text="Mastercard" />
+                  <Label alignment="CENTER_RIGHT" layoutX="120.0" layoutY="545.0" prefHeight="35.0" prefWidth="163.0" styleClass="normal-text" text="Korttyp:" AnchorPane.rightAnchor="300.0" />
+                  <BorderPane layoutX="292.0" layoutY="544.0" prefHeight="37.0" prefWidth="200.0" AnchorPane.leftAnchor="292.0" AnchorPane.rightAnchor="88.0">
+                     <left>
+                        <RadioButton fx:id="visaButton" mnemonicParsing="false" styleClass="small-text" text="Visa" BorderPane.alignment="CENTER" />
+                     </left>
+                     <right>
+                        <RadioButton fx:id="masterCardButton" mnemonicParsing="false" styleClass="small-text" text="Mastercard" BorderPane.alignment="CENTER" />
+                     </right>
+                  </BorderPane>
                </children>
             </AnchorPane>
          </content>

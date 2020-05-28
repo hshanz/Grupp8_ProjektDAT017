@@ -322,7 +322,7 @@
     -fx-border-color : #d8d8d0;
     -fx-border-width : 2;
     -fx-fill-color : #f3b9b7;
-    -fx-pref-width : 25;
+    -fx-pref-width : 20;
     -fx-padding : 0;
 }
 .scroll-bar:vertical .thumb{
