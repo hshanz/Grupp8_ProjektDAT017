@@ -16,7 +16,7 @@
 }
 
 .list-cell:hover{
-    -fx-background-color: #c2a1a1;
+    -fx-background-color: #f9d4d2;
     -fx-background-insets: 0 10 0 0;
 }
 
@@ -55,11 +55,11 @@
 }
 
 .toolbar-button:hover{
-    -fx-background-color: #c2a1a1;
+    -fx-background-color: #f9d4d2;
     -fx-pref-height: 90px;
 }
 .toolbar-button:pressed{
-    -fx-background-color: #ad5858;
+    -fx-background-color: #c48f8f;
     -fx-pref-height: 90px;
 }
 
@@ -102,8 +102,6 @@
 .shop-item{
     -fx-background-color: #d8d8d0;
 }
-
-
 
     /* History Settings*/
 
@@ -231,7 +229,7 @@
 }
 
 .normal-button:hover{
-    -fx-background-color : #ffe3e3;
+    -fx-background-color : #f9d4d2;
     -fx-border-width : 2;
 }
 
@@ -336,7 +334,7 @@
 }
 .scroll-bar:vertical .thumb:hover{
     -fx-border-width : 2;
-    -fx-background-color : #ffe3e3;
+    -fx-background-color : #f9d4d2;
 }
 
 .scroll-bar:horizontal{
@@ -348,4 +346,8 @@
 .scroll-bar:horizontal .thumb{
     -fx-opacity : 0;
     -fx-background-color : #f4f4f0;
+}
+
+.scroll-bar-large :vertical{
+    -fx-pref-width : 30;
 }
