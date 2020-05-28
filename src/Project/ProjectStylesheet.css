@@ -349,3 +349,7 @@
     -fx-opacity : 0;
     -fx-background-color : #f4f4f0;
 }
+
+.scroll-bar-large : vertical{
+    -fx-pref-width : 30;
+}
