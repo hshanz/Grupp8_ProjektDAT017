@@ -200,6 +200,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         monthField.setText(String.valueOf(creditCard.getValidMonth()));
         yearField.setText(String.valueOf(creditCard.getValidYear()));
         cvcField.setText(String.valueOf(creditCard.getVerificationCode()));
+        getSelectedCardType();
     }
 
     private void fillDateList(){
@@ -268,8 +269,16 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     public void goBackStep() {
         nextButton.setVisible(true);
         if (currentStep == 0) {
-            shoppingCart.clear();
-            return;
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Är du säker");
+            alert.getButtonTypes().setAll(ButtonType.CANCEL, ButtonType.OK);
+            alert.setHeaderText("Vill du rensa varukorg?");
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == ButtonType.OK){
+
+                shoppingCart.clear();
+                return;
+            } else return;
+
         }
         currentStep--;
         wizSteps.get(currentStep).toFront();

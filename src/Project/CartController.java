@@ -2,7 +2,9 @@ package Project;
 
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
@@ -11,6 +13,8 @@ import javafx.scene.layout.VBox;
 import se.chalmers.cse.dat216.project.*;
 
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.beans.EventHandler;
 import java.net.URL;
 import java.text.DecimalFormat;
 import java.util.*;
@@ -32,6 +36,7 @@ public class CartController extends AnchorPane implements Initializable,Shopping
     private BackendControllerProducts bckEndP;
     private ParentController parentController;
     ShoppingCart shoppingCart;
+    Alert alert;
     List <CartItemController> cartItemList;
     private DecimalFormat df = new DecimalFormat("0.00");
 
@@ -82,14 +87,15 @@ public class CartController extends AnchorPane implements Initializable,Shopping
     private void updateList(){
         priceLabel.setText("= " + df.format(shoppingCart.getTotal()) + " kr");
         flowPane.getChildren().clear();
-        for (CartItemController i:cartItemList) {
-            i.update();
-            flowPane.getChildren().add(i);
+        for (int i = cartItemList.size()-1; i > -1; i--) {
+            cartItemList.get(i).update();
+            flowPane.getChildren().add(cartItemList.get(i));
         }
     }
 
     @FXML
     public void checkout(){
+
         parentController.setCenterPage("Checkout");
     }
 }
