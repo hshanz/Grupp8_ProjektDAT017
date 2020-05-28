@@ -25,6 +25,9 @@
     -fx-background-insets: 0 0 0 0;
 
 }
+.list-cell:empty{
+    -fx-background-color: transparent;
+}
 
 
     /* Toolbar Settings */
