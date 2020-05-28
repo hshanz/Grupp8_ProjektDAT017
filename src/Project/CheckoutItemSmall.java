@@ -8,6 +8,7 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import se.chalmers.cse.dat216.project.ShoppingCart;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
 import java.io.IOException;
@@ -26,6 +27,8 @@ public class CheckoutItemSmall extends AnchorPane {
 
 
     private ShoppingItem shoppingItem;
+    private ShoppingCart shoppingCart;
+    private BackendControllerProducts bckEndp;
 
     public CheckoutItemSmall(ShoppingItem shoppingItem) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("CheckoutItemSmall.fxml"));
@@ -36,6 +39,22 @@ public class CheckoutItemSmall extends AnchorPane {
         } catch (IOException exception) {
             throw new RuntimeException(exception);
         }
+        bckEndp = BackendControllerProducts.getInstance();
+        shoppingCart = bckEndp.getShoppingCart();
+
+        number_of_wares.focusedProperty().addListener((observableValue, s, t1) -> {
+            if (number_of_wares.getText().equals("")) {
+                number_of_wares.setText(String.valueOf(shoppingItem.getAmount()));
+            } else if (!number_of_wares.getText().matches("[0-9]+")) {
+                number_of_wares.setText(String.valueOf(shoppingItem.getAmount()));
+                System.out.println("Invalid number");
+            } else if (number_of_wares.getText().equals("0")){
+                shoppingCart.removeItem(shoppingItem);
+            } else {
+                shoppingItem.setAmount(Double.parseDouble(number_of_wares.getText()));
+                shoppingCart.fireShoppingCartChanged(shoppingItem,false);
+            }
+        });
 
         number_of_wares.setOnKeyPressed(keyEvent -> {
             if (keyEvent.getCode().equals(KeyCode.ENTER)){

@@ -225,15 +225,19 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     @FXML
     public void confirmButtonPressed(){
-        Order order = bckEndP.placeOrder();
+        Order order = bckEndP.placeOrder(false);
         order.setDate(new Date());
         order.setOrderNumber(bckEndP.getOrders().size()+1);
         wares_to_dest.setText(order.getItems().size() + ":st varor är på väg till " + addressField.getText() );
         date_and_time.setText(dateOfDelivery +" kl: "+timeOfDelivery);
         parentController.addNewOrder(order);
+
         for (ShoppingItem sci:shoppingCart.getItems()) {
+            System.out.println("sdsd");
             sci.setAmount(0);
+            shoppingCart.fireShoppingCartChanged(sci,false);
         }
+
         shoppingCart.clear();
         Finish.toFront();
     }
@@ -279,7 +283,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         {
             d.resetButtonStyles();
         }
-
+        remove_goBack.setText("Ta bort allt");
         Finish.toBack();
         Delivery_date_1.setFill(Color.RED);
         Delivery_date_1.setText("Ej valt");
