@@ -134,16 +134,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
             }
         });
 
-        firstNameField.setText(customer.getFirstName());
-        lastNameField.setText(customer.getLastName());
-        emailField.setText(customer.getEmail());
-        addressField.setText(customer.getAddress());
-        zipCodeField.setText(customer.getPostCode());
-        cityField.setText(customer.getPostCode());
-        cardNumberField.setText(creditCard.getCardNumber());
-        monthField.setText(String.valueOf(creditCard.getValidMonth()));
-        yearField.setText(String.valueOf(creditCard.getValidYear()));
-        cvcField.setText(String.valueOf(creditCard.getVerificationCode()));
+        updateTextFeilds();
 
         firstNameField.textProperty().addListener((observableValue, s, t1) -> customer.setFirstName(firstNameField.getText()));
         lastNameField.textProperty().addListener((observableValue, s, t1) -> customer.setLastName(lastNameField.getText()));
@@ -196,6 +187,19 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         for (DateTimeItemController dti:dateTimeItemList) {
             dateFlowPane.getChildren().add(dti);
         }
+    }
+
+    private void updateTextFeilds(){
+        firstNameField.setText(customer.getFirstName());
+        lastNameField.setText(customer.getLastName());
+        emailField.setText(customer.getEmail());
+        addressField.setText(customer.getAddress());
+        zipCodeField.setText(customer.getPostCode());
+        cityField.setText(customer.getPostCode());
+        cardNumberField.setText(creditCard.getCardNumber());
+        monthField.setText(String.valueOf(creditCard.getValidMonth()));
+        yearField.setText(String.valueOf(creditCard.getValidYear()));
+        cvcField.setText(String.valueOf(creditCard.getVerificationCode()));
     }
 
     private void fillDateList(){
@@ -270,6 +274,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     }
 
     public void resetWizard(){
+        updateTextFeilds();
         for(DateTimeItemController d:dateTimeItemList)
         {
             d.resetButtonStyles();
