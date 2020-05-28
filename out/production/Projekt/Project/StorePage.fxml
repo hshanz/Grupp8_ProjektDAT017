@@ -6,16 +6,16 @@
 <?import javafx.scene.layout.FlowPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="600.0" prefWidth="780.0" styleClass="background-element" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.StorePageController">
+<AnchorPane prefHeight="600.0" prefWidth="790.0" styleClass="background-element" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.StorePageController">
    <children>
-      <TextField fx:id="searchField" layoutX="50.0" layoutY="25.0" prefHeight="60.0" prefWidth="680.0" promptText="Sök efter varor här...">
+      <TextField fx:id="searchField" layoutX="50.0" layoutY="25.0" prefHeight="55.0" prefWidth="728.0" promptText="Sök efter varor här..." AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="15.0">
          <font>
             <Font size="20.0" />
          </font>
       </TextField>
-      <ScrollPane hbarPolicy="NEVER" layoutX="50.0" layoutY="115.0" prefHeight="485.0" prefWidth="750.0" AnchorPane.leftAnchor="15.0">
+      <ScrollPane hbarPolicy="NEVER" layoutY="115.0" prefHeight="485.0" prefWidth="780.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="85.0">
          <content>
-            <FlowPane fx:id="flowPane" prefHeight="482.0" prefWidth="750.0" styleClass="background-element" />
+            <FlowPane fx:id="flowPane" prefHeight="513.0" prefWidth="784.0" styleClass="background-element" />
          </content>
       </ScrollPane>
    </children>

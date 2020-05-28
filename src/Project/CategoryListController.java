@@ -30,7 +30,7 @@ public class CategoryListController extends AnchorPane implements Initializable 
 
     //Write all categories in this list
     ObservableList<String> categories = FXCollections.observableArrayList("Hela sortimentet","Frukt & Grönt","Pasta, Ris & Potatis"
-            ,"Skafferi och Örter","Bröd","Mejeri","Kött, Kyckling & Fisk","Baljväxter","Frön och Nötter","Dryck","Godis");
+            ,"Skafferi & Örter","Bröd","Mejeri","Kött, Kyckling & Fisk","Baljväxter","Frön & Nötter","Dryck & Godis");
 
     @FXML
     private ListView<String> list;
@@ -73,7 +73,7 @@ public class CategoryListController extends AnchorPane implements Initializable 
                 categories.add(ProductCategory.POTATO_RICE);
                 categories.add(ProductCategory.PASTA);
                 return categories;
-            case "Skafferi och Örter":
+            case "Skafferi & Örter":
                 categories.add(ProductCategory.FLOUR_SUGAR_SALT);
                 categories.add(ProductCategory.HERB);
                 return categories;
@@ -90,14 +90,12 @@ public class CategoryListController extends AnchorPane implements Initializable 
             case "Baljväxter":
                 categories.add(ProductCategory.POD);
                 return categories;
-            case "Frön och Nötter":
+            case "Frön & Nötter":
                 categories.add(ProductCategory.NUTS_AND_SEEDS);
                 return categories;
-            case "Dryck":
+            case "Dryck & Godis":
                 categories.add(ProductCategory.COLD_DRINKS);
                 categories.add(ProductCategory.HOT_DRINKS);
-                return categories;
-            case "Godis":
                 categories.add(ProductCategory.SWEET);
                 return categories;
         }
