@@ -29,13 +29,25 @@
                   <Button layoutX="683.0" layoutY="549.0" mnemonicParsing="false" onAction="#backToStore" prefHeight="104.0" prefWidth="287.0" styleClass="important-button" text="Till Affär" AnchorPane.bottomAnchor="30.0" AnchorPane.rightAnchor="30.0">
                      <tooltip>
                         <Tooltip styleClass="tooltip-style" text="Återgå till affären. " />
-                     </tooltip></Button>
+                     </tooltip>
+                  </Button>
                   <Text layoutX="364.0" layoutY="106.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="large-text" text="Köp klart!" textAlignment="CENTER" AnchorPane.topAnchor="45.0" />
                   <Circle fill="#2a9a2a" layoutX="500.0" layoutY="342.0" radius="112.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="dark-green-item" />
                   <Polyline fill="#3cdc3c" layoutX="340.0" layoutY="389.0" points="-50.0, -40.0, 19.0, -85.0, 85.0, 19.0, 371.0, -211.0, 440.0, -125.0, 74.0, 93.0, -50.0, -40.0" strokeType="INSIDE" strokeWidth="3.0" styleClass="green-item" />
                   <Text fx:id="wares_to_dest" layoutX="346.0" layoutY="592.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="-st varor är påväg mot --." wrappingWidth="311.0" AnchorPane.bottomAnchor="101.9765625" />
                   <Text layoutX="344.0" layoutY="627.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="De kommer att vara framme " wrappingWidth="311.0" AnchorPane.bottomAnchor="66.9765625" />
                   <Text fx:id="date_and_time" layoutX="346.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="-- kl--" wrappingWidth="311.0" AnchorPane.bottomAnchor="32.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="cancelPopUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
+               <children>
+                  <AnchorPane layoutX="250.0" layoutY="225.0" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="250.0" prefWidth="500.0" style="-fx-background-color: #FFFFFF;" stylesheets="@ProjectStylesheet.css">
+                     <children>
+                        <Button layoutX="267.0" layoutY="186.0" mnemonicParsing="false" onAction="#Yes_cancel" prefHeight="100.0" prefWidth="200.0" styleClass="normal-button" text="Ja, avbryt köpet" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="260.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="150.0" />
+                        <Button layoutX="44.0" layoutY="186.0" mnemonicParsing="false" onAction="#No_dont_cancel" prefHeight="100.0" prefWidth="200.0" style="-fx-border-radius: 0px 0px 0px 10px; -fx-background-radius: 0px 0px 0px 10px;" styleClass="normal-button" text="Nej, avbryt inte" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="260.0" AnchorPane.topAnchor="150.0" />
+                        <Text layoutX="56.0" layoutY="74.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-large-text" text="Är du säker på att du vill avbryta köpet?" wrappingWidth="450.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0" />
+                     </children>
+                  </AnchorPane>
                </children>
             </AnchorPane>
             <SplitPane fx:id="splitPane" dividerPositions="0.682" prefHeight="700.0" prefWidth="1000.0">
@@ -274,21 +286,21 @@
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Postnummer:" GridPane.halignment="RIGHT" GridPane.rowIndex="11" />
                                           <GridPane prefHeight="47.0" prefWidth="210.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                             <columnConstraints>
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="38.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="8.0" prefWidth="16.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="39.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="186.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="41.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="8.0" prefWidth="22.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="58.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="158.0" />
                                             </columnConstraints>
                                             <rowConstraints>
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                <TextField fx:id="monthField" prefHeight="30.0" prefWidth="27.0" styleClass="large-text-field">
+                                                <TextField fx:id="monthField" maxWidth="-Infinity" prefHeight="37.0" prefWidth="47.0" styleClass="large-text-field">
                                                    <tooltip>
                                                       <Tooltip styleClass="tooltip-style" text="Månad då kortet går ut." />
                                                    </tooltip>
                                                 </TextField>
-                                                <TextField fx:id="yearField" prefHeight="30.0" prefWidth="41.0" styleClass="large-text-field" GridPane.columnIndex="2">
+                                                <TextField fx:id="yearField" maxWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="large-text-field" GridPane.columnIndex="2">
                                                    <tooltip>
                                                       <Tooltip styleClass="tooltip-style" text="År då kortet går ut. " />
                                                    </tooltip>
@@ -377,7 +389,7 @@
                            <children>
                               <AnchorPane prefHeight="199.0" prefWidth="284.0" styleClass="dark-background-element" GridPane.vgrow="NEVER">
                                  <children>
-                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#backToStore" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Avbryt" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                    <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#cancel" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Avbryt" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
                                        <tooltip>
                                           <Tooltip styleClass="tooltip-style" text="Avbryt köp och återgå till affär" />
                                        </tooltip></Button>
@@ -397,7 +409,7 @@
                                     </Text>
                                     <Text fx:id="Cost_text_1" layoutX="10.0" layoutY="23.0" strokeType="OUTSIDE" strokeWidth="0.0" text="---kr" textAlignment="CENTER" wrappingWidth="280.673828125">
                                        <font>
-                                          <Font size="64.0" />
+                                          <Font size="40.0" />
                                        </font>
                                     </Text>
                                  </children>

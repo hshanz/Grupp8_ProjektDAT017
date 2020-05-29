@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Text?>
 
@@ -9,9 +7,6 @@
    <children>
       <Text fx:id="name_text" layoutY="39.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Långtochjhob" wrappingWidth="182.0" AnchorPane.leftAnchor="5.0" />
       <Text fx:id="cost_text" layoutX="234.0" layoutY="38.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="1235kr" wrappingWidth="73.390625" AnchorPane.leftAnchor="234.0" />
-      <TextField fx:id="number_of_wares" layoutX="188.0" layoutY="6.0" prefHeight="48.0" prefWidth="46.0" styleClass="small-text-field" AnchorPane.leftAnchor="187.0">
-         <tooltip>
-            <Tooltip styleClass="tooltip-style" text="Mängden varor av denna typ i varukorgen." />
-         </tooltip></TextField>
+      <Text fx:id="number_of_wares" layoutX="179.0" layoutY="37.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Text" />
    </children>
 </fx:root>
