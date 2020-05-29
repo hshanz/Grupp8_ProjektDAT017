@@ -41,7 +41,7 @@ public class CheckoutItemLarge extends AnchorPane {
         shoppingCart = BackendControllerProducts.getInstance().getShoppingCart();
 
         name_text.setText(shoppingItem.getProduct().getName());
-        cost_text.setText(String.valueOf(shoppingItem.getProduct().getPrice()));
+        cost_text.setText(String.valueOf(shoppingItem.getProduct().getPrice()) + " Kr");
         number_of_wares.setText(String.valueOf(shoppingItem.getAmount()));
 
         number_of_wares.focusedProperty().addListener((observableValue, s, t1) -> {
@@ -88,7 +88,7 @@ public class CheckoutItemLarge extends AnchorPane {
 
     public void update(){
         number_of_wares.setText(String.valueOf(shoppingItem.getAmount()));
-        cost_text.setText(String.valueOf(df.format(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice())));
+        cost_text.setText(String.valueOf(df.format(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice())) + " Kr");
     }
 
     public ShoppingItem getShoppingItem() {
@@ -96,5 +96,8 @@ public class CheckoutItemLarge extends AnchorPane {
     }
 
     @FXML
-    public void DeleteItem(){}
+    public void DeleteItem(){
+        shoppingItem.setAmount(1);
+        RemoveWare();
+    }
 }
