@@ -69,6 +69,12 @@ public class ToolbarController implements Initializable {
         changeStylesheet(historyButton);
     }
 
+    @FXML
+    public void onClickHelp(){
+        parentController.setCenterPage("Help");
+        changeStylesheet(helpButton);
+    }
+
 
     //Changes the pressed button's style, and resets the other buttons' style
     private void changeStylesheet(Button pressedButton){
