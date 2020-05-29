@@ -227,6 +227,24 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         }
     }
 
+    private boolean infoCheck(){
+       return bckEndU.isCustomerComplete() && creditCardCheck();
+    }
+
+    private boolean creditCardCheck(){
+        if (creditCard.getCardType().equals(""))return false;
+        System.out.println("1");
+        if (creditCard.getCardNumber().equals(""))return false;
+        System.out.println("2");
+        if (creditCard.getValidMonth() == 0 || String.valueOf(creditCard.getValidMonth()).toCharArray().length > 2) return false;
+        System.out.println("3");
+        if (creditCard.getValidYear() == 0 || String.valueOf(creditCard.getValidYear()).toCharArray().length > 2) return false;
+        System.out.println("4");
+        if (creditCard.getVerificationCode() == 0 || String.valueOf(creditCard.getVerificationCode()).toCharArray().length > 3) return false;
+        System.out.println("5");
+        return true;
+    }
+
     @FXML
     public void confirmButtonPressed(){
         Order order = bckEndP.placeOrder(false);
@@ -248,6 +266,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     @FXML
     public void nextStep() {
+        if (currentStep == 2 && !infoCheck())return;
         currentStep++;
         wizSteps.get(currentStep).toFront();
         remove_goBack.setText("Tillbaka");
