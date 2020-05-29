@@ -115,6 +115,7 @@ public class CartItemController extends AnchorPane {
     }
 
     @FXML
-    public void DeleteItem()
-    {}
+    public void DeleteItem() {
+        removeItem();
+    }
 }
