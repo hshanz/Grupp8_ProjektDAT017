@@ -172,6 +172,10 @@
         -fx-border-width : 2;
 }
 
+.important-button-disabled{
+    -fx-background-color : #605040;
+}
+
 .important-button-small{
     -fx-background-radius : 0px 0px 10px 0px;
     -fx-border-radius : 0px 0px 10px 0px;
@@ -191,6 +195,7 @@
     -fx-font-size : 26;
     -fx-border-width : 2;
 }
+
 
 .caution-button{
     -fx-background-color: #8e333c;
