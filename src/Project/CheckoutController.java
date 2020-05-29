@@ -274,6 +274,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     }
 
     private void sanityChecks(){
+
         if (currentStep == 1 && dateOfDelivery == null){
             Delivery_date_1.setVisible(true);
             Delivery.setVisible(true);

@@ -37,6 +37,7 @@ public class ParentController implements Initializable {
     private Pane userPage;
     private Pane historyPage;
     private Pane historyMonths;
+    private Pane help;
 
     public static ParentController getInstance(){
         return parentController;
@@ -61,11 +62,15 @@ public class ParentController implements Initializable {
                 checkoutPaneParent.toFront();
                 break;
             case "HistoryPage":
-                System.out.println("123123123");
                 mainPane.setRight(cart);
                 mainPane.setLeft(historyMonths);
                 mainPane.setCenter(historyPage);
                 break;
+            case "Help":
+                mainPane.setRight(null);
+                mainPane.setLeft(null);
+                mainPane.setCenter(help);
+
         }
 
     }
@@ -85,6 +90,7 @@ public class ParentController implements Initializable {
         historyPage = paneLoader.LoadPane("HistoryPage.fxml");
         cart = paneLoader.LoadPane("Cart.fxml");
         historyMonths = paneLoader.LoadPane("MonthHolder.fxml");
+        help = paneLoader.LoadPane("Help.fxml");
 
 
         mainPane.setCenter(storePage);
