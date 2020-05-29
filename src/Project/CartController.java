@@ -61,6 +61,14 @@ public class CartController extends AnchorPane implements Initializable,Shopping
                 shoppingCart.fireShoppingCartChanged(sci,true);
             }
         }
+
+        if (shoppingCart.getItems().size() == 0)
+        {
+            checkoutButton.getStyleClass().add("important-button-small-disabled");
+        } else
+        {
+            checkoutButton.getStyleClass().remove("important-button-small-disabled");
+        }
     }
 
     @Override
@@ -89,6 +97,13 @@ public class CartController extends AnchorPane implements Initializable,Shopping
         for (int i = cartItemList.size()-1; i > -1; i--) {
             cartItemList.get(i).update();
             flowPane.getChildren().add(cartItemList.get(i));
+        }
+        if (shoppingCart.getItems().size() == 0)
+        {
+            checkoutButton.getStyleClass().add("important-button-small-disabled");
+        } else
+        {
+            checkoutButton.getStyleClass().remove("important-button-small-disabled");
         }
     }
 
