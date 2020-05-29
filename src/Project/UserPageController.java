@@ -48,7 +48,8 @@ public class UserPageController extends AnchorPane implements Initializable {
         bckEndU = BackendControllerUserInfo.getInstance();
         customer = bckEndU.getCustomer();
         creditCard = bckEndU.getCreditCard();
-
+        customer.setMobilePhoneNumber(String.valueOf(0));
+        customer.setPhoneNumber(String.valueOf(0));
         ToggleGroup group = new ToggleGroup();
 
         visaButton.setToggleGroup(group);
@@ -137,6 +138,7 @@ public class UserPageController extends AnchorPane implements Initializable {
 
     @FXML
     public void save(){
+        System.out.println(bckEndU.isCustomerComplete());
         System.out.println(customer.getFirstName());
         System.out.println(customer.getLastName());
         System.out.println(customer.getEmail());

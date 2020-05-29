@@ -27,4 +27,8 @@ public class BackendControllerUserInfo {
     public CreditCard getCreditCard(){
         return iM.getCreditCard();
     }
+
+    public boolean isCustomerComplete(){
+        return iM.isCustomerComplete();
+    }
 }
