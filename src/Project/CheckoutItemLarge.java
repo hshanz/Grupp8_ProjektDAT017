@@ -88,7 +88,7 @@ public class CheckoutItemLarge extends AnchorPane {
 
     public void update(){
         number_of_wares.setText(String.valueOf(shoppingItem.getAmount()));
-        cost_text.setText(String.valueOf(df.format(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice())) + " Kr");
+        cost_text.setText(String.valueOf(df.format(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice())));
     }
 
     public ShoppingItem getShoppingItem() {
