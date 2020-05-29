@@ -113,4 +113,8 @@ public class CartItemController extends AnchorPane {
     public ShoppingItem getShoppingItem() {
         return shoppingItem;
     }
+
+    @FXML
+    public void DeleteItem()
+    {}
 }

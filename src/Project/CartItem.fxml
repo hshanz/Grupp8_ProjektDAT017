@@ -53,7 +53,7 @@
          <tooltip>
             <Tooltip styleClass="tooltip-style" text="Mängden varor av denna typ i varukorgen." />
          </tooltip></TextField>
-      <Button layoutX="210.0" layoutY="4.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="17.0" style="-fx-font-size: 1;" styleClass="remove-button" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0">
+      <Button layoutX="210.0" layoutY="4.0" mnemonicParsing="false" onAction="#DeleteItem" prefHeight="38.0" prefWidth="17.0" style="-fx-font-size: 1;" styleClass="remove-button" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="0.0">
          <graphic>
             <ImageView fitHeight="60.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
