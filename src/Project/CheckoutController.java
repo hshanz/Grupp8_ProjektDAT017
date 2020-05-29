@@ -267,6 +267,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     @FXML
     public void nextStep() {
         if (currentStep == 2 && !infoCheck())return;
+        if (currentStep == 1 && dateOfDelivery == null) return;
         currentStep++;
         wizSteps.get(currentStep).toFront();
         remove_goBack.setText("Tillbaka");
@@ -278,7 +279,12 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         if (currentStep == 1 && dateOfDelivery == null){
             Delivery_date_1.setVisible(true);
             Delivery.setVisible(true);
-            nextButton.setVisible(false);
+            //nextButton.setVisible(false);
+            nextButton.getStyleClass().add("important-button-disabled");
+        }
+        if (currentStep == 2 && !infoCheck())
+        {
+            nextButton.getStyleClass().add("important-button-disabled");
         }
         if (currentStep == 3) {
             nextButton.setVisible(false);
@@ -310,7 +316,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         currentStep--;
         wizSteps.get(currentStep).toFront();
         if (currentStep == 0) remove_goBack.setText("Ta bort allt");
-
+        nextButton.getStyleClass().remove("important-button-disabled");
     }
 
     public void resetWizard(){
@@ -330,6 +336,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         currentStep=0;
         wizSteps.get(currentStep).toFront();
         nextButton.setVisible(true);
+        nextButton.getStyleClass().remove("important-button-disabled");
     }
 
 
@@ -383,7 +390,8 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
         Delivery_date_1.setText(this.dateOfDelivery + "\n kl:" + this.timeOfDelivery );
         Delivery_date_1.setFill(Color.BLACK);
-        nextButton.setVisible(true);
+        //nextButton.setVisible(true);
+        nextButton.getStyleClass().remove("important-button-disabled");
 
         for(DateTimeItemController d:dateTimeItemList) {
             d.resetButtonStyles();
