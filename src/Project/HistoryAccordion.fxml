@@ -37,7 +37,7 @@
                   <Insets right="10.0" top="5.0" />
                </FlowPane.margin>
                <image>
-                  <Image url="@Images/arrow.png" />
+                  <Image url="@Images/baseline_expand_less_black_24dp.png" />
                </image>
             </ImageView>
          </children>
