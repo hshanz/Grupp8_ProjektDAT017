@@ -23,7 +23,7 @@ public class CheckoutItemSmall extends AnchorPane {
     @FXML private Text name_text; //Should show the name of the wares
     @FXML private Text cost_text; //Should show the cost of the wares
     @FXML private Text number_of_wares; //should show the number of these wares in the cart. This can also be edited
-    private DecimalFormat df = new DecimalFormat("0.00");
+    private DecimalFormat df = new DecimalFormat("0");
 
 
     private ShoppingItem shoppingItem;
@@ -54,6 +54,6 @@ public class CheckoutItemSmall extends AnchorPane {
 
     public void update(){
         number_of_wares.setText(String.valueOf(shoppingItem.getAmount()));
-        cost_text.setText(String.valueOf(df.format(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice())));
+        cost_text.setText(String.valueOf(df.format(shoppingItem.getAmount() * shoppingItem.getProduct().getPrice())) + "Kr");
     }
 }
