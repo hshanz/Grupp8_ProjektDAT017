@@ -207,6 +207,20 @@
     -fx-border-width : 2;
 }
 
+.important-button-small-disabled{
+    -fx-background-color : #605040;
+}
+
+.important-button-small-disabled:hover{
+    -fx-background-color : #605040;
+    -fx-border-width : 1;
+    -fx-font-size : 24;
+}
+.important-button-small-disabled:pressed{
+    -fx-background-color : #605040;
+    -fx-border-width : 1;
+    -fx-font-size : 24;
+}
 
 .caution-button{
     -fx-background-color: #8e333c;
