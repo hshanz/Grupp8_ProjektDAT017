@@ -26,11 +26,11 @@
          <tooltip>
             <Tooltip styleClass="tooltip-style" text="Gå vidare till kassan med denna varukorg." />
          </tooltip></Button>
-      <Label fx:id="priceLabel" layoutX="155.0" layoutY="575.0" prefHeight="35.0" prefWidth="127.0" styleClass="normal-text" text="= 0 kr" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="155.0">
+      <Label fx:id="priceLabel" layoutX="140.0" layoutY="575.0" prefHeight="35.0" prefWidth="149.0" styleClass="normal-text" text="= 0 kr" AnchorPane.bottomAnchor="90.0" AnchorPane.leftAnchor="140.0">
          <tooltip>
             <Tooltip styleClass="tooltip-style" text="Den sammanlagda kostnaden för varorna i varukorgen." />
          </tooltip></Label>
-      <Label alignment="CENTER_RIGHT" layoutX="28.0" layoutY="575.0" prefHeight="30.0" prefWidth="127.0" styleClass="normal-text" text="Totalt pris:" textAlignment="RIGHT" AnchorPane.bottomAnchor="90.0" AnchorPane.rightAnchor="135.0">
+      <Label alignment="CENTER_RIGHT" layoutX="28.0" layoutY="575.0" prefHeight="35.0" prefWidth="127.0" styleClass="normal-text" text="Totalt pris:" textAlignment="RIGHT" AnchorPane.bottomAnchor="90.0" AnchorPane.rightAnchor="150.0">
          <tooltip>
             <Tooltip styleClass="tooltip-style" text="Den sammanlagda kostnaden för varorna i varukorgen." />
          </tooltip></Label>
