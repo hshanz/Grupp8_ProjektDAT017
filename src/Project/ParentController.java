@@ -77,6 +77,7 @@ public class ParentController implements Initializable {
         backendControllerProducts = new BackendControllerProducts();
         backendControllerUserInfo = new BackendControllerUserInfo();
         paneLoader = new PaneLoader();
+        checkoutPane.getChildren().add(paneLoader.LoadPane("Checkout.fxml"));
         toolBar = paneLoader.LoadPane("Toolbar.fxml");
         categoryList = paneLoader.LoadPane("CategoryList.fxml");
         storePage = paneLoader.LoadPane("StorePage.fxml");
@@ -84,7 +85,6 @@ public class ParentController implements Initializable {
         historyPage = paneLoader.LoadPane("HistoryPage.fxml");
         cart = paneLoader.LoadPane("Cart.fxml");
         historyMonths = paneLoader.LoadPane("MonthHolder.fxml");
-        checkoutPane.getChildren().add(paneLoader.LoadPane("Checkout.fxml"));
 
 
         mainPane.setCenter(storePage);

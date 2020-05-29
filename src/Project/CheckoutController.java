@@ -29,6 +29,9 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     @FXML private AnchorPane wiz4_Confirm; // The fourth page of the checkout wizard.
     @FXML private AnchorPane Finish; // Last page of the checkout wizard. This page is shown after the checkout is finished.
 
+    @FXML
+    private AnchorPane cancelPopUp;
+
     @FXML private Text Cost_text_1; // These texts should be updated with the complete cost of the purchase + "kr".
     @FXML private FlowPane itemPane;
     @FXML private FlowPane dateFlowPane;
@@ -266,20 +269,24 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     }
 
     @FXML
+    void cancel(){
+        cancelPopUp.toFront();
+    }
+
+    @FXML
+    void No_dont_cancel() {
+       cancelPopUp.toBack();
+    }
+
+    @FXML
+    void Yes_cancel() {
+        cancelPopUp.toBack();
+        backToStore();
+    }
+
+    @FXML
     public void goBackStep() {
         nextButton.setVisible(true);
-        if (currentStep == 0) {
-            Alert alert = new Alert(Alert.AlertType.CONFIRMATION,"Är du säker");
-            alert.getButtonTypes().setAll(ButtonType.CANCEL, ButtonType.OK);
-            alert.setHeaderText("Vill du rensa varukorg?");
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == ButtonType.OK){
-
-                shoppingCart.clear();
-                return;
-            } else return;
-
-        }
         currentStep--;
         wizSteps.get(currentStep).toFront();
         if (currentStep == 0) remove_goBack.setText("Ta bort allt");
@@ -304,6 +311,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         wizSteps.get(currentStep).toFront();
         nextButton.setVisible(true);
     }
+
 
     @FXML
     public void backToStore(){

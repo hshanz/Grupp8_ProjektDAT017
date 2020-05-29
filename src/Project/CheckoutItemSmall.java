@@ -20,9 +20,9 @@ public class CheckoutItemSmall extends AnchorPane {
      * The checkout item small should be placed in a scroll pane where 2 items is besides each other and then it lists down. '
      * Reference image: https://www.figma.com/file/Y6tseIZ6XOMK9EmOdySxMK/IMat?node-id=0%3A1 Betalningswizard4*/
 
-    @FXML Text name_text; //Should show the name of the wares
-    @FXML Text cost_text; //Should show the cost of the wares
-    @FXML TextField number_of_wares; //should show the number of these wares in the cart. This can also be edited
+    @FXML private Text name_text; //Should show the name of the wares
+    @FXML private Text cost_text; //Should show the cost of the wares
+    @FXML private Text number_of_wares; //should show the number of these wares in the cart. This can also be edited
     private DecimalFormat df = new DecimalFormat("0.00");
 
 
@@ -42,25 +42,6 @@ public class CheckoutItemSmall extends AnchorPane {
         bckEndp = BackendControllerProducts.getInstance();
         shoppingCart = bckEndp.getShoppingCart();
 
-        number_of_wares.focusedProperty().addListener((observableValue, s, t1) -> {
-            if (number_of_wares.getText().equals("")) {
-                number_of_wares.setText(String.valueOf(shoppingItem.getAmount()));
-            } else if (!number_of_wares.getText().matches("[0-9]+")) {
-                number_of_wares.setText(String.valueOf(shoppingItem.getAmount()));
-                System.out.println("Invalid number");
-            } else if (number_of_wares.getText().equals("0")){
-                shoppingCart.removeItem(shoppingItem);
-            } else {
-                shoppingItem.setAmount(Double.parseDouble(number_of_wares.getText()));
-                shoppingCart.fireShoppingCartChanged(shoppingItem,false);
-            }
-        });
-
-        number_of_wares.setOnKeyPressed(keyEvent -> {
-            if (keyEvent.getCode().equals(KeyCode.ENTER)){
-                number_of_wares.getParent().requestFocus();
-            }
-        });
 
         this.shoppingItem = shoppingItem;
         name_text.setText(shoppingItem.getProduct().getName());

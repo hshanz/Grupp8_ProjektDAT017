@@ -36,7 +36,6 @@ public class CartController extends AnchorPane implements Initializable,Shopping
     private BackendControllerProducts bckEndP;
     private ParentController parentController;
     ShoppingCart shoppingCart;
-    Alert alert;
     List <CartItemController> cartItemList;
     private DecimalFormat df = new DecimalFormat("0.00");
 
@@ -95,7 +94,7 @@ public class CartController extends AnchorPane implements Initializable,Shopping
 
     @FXML
     public void checkout(){
-
+        if (shoppingCart.getItems().size() == 0)return;
         parentController.setCenterPage("Checkout");
     }
 }
