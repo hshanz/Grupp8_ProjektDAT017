@@ -176,6 +176,17 @@
     -fx-background-color : #605040;
 }
 
+.important-button-disabled:hover{
+    -fx-background-color : #605040;
+    -fx-border-width : 1;
+    -fx-font-size : 48;
+}
+.important-button-disabled:pressed{
+    -fx-background-color : #605040;
+    -fx-border-width : 1;
+    -fx-font-size : 48;
+}
+
 .important-button-small{
     -fx-background-radius : 0px 0px 10px 0px;
     -fx-border-radius : 0px 0px 10px 0px;
