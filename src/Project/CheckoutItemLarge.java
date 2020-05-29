@@ -94,4 +94,7 @@ public class CheckoutItemLarge extends AnchorPane {
     public ShoppingItem getShoppingItem() {
         return shoppingItem;
     }
+
+    @FXML
+    public void DeleteItem(){}
 }

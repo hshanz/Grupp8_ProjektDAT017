@@ -45,5 +45,14 @@
             <Tooltip styleClass="tooltip-style" text="Mängden varor av denna typ i varukorgen." />
          </tooltip></TextField>
       <Text fx:id="cost_text" layoutX="480.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-large-text" text="1000kr" AnchorPane.leftAnchor="480.0" />
+      <Button layoutX="597.0" layoutY="11.0" mnemonicParsing="false" onAction="#DeleteItem" styleClass="remove-button-large" AnchorPane.bottomAnchor="10.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <graphic>
+            <ImageView fitHeight="80.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/delete-24px.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
    </children>
 </fx:root>
