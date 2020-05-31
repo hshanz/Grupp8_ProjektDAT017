@@ -468,3 +468,17 @@
     -fx-border-width : 2;
     -fx-border-color : #000000;
 }
+
+.play-button{
+    -fx-background-color : #ffffff;
+    -fx-opacity : 0;
+}
+
+.play-button:hover{
+    -fx-opacity : 0.3;
+}
+
+.play-button:pressed{
+    -fx-opacity : 0.3;
+    -fx-background-color : #000000;
+}

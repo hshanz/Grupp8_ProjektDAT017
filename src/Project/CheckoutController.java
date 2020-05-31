@@ -109,6 +109,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         checkoutItemSmallList = new CopyOnWriteArrayList<>();
         dateTimeItemList = new CopyOnWriteArrayList<>();
         shoppingCart.addShoppingCartListener(this);
+        DeselectSaveText();
 
         wizSteps = new ArrayList<>();
         wizSteps.add(wiz1_Check);
@@ -293,6 +294,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     @FXML
     public void nextStep() {
+        DeselectSaveText();
         if (currentStep == 2 && !infoCheck())return;
         if (currentStep == 1 && dateOfDelivery == null) return;
         currentStep++;
@@ -338,6 +340,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     @FXML
     public void goBackStep() {
+        DeselectSaveText();
         if (currentStep == 0) {
             cancel();
             return;
@@ -349,6 +352,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     }
 
     public void resetWizard(){
+        DeselectSaveText();
         updateTextFeilds();
         for(DateTimeItemController d:dateTimeItemList)
         {
@@ -370,7 +374,15 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     @FXML
     public void backToStore(){
-        parentController.setCenterPage("StorePage");
+        DeselectSaveText();
+        parentController.toolbarController.onClickShop();
+    }
+
+
+    @FXML
+    public void toHistory () {
+        DeselectSaveText();
+        parentController.toolbarController.onClickHistory();
     }
 
     private void getSelectedCardType() {
@@ -423,6 +435,17 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         for(DateTimeItemController d:dateTimeItemList) {
             d.resetButtonStyles();
         }
+    }
+
+    @FXML
+    public void SaveUserInfo ()
+    {
+        save_text.setOpacity(1);
+    }
+
+    public void DeselectSaveText ()
+    {
+        save_text.setOpacity(0);
     }
 }
     //endregion

@@ -49,6 +49,7 @@ public class ToolbarController implements Initializable {
         buttonList.add(userButton);
         changeStylesheet(shopButton);
 
+        parentController.setToolbarController(this);
     }
 
     @FXML
