@@ -433,3 +433,21 @@
 .scroll-bar-large :vertical{
     -fx-pref-width : 30;
 }
+
+.logo-shade{
+    -fx-opacity : 0;
+}
+
+.logo-shade:hover{
+    -fx-opacity : 0.3;
+    -fx-background-color : #ffffff;
+    -fx-border-width : 2;
+    -fx-border-color : #000000;
+}
+
+.logo-shade:pressed{
+    -fx-opacity : 0.3;
+    -fx-background-color : #000000;
+    -fx-border-width : 2;
+    -fx-border-color : #000000;
+}
