@@ -39,10 +39,6 @@ public class HistoryPage implements Initializable {
 
     }
 
-    private void sortOrders(){
-        accordions.sort(HistoryAccordion::compareTo);
-    }
-
 
 
     public void addOrder(Order order){
@@ -61,7 +57,6 @@ public class HistoryPage implements Initializable {
         for (Order o:orders) {
             accordions.add(new HistoryAccordion(o, mainScroll));
         }
-        sortOrders();
         updateList();
     }
 

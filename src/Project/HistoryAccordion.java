@@ -2,10 +2,10 @@ package Project;
 
 import javafx.beans.binding.Bindings;
 import javafx.event.Event;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
-import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -23,7 +23,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class HistoryAccordion extends AnchorPane implements Comparable {
+public class HistoryAccordion extends AnchorPane {
 
 
     //Labels
@@ -99,20 +99,6 @@ public class HistoryAccordion extends AnchorPane implements Comparable {
             arrow.setVisible(false);
         }
 
-        /*scroll.addEventFilter(ScrollEvent.SCROLL,new EventHandler<ScrollEvent>() {
-            @Override
-            public void handle(ScrollEvent event) {
-                if (event.getDeltaY() != 0) {
-                    //parentScroll.vvalueProperty().bindBidirectional(scroll.vvalueProperty());
-                    //parentScroll.setVvalue(-event.getDeltaY()/(parentScroll.getVmax() - parentScroll.getVmin()));
-                    //event.consume();
-                   //scroll.addEventHandler().consume();
-                }
-            }
-        });*/
-
-        //scroll.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
-        //scroll.setVbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
     }
 
     private void updateList() {
@@ -175,16 +161,5 @@ public class HistoryAccordion extends AnchorPane implements Comparable {
         expanded = !expanded;
 
 
-    }
-
-
-    public Order getOrder() {
-        return order;
-    }
-
-    @Override
-    public int compareTo(Object o) {
-        long orderDate = ((HistoryAccordion) o).getOrder().getDate().getTime();
-        return (int) (this.order.getDate().getTime()-orderDate);
     }
 }

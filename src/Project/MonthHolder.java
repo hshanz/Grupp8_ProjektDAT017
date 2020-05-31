@@ -38,13 +38,6 @@ public class MonthHolder implements Initializable {
         }
     }
 
-    private void hardcode(){
-        monthsList.add(new HistoryMonths(3));
-        monthsList.add(new HistoryMonths(2));
-        monthsList.add(new HistoryMonths(1));
-        monthsList.add(new HistoryMonths(0));
-    }
-
 
     private void addMonths() {
         List<Order> orders = historyPage.getOrders();
@@ -57,6 +50,5 @@ public class MonthHolder implements Initializable {
             if (month != monthPrev) monthsList.add(new HistoryMonths(month));
             monthPrev = month;
         }
-        hardcode();
     }
 }

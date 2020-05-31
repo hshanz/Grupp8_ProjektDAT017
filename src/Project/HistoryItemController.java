@@ -52,6 +52,8 @@ public class HistoryItemController extends AnchorPane {
 
     @FXML
     public void addItem(){
+
+        System.out.println("444");
         ShoppingItem shoppingItemCopy = new ShoppingItem(shoppingItem.getProduct());
 
         for (ShoppingItem sci:shoppingCart.getItems()) {
@@ -61,6 +63,7 @@ public class HistoryItemController extends AnchorPane {
                 return;
             }
         }
+        System.out.println("3333");
         shoppingItemCopy.setAmount(1);
         shoppingCart.addItem(shoppingItemCopy);
 
