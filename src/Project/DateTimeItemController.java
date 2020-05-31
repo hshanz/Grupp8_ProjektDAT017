@@ -1,6 +1,5 @@
 package Project;
 
-import com.sun.tools.javac.Main;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Button;
@@ -8,12 +7,8 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import se.chalmers.cse.dat216.project.Order;
 
-import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 import java.util.Calendar;
-import java.util.Date;
 
 public class DateTimeItemController extends AnchorPane {
 
@@ -29,7 +24,7 @@ public class DateTimeItemController extends AnchorPane {
 
 
     public DateTimeItemController(int dayIndex, CheckoutController parent) {
-        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("dateTimeItem.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("DateTimeItem.fxml"));
         fxmlLoader.setController(this);
         fxmlLoader.setRoot(this);
         try {

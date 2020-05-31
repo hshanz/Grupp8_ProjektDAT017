@@ -139,13 +139,34 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
         updateTextFeilds();
 
-        firstNameField.textProperty().addListener((observableValue, s, t1) -> customer.setFirstName(firstNameField.getText()));
-        lastNameField.textProperty().addListener((observableValue, s, t1) -> customer.setLastName(lastNameField.getText()));
-        emailField.textProperty().addListener((observableValue, s, t1) -> customer.setEmail(emailField.getText()));
-        addressField.textProperty().addListener((observableValue, s, t1) -> customer.setAddress(addressField.getText()));
-        cityField.textProperty().addListener((observableValue, s, t1) -> customer.setPostAddress(cityField.getText()));
-        zipCodeField.textProperty().addListener((observableValue, s, t1) -> customer.setPostCode(zipCodeField.getText()));
-        cardNumberField.textProperty().addListener((observableValue, s, t1) -> creditCard.setCardNumber(cardNumberField.getText()));
+        firstNameField.textProperty().addListener((observableValue, s, t1) -> {
+            customer.setFirstName(firstNameField.getText());
+            updateButton();
+        });
+        lastNameField.textProperty().addListener((observableValue, s, t1) -> {
+            customer.setLastName(lastNameField.getText());
+            updateButton();
+        });
+        emailField.textProperty().addListener((observableValue, s, t1) -> {
+            customer.setEmail(emailField.getText());
+            updateButton();
+        });
+        addressField.textProperty().addListener((observableValue, s, t1) -> {
+            customer.setAddress(addressField.getText());
+            updateButton();
+        });
+        cityField.textProperty().addListener((observableValue, s, t1) -> {
+            customer.setPostAddress(cityField.getText());
+            updateButton();
+        });
+        zipCodeField.textProperty().addListener((observableValue, s, t1) -> {
+            customer.setPostCode(zipCodeField.getText());
+            updateButton();
+        });
+        cardNumberField.textProperty().addListener((observableValue, s, t1) -> {
+            creditCard.setCardNumber(cardNumberField.getText());
+            updateButton();
+        });
 
         monthField.textProperty().addListener((observableValue, s, t1) -> {
             if (monthField.getText().equals("")) {
@@ -154,6 +175,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
                 System.out.println("Invalid number");
                 monthField.setText(String.valueOf(0));
             } else creditCard.setValidMonth(Integer.parseInt(monthField.getText()));
+            updateButton();
         });
         yearField.textProperty().addListener((observableValue, s, t1) -> {
             if (yearField.getText().equals("")) {
@@ -162,6 +184,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
                 System.out.println("Invalid number");
                 yearField.setText(String.valueOf(0));
             } else creditCard.setValidYear(Integer.parseInt(yearField.getText()));
+            updateButton();
         });
         cvcField.textProperty().addListener((observableValue, s, t1) -> {
             if (cvcField.getText().equals("")) {
@@ -170,6 +193,7 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
                 System.out.println("Invalid number");
                 cvcField.setText(String.valueOf(0));
             } else creditCard.setVerificationCode(Integer.parseInt(cvcField.getText()));
+            updateButton();
         });
 
         firstNameField.getParent().getParent().getParent().setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -178,11 +202,18 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
                 if (keyEvent.getCode().equals(KeyCode.ENTER)){
                     firstNameField.getParent().getParent().getParent().requestFocus();
                 }
+                updateButton();
             }
         });
 
         scrollPane1.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
         checkout_cart_confirm_pane.setHbarPolicy(ScrollPane.ScrollBarPolicy.NEVER);
+    }
+
+    private void updateButton() {
+        if (infoCheck()){
+            nextButton.getStyleClass().remove("important-button-disabled");
+        } else nextButton.getStyleClass().add("important-button-disabled");
     }
 
     private void updateDateList(){
@@ -255,7 +286,6 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         parentController.addNewOrder(order);
 
         for (ShoppingItem sci:shoppingCart.getItems()) {
-            System.out.println("sdsd");
             sci.setAmount(0);
             shoppingCart.fireShoppingCartChanged(sci,false);
         }
@@ -279,7 +309,6 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         if (currentStep == 1 && dateOfDelivery == null){
             Delivery_date_1.setVisible(true);
             Delivery.setVisible(true);
-            //nextButton.setVisible(false);
             nextButton.getStyleClass().add("important-button-disabled");
         }
         if (currentStep == 2 && !infoCheck())
@@ -312,10 +341,13 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     @FXML
     public void goBackStep() {
+        if (currentStep == 0) {
+            cancel();
+            return;
+        }
         nextButton.setVisible(true);
         currentStep--;
         wizSteps.get(currentStep).toFront();
-        if (currentStep == 0) remove_goBack.setText("Ta bort allt");
         nextButton.getStyleClass().remove("important-button-disabled");
     }
 
@@ -325,7 +357,6 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
         {
             d.resetButtonStyles();
         }
-        remove_goBack.setText("Ta bort allt");
         Finish.toBack();
         Delivery_date_1.setFill(Color.RED);
         Delivery_date_1.setText("Ej valt");
@@ -347,7 +378,6 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
 
     private void getSelectedCardType() {
         if ("Visa".equals(creditCard.getCardType())){
-            System.out.println("2222");
             visaButton.setSelected(true);
         } else if (creditCard.getCardType().equals("MasterCard")){
             masterCardButton.setSelected(true);
