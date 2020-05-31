@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <AnchorPane prefHeight="700.0" prefWidth="1300.0" styleClass="grey-background-element" stylesheets="@ProjectStylesheet.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Project.UserPageController">
    <children>
@@ -88,5 +89,6 @@
          <tooltip>
             <Tooltip styleClass="tooltip-style" text="Uppdatera och spara informationen om dig." />
          </tooltip></Button>
+      <Text fx:id="save_text" layoutX="973.0" layoutY="541.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small-text" text="Användarinformationen har sparats !" />
    </children>
 </AnchorPane>
