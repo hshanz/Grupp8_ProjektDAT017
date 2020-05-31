@@ -98,10 +98,9 @@ public class CartController extends AnchorPane implements Initializable,Shopping
             cartItemList.get(i).update();
             flowPane.getChildren().add(cartItemList.get(i));
         }
-        if (shoppingCart.getItems().size() == 0 && !checkoutButton.getStyleClass().contains("important-button-small-disabled"))
-        {
+        if (shoppingCart.getItems().size() == 0 && !checkoutButton.getStyleClass().contains("important-button-small-disabled")) {
             checkoutButton.getStyleClass().add("important-button-small-disabled");
-        } else {
+        } else if (shoppingCart.getItems().size() != 0) {
             checkoutButton.getStyleClass().remove("important-button-small-disabled");
         }
     }
