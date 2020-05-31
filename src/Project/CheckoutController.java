@@ -63,6 +63,8 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     @FXML private RadioButton visaButton;
     @FXML private RadioButton masterCardButton;
 
+    @FXML private Text save_text;
+
     //endregion
 
     //region confirm_wiz vars
