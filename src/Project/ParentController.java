@@ -29,6 +29,9 @@ public class ParentController implements Initializable {
     private CheckoutController checkoutController;
     private HistoryPage historyPageController;
     private StorePageController storePageController;
+    private UserPageController userPageController;
+
+    public ToolbarController toolbarController;
 
     private Pane toolBar;
     private Pane categoryList;
@@ -46,6 +49,7 @@ public class ParentController implements Initializable {
 
     public void setCenterPage(String str){
         checkoutPaneParent.toBack();
+        userPageController.DisableText();
         switch (str) {
             case "StorePage":
                 mainPane.setCenter(storePage);
@@ -120,6 +124,15 @@ public class ParentController implements Initializable {
 
     public void setHistoryPageController(HistoryPage historyPageController) {
         this.historyPageController = historyPageController;
+    }
+
+    public void setToolbarController (ToolbarController toolbarController)
+    {
+        this.toolbarController = toolbarController;
+    }
+
+    public void setUserPageController(UserPageController userPageController) {
+        this.userPageController = userPageController;
     }
 
     public void addNewOrder(Order order){

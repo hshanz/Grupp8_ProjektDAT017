@@ -59,6 +59,8 @@ public class UserPageController extends AnchorPane implements Initializable {
         masterCardButton.setToggleGroup(group);
         getSelectedCardType();
 
+        ParentController.getInstance().setUserPageController(this);
+
         group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
             @Override
             public void changed(ObservableValue<? extends Toggle> observableValue, Toggle toggle, Toggle t1) {
@@ -72,6 +74,8 @@ public class UserPageController extends AnchorPane implements Initializable {
                 }
             }
         });
+
+        DisableText();
 
         firstNameField.setText(customer.getFirstName());
         lastNameField.setText(customer.getLastName());
@@ -151,7 +155,12 @@ public class UserPageController extends AnchorPane implements Initializable {
         System.out.println(creditCard.getValidMonth());
         System.out.println(creditCard.getValidYear());
         System.out.println(creditCard.getVerificationCode());
+
+        save_text.setOpacity(1);
     }
 
-
+    public void DisableText()
+    {
+        save_text.setOpacity(0);
+    }
 }

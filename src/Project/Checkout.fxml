@@ -37,7 +37,7 @@
                   <Text fx:id="wares_to_dest" layoutX="346.0" layoutY="592.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="-st varor är påväg mot --." wrappingWidth="311.0" AnchorPane.bottomAnchor="101.9765625" />
                   <Text layoutX="344.0" layoutY="627.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="De kommer att vara framme " wrappingWidth="311.0" AnchorPane.bottomAnchor="66.9765625" />
                   <Text fx:id="date_and_time" layoutX="346.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="-- kl--" wrappingWidth="311.0" AnchorPane.bottomAnchor="32.0" />
-                  <Button layoutX="23.0" layoutY="590.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="234.0" style="-fx-font-size: 36; -fx-border-radius: 0px 0px 0px 10px; -fx-background-radius: 0px 0px 0px 10px;" styleClass="normal-button" text="Till Historik" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" />
+                  <Button layoutX="23.0" layoutY="590.0" mnemonicParsing="false" onAction="#toHistory" prefHeight="104.0" prefWidth="248.0" style="-fx-font-size: 36; -fx-border-radius: 0px 0px 0px 10px; -fx-background-radius: 0px 0px 0px 10px;" styleClass="normal-button" text="Till Historik" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="cancelPopUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
@@ -369,7 +369,7 @@
                                           </BorderPane>
                                        </children>
                                     </GridPane>
-                                    <Button layoutX="168.0" layoutY="647.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="325.0" styleClass="normal-button" text="Spara användarinfo" AnchorPane.bottomAnchor="15.0">
+                                    <Button layoutX="168.0" layoutY="647.0" mnemonicParsing="false" onAction="#SaveUserInfo" prefHeight="53.0" prefWidth="325.0" styleClass="normal-button" text="Spara användarinfo" AnchorPane.bottomAnchor="15.0">
                                        <tooltip>
                                           <Tooltip styleClass="tooltip-style" text="Uppdatera och spara användarinformationen. " />
                                        </tooltip></Button>
