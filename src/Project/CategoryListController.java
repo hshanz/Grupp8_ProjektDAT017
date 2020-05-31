@@ -29,8 +29,8 @@ public class CategoryListController extends AnchorPane implements Initializable 
 
 
     //Write all categories in this list
-    ObservableList<String> categories = FXCollections.observableArrayList("Hela sortimentet","Frukt & Grönt","Pasta, Ris & Potatis"
-            ,"Skafferi & Örter","Bröd","Mejeri","Kött, Kyckling & Fisk","Baljväxter","Frön & Nötter","Dryck & Godis");
+    ObservableList<String> categories = FXCollections.observableArrayList("Hela sortimentet","Frukt & Bär","Grönsaker & Örter","Pasta, Ris & Potatis"
+            ,"Skafferi","Bröd","Mejeri","Kött & Kyckling","Fisk och Skaldjur","Baljväxter","Frön & Nötter","Dryck & Gott");
 
     @FXML
     private ListView<String> list;
@@ -59,23 +59,25 @@ public class CategoryListController extends AnchorPane implements Initializable 
     private List<ProductCategory> findCatergorys(String str){
         List<ProductCategory> categories = new ArrayList<>();
         switch (str){
-            case "Frukt & Grönt":
+            case "Frukt & Bär":
                 categories.add(ProductCategory.CITRUS_FRUIT);
                 categories.add(ProductCategory.EXOTIC_FRUIT);
                 categories.add(ProductCategory.BERRY);
                 categories.add(ProductCategory.FRUIT);
                 categories.add(ProductCategory.MELONS);
+                return categories;
+            case "Grönsaker & Örter":
                 categories.add(ProductCategory.CABBAGE);
                 categories.add(ProductCategory.ROOT_VEGETABLE);
                 categories.add(ProductCategory.VEGETABLE_FRUIT);
+                categories.add(ProductCategory.HERB);
                 return categories;
             case "Pasta, Ris & Potatis":
                 categories.add(ProductCategory.POTATO_RICE);
                 categories.add(ProductCategory.PASTA);
                 return categories;
-            case "Skafferi & Örter":
+            case "Skafferi":
                 categories.add(ProductCategory.FLOUR_SUGAR_SALT);
-                categories.add(ProductCategory.HERB);
                 return categories;
             case "Bröd":
                 categories.add(ProductCategory.BREAD);
@@ -83,8 +85,11 @@ public class CategoryListController extends AnchorPane implements Initializable 
             case"Mejeri":
                 categories.add(ProductCategory.DAIRIES);
                 return categories;
-            case "Kött, Kyckling & Fisk":
+            case "Kött & Kyckling":
                 categories.add(ProductCategory.MEAT);
+                categories.add(ProductCategory.FISH);
+                return categories;
+            case "Fisk och Skaldjur":
                 categories.add(ProductCategory.FISH);
                 return categories;
             case "Baljväxter":
@@ -93,7 +98,7 @@ public class CategoryListController extends AnchorPane implements Initializable 
             case "Frön & Nötter":
                 categories.add(ProductCategory.NUTS_AND_SEEDS);
                 return categories;
-            case "Dryck & Godis":
+            case "Dryck & Gott":
                 categories.add(ProductCategory.COLD_DRINKS);
                 categories.add(ProductCategory.HOT_DRINKS);
                 categories.add(ProductCategory.SWEET);
