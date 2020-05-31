@@ -128,7 +128,6 @@ public class UserPageController extends AnchorPane implements Initializable {
 
     private void getSelectedCardType() {
         if ("Visa".equals(creditCard.getCardType())){
-            System.out.println("2222");
             visaButton.setSelected(true);
         } else if (creditCard.getCardType().equals("MasterCard")){
             masterCardButton.setSelected(true);

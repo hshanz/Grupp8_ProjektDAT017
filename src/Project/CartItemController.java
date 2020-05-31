@@ -76,9 +76,7 @@ public class CartItemController extends AnchorPane {
         productCounter.setOnKeyPressed(new EventHandler<KeyEvent>() {
             @Override
             public void handle(KeyEvent keyEvent) {
-                System.out.println("nnnnnn");
                 if (keyEvent.getCode().equals(KeyCode.ENTER)){
-                    System.out.println("sdsd");
                     productCounter.getParent().requestFocus();
                 }
             }

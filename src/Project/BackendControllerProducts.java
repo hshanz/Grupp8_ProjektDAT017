@@ -14,7 +14,6 @@ public class BackendControllerProducts {
     public BackendControllerProducts() {
         iM = IMatDataHandler.getInstance();
         bck = this;
-        System.out.println(iM.getOrders().size());
     }
 
     public static BackendControllerProducts getInstance(){

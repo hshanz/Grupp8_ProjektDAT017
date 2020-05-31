@@ -393,7 +393,7 @@
                                        <tooltip>
                                           <Tooltip styleClass="tooltip-style" text="Avbryt köp och återgå till affär" />
                                        </tooltip></Button>
-                                    <Button fx:id="remove_goBack" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#goBackStep" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Ta bort allt" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="remove_goBack" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#goBackStep" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Tillbaka" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
                                  </children>
                               </AnchorPane>
                               <Button fx:id="nextButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nextStep" prefHeight="184.0" prefWidth="281.0" styleClass="important-button" text="Fortsätt" GridPane.halignment="CENTER" GridPane.rowIndex="4">

@@ -2,10 +2,10 @@ package Project;
 
 import javafx.beans.binding.Bindings;
 import javafx.event.Event;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
@@ -18,13 +18,12 @@ import javafx.scene.layout.FlowPane;
 import se.chalmers.cse.dat216.project.Order;
 import se.chalmers.cse.dat216.project.ShoppingItem;
 
-import java.awt.desktop.SystemSleepEvent;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class HistoryAccordion extends AnchorPane {
+public class HistoryAccordion extends AnchorPane implements Comparable {
 
 
     //Labels
@@ -176,5 +175,16 @@ public class HistoryAccordion extends AnchorPane {
         expanded = !expanded;
 
 
+    }
+
+
+    public Order getOrder() {
+        return order;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        long orderDate = ((HistoryAccordion) o).getOrder().getDate().getTime();
+        return (int) (this.order.getDate().getTime()-orderDate);
     }
 }

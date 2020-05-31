@@ -98,6 +98,19 @@
     -fx-border-width : 2;
 }
 
+.shop-item-minus-disabled{
+    -fx-background-color : #605040;
+    -fx-background-radius : 10 0 0 0;
+    -fx-border-color : #000000;
+    -fx-border-radius : 10 0 0 0;
+}
+
+.shop-item-minus-disabled:hover{
+    -fx-background-color : #605040;
+}
+.shop-item-minus-disabled:pressed{
+    -fx-background-color : #605040;
+}
 
 .shop-item{
     -fx-background-color: #d8d8d0;

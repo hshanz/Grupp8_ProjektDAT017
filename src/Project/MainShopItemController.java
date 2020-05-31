@@ -7,6 +7,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
@@ -28,6 +29,8 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
     @FXML private Label productPrice;
     @FXML private TextField productCounter;
     @FXML private Label priceUnit;
+    @FXML private Button removebutton;
+
 
 
     private ShoppingItem shoppingItem;
@@ -50,6 +53,7 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
         this.p = p;
         shoppingItem = new ShoppingItem(p,0);
         checkSaveditems();
+        updateButton();
 
         productName.setText(p.getName());
         productImage.setImage(bckEndP.getFXImage(p));
@@ -92,6 +96,7 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
                 if (sci.getProduct().equals(p)){
                     shoppingItem = sci;
                     productCounter.setText(String.valueOf(shoppingItem.getAmount()));
+                    updateButton();
                 }
         }
 
@@ -107,6 +112,7 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
             shoppingCart.fireShoppingCartChanged(null, false);
         }
         productCounter.setText(String.valueOf(shoppingItem.getAmount()));
+        updateButton();
     }
 
     @FXML
@@ -118,6 +124,15 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
         }
         shoppingCart.fireShoppingCartChanged(null, false);
         productCounter.setText(String.valueOf(shoppingItem.getAmount()));
+        updateButton();
+    }
+
+    private void updateButton(){
+        if (!isInCart(shoppingItem) && !removebutton.getStyleClass().contains("shop-item-minus-disabled")){
+            removebutton.getStyleClass().add("shop-item-minus-disabled");
+        } else if (isInCart(shoppingItem)){
+            removebutton.getStyleClass().remove("shop-item-minus-disabled");
+        }
     }
 
     private boolean isInCart(ShoppingItem sci){
@@ -133,5 +148,6 @@ public class MainShopItemController extends AnchorPane implements ShoppingCartLi
             shoppingItem = cartEvent.getShoppingItem();
         }
         productCounter.setText(String.valueOf(shoppingItem.getAmount()));
+        updateButton();
     }
 }
