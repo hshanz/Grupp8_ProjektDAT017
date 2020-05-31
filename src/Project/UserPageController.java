@@ -10,6 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.text.Text;
 import se.chalmers.cse.dat216.project.CreditCard;
 import se.chalmers.cse.dat216.project.Customer;
 
@@ -34,6 +35,8 @@ public class UserPageController extends AnchorPane implements Initializable {
 
     @FXML private RadioButton visaButton;
     @FXML private RadioButton masterCardButton;
+
+    @FXML private Text save_text;
 
 
     public Button saveButton;

@@ -37,6 +37,7 @@
                   <Text fx:id="wares_to_dest" layoutX="346.0" layoutY="592.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="-st varor är påväg mot --." wrappingWidth="311.0" AnchorPane.bottomAnchor="101.9765625" />
                   <Text layoutX="344.0" layoutY="627.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="De kommer att vara framme " wrappingWidth="311.0" AnchorPane.bottomAnchor="66.9765625" />
                   <Text fx:id="date_and_time" layoutX="346.0" layoutY="659.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="-- kl--" wrappingWidth="311.0" AnchorPane.bottomAnchor="32.0" />
+                  <Button layoutX="23.0" layoutY="590.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="234.0" style="-fx-font-size: 36; -fx-border-radius: 0px 0px 0px 10px; -fx-background-radius: 0px 0px 0px 10px;" styleClass="normal-button" text="Till Historik" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" />
                </children>
             </AnchorPane>
             <AnchorPane fx:id="cancelPopUp" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: rgba(0, 0, 0, 0.75);">
@@ -56,6 +57,104 @@
                      <children>
                         <StackPane fx:id="mainStackPane" prefHeight="582.0" prefWidth="847.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
+                              <AnchorPane fx:id="wiz2_Date" prefHeight="698.0" prefWidth="788.0" styleClass="grey-background-element">
+                                 <children>
+                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <children>
+                                          <Pane layoutX="7.0" layoutY="127.0" prefHeight="371.0" prefWidth="658.0" styleClass="background-element" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                             <children>
+                                                <FlowPane fx:id="dateFlowPane" layoutX="9.0" layoutY="87.0" prefHeight="270.0" prefWidth="642.0" style="-fx-border-color: #000000;" />
+                                             </children>
+                                          </Pane>
+                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-large-text" text="Välj leveranstid" AnchorPane.bottomAnchor="521.0" AnchorPane.leftAnchor="18.0" />
+                                          <GridPane prefHeight="30.0" prefWidth="640.0" AnchorPane.bottomAnchor="490.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                            </rowConstraints>
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="I morgon:" wrappingWidth="103.2421875" />
+                                                <Text layoutX="10.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="I övermorgon:" wrappingWidth="158.2421875" GridPane.columnIndex="1" />
+                                                <Text layoutX="170.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" wrappingWidth="103.2421875" GridPane.columnIndex="2" />
+                                                <Text layoutX="330.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" wrappingWidth="103.2421875" GridPane.columnIndex="3" />
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane layoutX="189.0" layoutY="45.0" prefHeight="46.0" prefWidth="300.0" AnchorPane.topAnchor="45.0">
+                                       <children>
+                                          <Pane prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="0.0" />
+                                          <Circle fill="#ababab" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="-40.0" />
+                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="-40.0" />
+                                          <Circle fill="#5ca1ff" layoutX="122.0" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.leftAnchor="48.0" />
+                                          <Circle fill="#ababab" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
+                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="64.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="173.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="285.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="3.0">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="wiz1_Check" prefHeight="200.0" prefWidth="200.0" styleClass="grey-background-element">
+                                 <children>
+                                    <AnchorPane layoutX="189.0" layoutY="48.0" prefHeight="64.0" prefWidth="254.0" AnchorPane.topAnchor="45.0">
+                                       <children>
+                                          <Pane prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="0.0" />
+                                          <Circle fill="#5ca1ff" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.leftAnchor="-50.0" />
+                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="64.0" />
+                                             </font>
+                                          </Text>
+                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="-40.0" />
+                                          <Circle fill="#ababab" layoutX="122.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="58.0" />
+                                          <Circle fill="#ababab" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
+                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="173.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                          <Text layoutX="286.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
+                                             <font>
+                                                <Font size="48.0" />
+                                             </font>
+                                          </Text>
+                                       </children>
+                                    </AnchorPane>
+                                    <ScrollPane fx:id="scrollPane1" layoutX="152.0" layoutY="153.0" prefHeight="447.0" prefWidth="694.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="130.0">
+                                       <content>
+                                          <FlowPane fx:id="itemPane" prefHeight="549.0" prefWidth="645.0" />
+                                       </content>
+                                    </ScrollPane>
+                                 </children>
+                              </AnchorPane>
                               <AnchorPane fx:id="wiz4_Confirm" prefHeight="200.0" prefWidth="200.0" styleClass="grey-background-element">
                                  <children>
                                     <AnchorPane layoutX="189.0" layoutY="43.0" prefHeight="30.0" prefWidth="294.0" AnchorPane.topAnchor="45.0">
@@ -175,6 +274,7 @@
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                       </rowConstraints>
                                        <children>
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Förnamn:" GridPane.halignment="RIGHT" />
@@ -188,21 +288,21 @@
                                           <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Postnummer:" GridPane.halignment="RIGHT" GridPane.rowIndex="11" />
                                           <GridPane prefHeight="47.0" prefWidth="210.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                                             <columnConstraints>
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="41.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="8.0" prefWidth="22.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="58.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="158.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="132.0" minWidth="10.0" prefWidth="48.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="83.0" minWidth="8.0" prefWidth="15.0" />
+                                              <ColumnConstraints hgrow="SOMETIMES" maxWidth="115.0" minWidth="10.0" prefWidth="64.0" />
+                                                <ColumnConstraints hgrow="SOMETIMES" maxWidth="201.0" minWidth="10.0" prefWidth="152.0" />
                                             </columnConstraints>
                                             <rowConstraints>
                                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                                             </rowConstraints>
                                              <children>
-                                                <TextField fx:id="monthField" maxWidth="-Infinity" prefHeight="37.0" prefWidth="47.0" styleClass="large-text-field">
+                                                <TextField fx:id="monthField" maxWidth="-Infinity" prefHeight="37.0" prefWidth="50.0" promptText="MM" styleClass="large-text-field">
                                                    <tooltip>
                                                       <Tooltip styleClass="tooltip-style" text="Månad då kortet går ut." />
                                                    </tooltip>
                                                 </TextField>
-                                                <TextField fx:id="yearField" maxWidth="-Infinity" prefHeight="30.0" prefWidth="40.0" styleClass="large-text-field" GridPane.columnIndex="2">
+                                                <TextField fx:id="yearField" maxWidth="-Infinity" prefHeight="37.0" prefWidth="45.0" promptText="ÅÅ" styleClass="large-text-field" GridPane.columnIndex="2">
                                                    <tooltip>
                                                       <Tooltip styleClass="tooltip-style" text="År då kortet går ut. " />
                                                    </tooltip>
@@ -216,7 +316,7 @@
                                           </GridPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="7">
                                              <left>
-                                                <TextField fx:id="cvcField" prefHeight="17.0" prefWidth="59.0" styleClass="large-text-field" BorderPane.alignment="CENTER">
+                                                <TextField fx:id="cvcField" prefHeight="17.0" prefWidth="59.0" promptText="***" styleClass="large-text-field" BorderPane.alignment="CENTER">
                                                    <tooltip>
                                                       <Tooltip styleClass="tooltip-style" text="Tresiffrig säkerhetskod. " />
                                                    </tooltip>
@@ -225,37 +325,37 @@
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                                              <left>
-                                                <TextField fx:id="firstNameField" prefHeight="25.0" prefWidth="200.0" styleClass="large-text-field" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="firstNameField" prefHeight="25.0" prefWidth="200.0" promptText="Skriv in ditt förnamn..." styleClass="large-text-field" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                              <left>
-                                                <TextField fx:id="lastNameField" prefHeight="30.0" prefWidth="200.0" styleClass="large-text-field" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="lastNameField" prefHeight="30.0" prefWidth="200.0" promptText="Skriv in ditt efternamn..." styleClass="large-text-field" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                              <left>
-                                                <TextField fx:id="emailField" prefHeight="30.0" prefWidth="200.0" styleClass="large-text-field" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="emailField" prefHeight="30.0" prefWidth="200.0" promptText="Skriv in din mailadress..." styleClass="large-text-field" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="9">
                                              <left>
-                                                <TextField fx:id="addressField" prefHeight="25.0" prefWidth="200.0" styleClass="large-text-field" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="addressField" prefHeight="37.0" prefWidth="202.0" promptText="Törnrosgatan 12b" styleClass="large-text-field" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="10">
                                              <left>
-                                                <TextField fx:id="cityField" prefHeight="25.0" prefWidth="154.0" styleClass="large-text-field" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="cityField" prefHeight="25.0" prefWidth="154.0" promptText="Göteborg" styleClass="large-text-field" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="11">
                                              <left>
-                                                <TextField fx:id="zipCodeField" prefHeight="25.0" prefWidth="154.0" styleClass="large-text-field" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="zipCodeField" prefHeight="25.0" prefWidth="154.0" promptText="404 42" styleClass="large-text-field" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                                              <left>
-                                                <TextField fx:id="cardNumberField" prefHeight="30.0" prefWidth="200.0" styleClass="large-text-field" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="cardNumberField" prefHeight="30.0" prefWidth="200.0" promptText="1234 1234 1234 1234" styleClass="large-text-field" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Korttyp" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
@@ -269,104 +369,11 @@
                                           </BorderPane>
                                        </children>
                                     </GridPane>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="wiz2_Date" prefHeight="698.0" prefWidth="788.0" styleClass="grey-background-element">
-                                 <children>
-                                    <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                       <children>
-                                          <Pane layoutX="7.0" layoutY="127.0" prefHeight="371.0" prefWidth="658.0" styleClass="background-element" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
-                                             <children>
-                                                <FlowPane fx:id="dateFlowPane" layoutX="9.0" layoutY="87.0" prefHeight="270.0" prefWidth="642.0" style="-fx-border-color: #000000;" />
-                                             </children>
-                                          </Pane>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="medium-large-text" text="Välj leveranstid" AnchorPane.bottomAnchor="521.0" AnchorPane.leftAnchor="18.0" />
-                                          <GridPane prefHeight="30.0" prefWidth="640.0" AnchorPane.bottomAnchor="490.0" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="18.0">
-                                            <columnConstraints>
-                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                                            </columnConstraints>
-                                            <rowConstraints>
-                                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                                            </rowConstraints>
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="I morgon:" wrappingWidth="103.2421875" />
-                                                <Text layoutX="10.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="I övermorgon:" wrappingWidth="158.2421875" GridPane.columnIndex="1" />
-                                                <Text layoutX="170.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" wrappingWidth="103.2421875" GridPane.columnIndex="2" />
-                                                <Text layoutX="330.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" wrappingWidth="103.2421875" GridPane.columnIndex="3" />
-                                             </children>
-                                          </GridPane>
-                                       </children>
-                                    </AnchorPane>
-                                    <AnchorPane layoutX="189.0" layoutY="45.0" prefHeight="46.0" prefWidth="300.0" AnchorPane.topAnchor="45.0">
-                                       <children>
-                                          <Pane prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="0.0" />
-                                          <Circle fill="#ababab" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="-40.0" />
-                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                             <font>
-                                                <Font size="48.0" />
-                                             </font>
-                                          </Text>
-                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="-40.0" />
-                                          <Circle fill="#5ca1ff" layoutX="122.0" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.leftAnchor="48.0" />
-                                          <Circle fill="#ababab" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
-                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                             <font>
-                                                <Font size="64.0" />
-                                             </font>
-                                          </Text>
-                                          <Text layoutX="173.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                             <font>
-                                                <Font size="48.0" />
-                                             </font>
-                                          </Text>
-                                          <Text layoutX="285.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="3.0">
-                                             <font>
-                                                <Font size="48.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                    </AnchorPane>
-                                 </children>
-                              </AnchorPane>
-                              <AnchorPane fx:id="wiz1_Check" prefHeight="200.0" prefWidth="200.0" styleClass="grey-background-element">
-                                 <children>
-                                    <AnchorPane layoutX="189.0" layoutY="48.0" prefHeight="64.0" prefWidth="254.0" AnchorPane.topAnchor="45.0">
-                                       <children>
-                                          <Pane prefHeight="30.0" prefWidth="300.0" styleClass="dark-background-element" AnchorPane.topAnchor="0.0" />
-                                          <Circle fill="#5ca1ff" layoutY="14.0" radius="50.0" stroke="BLACK" strokeType="INSIDE" styleClass="important-element" AnchorPane.leftAnchor="-50.0" />
-                                          <Text layoutX="-29.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                             <font>
-                                                <Font size="64.0" />
-                                             </font>
-                                          </Text>
-                                          <Circle fill="#ababab" layoutX="282.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="-40.0" />
-                                          <Circle fill="#ababab" layoutX="122.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.leftAnchor="58.0" />
-                                          <Circle fill="#ababab" layoutX="198.0" layoutY="14.0" radius="40.0" stroke="BLACK" strokeType="INSIDE" styleClass="unimportant-element" AnchorPane.rightAnchor="58.0" />
-                                          <Text layoutX="69.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                             <font>
-                                                <Font size="48.0" />
-                                             </font>
-                                          </Text>
-                                          <Text layoutX="173.0" layoutY="15.0" strokeType="OUTSIDE" strokeWidth="0.0" text="3" textAlignment="CENTER" textOrigin="CENTER" wrappingWidth="58.5">
-                                             <font>
-                                                <Font size="48.0" />
-                                             </font>
-                                          </Text>
-                                          <Text layoutX="286.0" layoutY="14.0" strokeType="OUTSIDE" strokeWidth="0.0" text="4" textOrigin="CENTER" wrappingWidth="11.0">
-                                             <font>
-                                                <Font size="48.0" />
-                                             </font>
-                                          </Text>
-                                       </children>
-                                    </AnchorPane>
-                                    <ScrollPane fx:id="scrollPane1" layoutX="152.0" layoutY="153.0" prefHeight="447.0" prefWidth="694.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="130.0">
-                                       <content>
-                                          <FlowPane fx:id="itemPane" prefHeight="549.0" prefWidth="645.0" />
-                                       </content>
-                                    </ScrollPane>
+                                    <Button layoutX="168.0" layoutY="647.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="325.0" styleClass="normal-button" text="Spara användarinfo" AnchorPane.bottomAnchor="15.0">
+                                       <tooltip>
+                                          <Tooltip styleClass="tooltip-style" text="Uppdatera och spara användarinformationen. " />
+                                       </tooltip></Button>
+                                    <Text fx:id="save_text" layoutX="499.0" layoutY="666.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small-text" text="Informationen har sparats!" wrappingWidth="118.1953125" AnchorPane.bottomAnchor="15.0" />
                                  </children>
                               </AnchorPane>
                            </children>
@@ -393,7 +400,10 @@
                                        <tooltip>
                                           <Tooltip styleClass="tooltip-style" text="Avbryt köp och återgå till affär" />
                                        </tooltip></Button>
-                                    <Button fx:id="remove_goBack" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#goBackStep" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Tillbaka" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="remove_goBack" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#goBackStep" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Tillbaka" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                       <tooltip>
+                                          <Tooltip styleClass="tooltip-style" text="Gå tillbaka till det tidigare steget." />
+                                       </tooltip></Button>
                                  </children>
                               </AnchorPane>
                               <Button fx:id="nextButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nextStep" prefHeight="184.0" prefWidth="281.0" styleClass="important-button" text="Fortsätt" GridPane.halignment="CENTER" GridPane.rowIndex="4">

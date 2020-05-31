@@ -16,6 +16,7 @@
                   <Image url="@Images/Imat_logga.png" />
                </image>
             </ImageView>
+            <Button mnemonicParsing="false" onAction="#onClickShop" prefHeight="120.0" prefWidth="196.0" style="-fx-background-radius: 0px 38px 0px 0px; -fx-border-radius: 0px 38px 0px 0px;" styleClass="logo-shade" />
          </children>
       </Pane>
       <Button fx:id="shopButton" layoutX="250.0" layoutY="21.0" mnemonicParsing="false" onAction="#onClickShop" prefHeight="99.0" prefWidth="150.0" styleClass="toolbar-button" text="Handla" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="230.0">

@@ -47,7 +47,7 @@ public class MonthHolder implements Initializable {
         for (int i = orders.size() -1; i >= 0 ; i--) {
             calendar.setTimeInMillis(orders.get(i).getDate().getTime());
             month = calendar.get(Calendar.MONTH);
-            if (month != monthPrev) monthsList.add(new HistoryMonths(month));
+            if (month != monthPrev) monthsList.add(new HistoryMonths(month, this));
             monthPrev = month;
         }
     }
