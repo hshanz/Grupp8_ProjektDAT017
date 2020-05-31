@@ -7,15 +7,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
-import se.chalmers.cse.dat216.project.Product;
-import se.chalmers.cse.dat216.project.ShoppingCart;
-import se.chalmers.cse.dat216.project.ShoppingItem;
+import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class HistoryItemController extends AnchorPane {
+public class HistoryItemController extends AnchorPane implements ShoppingCartListener {
 
     @FXML private ImageView productImage;
     @FXML private Label productName;
@@ -40,6 +38,7 @@ public class HistoryItemController extends AnchorPane {
         }bckEndP = BackendControllerProducts.getInstance();
         shoppingCart = bckEndP.getShoppingCart();
         this.shoppingItem = shoppingItem;
+        shoppingCart.addShoppingCartListener(this);
 
 
         productImage.setImage(bckEndP.getFXImage(shoppingItem.getProduct()));
@@ -67,5 +66,10 @@ public class HistoryItemController extends AnchorPane {
         shoppingItemCopy.setAmount(1);
         shoppingCart.addItem(shoppingItemCopy);
 
+    }
+
+    @Override
+    public void shoppingCartChanged(CartEvent cartEvent) {
+        //System.out.println(shoppingItem.getAmount());
     }
 }

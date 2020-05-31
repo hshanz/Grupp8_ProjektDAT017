@@ -107,7 +107,11 @@ public class ParentController implements Initializable {
 
 
 
-        Runtime.getRuntime().addShutdownHook(new Thread(() -> backendControllerProducts.shutDown()));
+        Runtime.getRuntime().addShutdownHook(new Thread(() -> {
+            System.out.println(backendControllerProducts.getOrders().size());
+
+            backendControllerProducts.shutDown();
+        }));
     }
 
     public void setCheckoutController(CheckoutController checkoutController) {

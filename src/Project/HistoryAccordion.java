@@ -23,7 +23,7 @@ import java.util.Calendar;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class HistoryAccordion extends AnchorPane {
+public class HistoryAccordion extends AnchorPane implements Comparable {
 
 
     //Labels
@@ -161,5 +161,16 @@ public class HistoryAccordion extends AnchorPane {
         expanded = !expanded;
 
 
+    }
+
+
+    public Order getOrder() {
+        return order;
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        long orderDate = ((HistoryAccordion) o).getOrder().getDate().getTime();
+        return (int) (this.order.getDate().getTime()-orderDate);
     }
 }

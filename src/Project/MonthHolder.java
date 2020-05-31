@@ -25,8 +25,9 @@ public class MonthHolder implements Initializable {
         parentController = ParentController.getInstance();
         historyPage = parentController.getHistoryPageController();
         monthsList = new ArrayList<>();
-
+        monthsList.add(new HistoryMonths(-1,this));
         addMonths();
+        addThisMonth();
         update();
 
     }
@@ -38,6 +39,25 @@ public class MonthHolder implements Initializable {
         }
     }
 
+    public void addThisMonth(){
+        Calendar calendar = Calendar.getInstance();
+        if (monthsList.size() > 2 && calendar.get(Calendar.MONTH) == monthsList.get(1).getMonth()){
+            monthsList.add(1,new HistoryMonths(calendar.get(Calendar.MONTH),this));
+        }
+    }
+
+
+    public void loadMonth(int month){
+        if (month == -1) {
+            historyPage.updateList();
+        }else historyPage.loadMonthView(month);
+        for (HistoryMonths h:monthsList) {
+            h.deselect(month);
+        }
+    }
+
+
+
 
     private void addMonths() {
         List<Order> orders = historyPage.getOrders();
@@ -47,7 +67,7 @@ public class MonthHolder implements Initializable {
         for (int i = orders.size() -1; i >= 0 ; i--) {
             calendar.setTimeInMillis(orders.get(i).getDate().getTime());
             month = calendar.get(Calendar.MONTH);
-            if (month != monthPrev) monthsList.add(new HistoryMonths(month, this));
+            if (month != monthPrev) monthsList.add(new HistoryMonths(month,this));
             monthPrev = month;
         }
     }

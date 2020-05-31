@@ -276,6 +276,8 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
     @FXML
     public void confirmButtonPressed(){
         Order order = bckEndP.placeOrder(false);
+        makeCopys(order);
+        System.out.println(order.getItems().get(0).getAmount());
         order.setDate(new Date());
         order.setOrderNumber(bckEndP.getOrders().size()+1);
         wares_to_dest.setText(order.getItems().size() + ":st varor är på väg till " + addressField.getText() );
@@ -286,10 +288,22 @@ public class CheckoutController implements Initializable, ShoppingCartListener {
             sci.setAmount(0);
             shoppingCart.fireShoppingCartChanged(sci,false);
         }
+        System.out.println(order.getItems().get(0).getAmount());
 
         shoppingCart.clear();
         Finish.toFront();
+        System.out.println(order.getItems().get(0).getAmount());
     }
+
+    public void makeCopys(Order order){
+        List<ShoppingItem> orderList = new ArrayList<>();
+        for (ShoppingItem sci: shoppingCart.getItems()){
+            orderList.add(new ShoppingItem(sci.getProduct(),sci.getAmount()));
+        }
+        order.setItems(orderList);
+    }
+
+
 
     @FXML
     public void nextStep() {

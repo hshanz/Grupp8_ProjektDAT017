@@ -11,6 +11,7 @@ public class HistoryMonths extends AnchorPane {
     @FXML Button month_button; //The text should represent a month.
     private String [] months ={"Januari","Februari","Mars","April","Maj","Juni","Juli","Augusti","September","Oktober","November","December"};
     MonthHolder parent;
+    private int month;
 
     public HistoryMonths(int month, MonthHolder parent) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HistoryMonths.fxml"));
@@ -23,18 +24,28 @@ public class HistoryMonths extends AnchorPane {
         }
 
         this.parent = parent;
-        month_button.setText(months[month]);
+        this.month = month;
+        if (this.month == -1){
+            month_button.setText("Alla köp");
+        }else month_button.setText(months[this.month]);
     }
 
-    public void deselect()
-    {
-        month_button.getStyleClass().remove("list-cell-selected");
+    @FXML
+    public void Pressed (){
+        parent.loadMonth(month);
     }
 
-    public void Pressed () //This month is chosen
-    {
-        parent.deselectMonths();
-        month_button.getStyleClass().add("list-cell-selected");
+    public void deselect(int month){
+        if (month == this.month && !month_button.getStyleClass().contains("month-button-selected")){
+            month_button.getStyleClass().remove("month-button");
+            month_button.getStyleClass().add("month-button-selected");
+        } else if (month_button.getStyleClass().contains("month-button-selected")){
+            month_button.getStyleClass().remove("month-button-selected");
+            month_button.getStyleClass().add("month-button");
+        }
+    }
 
+    public int getMonth() {
+        return month;
     }
 }
