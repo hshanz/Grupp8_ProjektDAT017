@@ -24,47 +24,47 @@
                      </font>
                   </Label>
                   <Label alignment="CENTER_RIGHT" layoutX="217.0" layoutY="96.0" prefHeight="35.0" prefWidth="107.0" styleClass="normal-text" text="Förnamn:" AnchorPane.rightAnchor="300.0" />
-                  <TextField fx:id="firstNameField" layoutX="290.0" layoutY="101.0" styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
+                  <TextField fx:id="firstNameField" layoutX="290.0" layoutY="101.0" promptText="Skriv in ditt förnamn..." styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
                   <Label alignment="CENTER_RIGHT" layoutX="157.0" layoutY="146.0" prefHeight="35.0" prefWidth="124.0" styleClass="normal-text" text="Efternamn:" AnchorPane.rightAnchor="300.0" />
-                  <TextField fx:id="lastNameField" layoutX="290.0" layoutY="145.0" styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
+                  <TextField fx:id="lastNameField" layoutX="290.0" layoutY="145.0" promptText="Skriv in ditt efternamn..." styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
                   <Label alignment="CENTER_RIGHT" layoutX="201.0" layoutY="191.0" prefHeight="35.0" prefWidth="80.0" styleClass="normal-text" text="E-Post:" AnchorPane.rightAnchor="300.0" />
-                  <TextField fx:id="emailField" layoutX="291.0" layoutY="190.0" styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
+                  <TextField fx:id="emailField" layoutX="291.0" layoutY="190.0" promptText="Skriv in din mailadress..." styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
                   <Label layoutX="108.0" layoutY="233.0" styleClass="medium-large-text" text="Leverans-information">
                      <font>
                         <Font size="39.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER_RIGHT" layoutX="141.0" layoutY="302.0" prefHeight="35.0" prefWidth="138.0" styleClass="normal-text" text="Adress:" AnchorPane.rightAnchor="300.0" />
-                  <TextField fx:id="addressField" layoutX="289.0" layoutY="307.0" styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
+                  <TextField fx:id="addressField" layoutX="289.0" layoutY="307.0" promptText="Törnrosgatan 12b" styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
                   <Label alignment="CENTER_RIGHT" layoutX="219.0" layoutY="355.0" prefHeight="17.0" prefWidth="60.0" styleClass="normal-text" text="Ort:" AnchorPane.rightAnchor="300.0" />
-                  <TextField fx:id="cityField" layoutX="290.0" layoutY="354.0" styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
+                  <TextField fx:id="cityField" layoutX="290.0" layoutY="354.0" promptText="Göteborg" styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
                   <Label alignment="CENTER_RIGHT" layoutX="122.0" layoutY="403.0" prefHeight="35.0" prefWidth="157.0" styleClass="normal-text" text="Postnummer:" AnchorPane.rightAnchor="300.0" />
-                  <TextField fx:id="zipCodeField" layoutX="291.0" layoutY="402.0" styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
+                  <TextField fx:id="zipCodeField" layoutX="291.0" layoutY="402.0" promptText="404 42" styleClass="large-text-field" AnchorPane.leftAnchor="290.0" />
                   <Label layoutX="191.0" layoutY="471.0" styleClass="medium-large-text" text="Kortuppgifter">
                      <font>
                         <Font size="39.0" />
                      </font>
                   </Label>
                   <Label alignment="CENTER_RIGHT" layoutX="119.0" layoutY="591.0" prefHeight="35.0" prefWidth="163.0" styleClass="normal-text" text="Kortnummer:" AnchorPane.rightAnchor="298.0" />
-                  <TextField fx:id="cardNumberField" layoutX="292.0" layoutY="591.0" styleClass="large-text-field" AnchorPane.leftAnchor="292.0" />
+                  <TextField fx:id="cardNumberField" layoutX="292.0" layoutY="591.0" promptText="1234 1234 1234" styleClass="large-text-field" AnchorPane.leftAnchor="292.0" />
                   <Label alignment="CENTER_RIGHT" layoutX="89.0" layoutY="635.0" prefHeight="35.0" prefWidth="193.0" styleClass="normal-text" text="Utgångsdatum:" AnchorPane.rightAnchor="298.0" />
-                  <TextField fx:id="monthField" layoutX="292.0" layoutY="634.0" prefHeight="37.0" prefWidth="42.0" styleClass="large-text-field" AnchorPane.leftAnchor="292.0">
+                  <TextField fx:id="monthField" layoutX="292.0" layoutY="634.0" prefHeight="37.0" prefWidth="51.0" promptText="MM" styleClass="large-text-field" AnchorPane.leftAnchor="292.0">
                      <tooltip>
                         <Tooltip styleClass="tooltip-style" text="Månaden då ditt kort går ut." />
                      </tooltip>
                   </TextField>
                   <Label alignment="CENTER_RIGHT" layoutX="201.0" layoutY="680.0" prefHeight="17.0" prefWidth="81.0" styleClass="normal-text" text="CVC:" AnchorPane.rightAnchor="298.0" />
-                  <TextField fx:id="cvcField" layoutX="292.0" layoutY="679.0" prefHeight="37.0" prefWidth="62.0" styleClass="large-text-field" AnchorPane.leftAnchor="292.0">
+                  <TextField fx:id="cvcField" layoutX="292.0" layoutY="679.0" prefHeight="37.0" prefWidth="62.0" promptText="***" styleClass="large-text-field" AnchorPane.leftAnchor="292.0">
                      <tooltip>
                         <Tooltip styleClass="tooltip-style" text="Tresiffrig säkerhetskod." />
                      </tooltip>
                   </TextField>
-                  <Label layoutX="338.0" layoutY="635.0" style="-fx-font-weight: regular;" styleClass="normal-text" text="-">
+                  <Label layoutX="344.0" layoutY="634.0" style="-fx-font-weight: regular;" styleClass="normal-text" text="-">
                      <font>
                         <Font size="23.0" />
                      </font>
                   </Label>
-                  <TextField fx:id="yearField" layoutX="352.0" layoutY="633.0" prefHeight="37.0" prefWidth="46.0" styleClass="large-text-field">
+                  <TextField fx:id="yearField" layoutX="354.0" layoutY="633.0" prefHeight="37.0" prefWidth="47.0" promptText="ÅÅ" styleClass="large-text-field">
                      <tooltip>
                         <Tooltip styleClass="tooltip-style" text="Året då ditt kort går ut." />
                      </tooltip>
