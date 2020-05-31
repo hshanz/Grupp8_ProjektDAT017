@@ -11,6 +11,7 @@ import se.chalmers.cse.dat216.project.*;
 
 import java.io.IOException;
 import java.net.URL;
+import java.text.DecimalFormat;
 import java.util.ResourceBundle;
 
 public class HistoryItemController extends AnchorPane implements ShoppingCartListener {
@@ -26,6 +27,7 @@ public class HistoryItemController extends AnchorPane implements ShoppingCartLis
     private ShoppingItem shoppingItem;
     private BackendControllerProducts bckEndP;
     private ShoppingCart shoppingCart;
+    private DecimalFormat df = new DecimalFormat("0.00");
 
     public HistoryItemController(ShoppingItem shoppingItem) {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("HistoryItem.fxml"));
@@ -44,7 +46,7 @@ public class HistoryItemController extends AnchorPane implements ShoppingCartLis
         productImage.setImage(bckEndP.getFXImage(shoppingItem.getProduct()));
         productName.setText(shoppingItem.getProduct().getName());
         historyCount.setText(String.valueOf(shoppingItem.getAmount()) + " " + shoppingItem.getProduct().getUnitSuffix());
-        historyPrice.setText(String.valueOf(shoppingItem.getTotal() + " kr"));
+        historyPrice.setText(String.valueOf(df.format(shoppingItem.getTotal()) + " kr"));
         singleItem.setText("1 " + shoppingItem.getProduct().getUnitSuffix());
         currentPrice.setText(String.valueOf(shoppingItem.getProduct().getPrice()) + " kr");
     }

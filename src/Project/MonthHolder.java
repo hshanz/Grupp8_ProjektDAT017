@@ -41,7 +41,7 @@ public class MonthHolder implements Initializable {
 
     public void addThisMonth(){
         Calendar calendar = Calendar.getInstance();
-        if (monthsList.size() > 2 && calendar.get(Calendar.MONTH) == monthsList.get(1).getMonth()){
+        if (monthsList.size() > 1 && calendar.get(Calendar.MONTH) != monthsList.get(1).getMonth()){
             monthsList.add(1,new HistoryMonths(calendar.get(Calendar.MONTH),this));
         }
     }
