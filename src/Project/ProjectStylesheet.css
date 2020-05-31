@@ -100,16 +100,18 @@
 
 .shop-item-minus-disabled{
     -fx-background-color : #605040;
-    -fx-background-radius : 10 0 0 0;
+    -fx-background-radius : 10px 0px 0px 0px;
     -fx-border-color : #000000;
-    -fx-border-radius : 10 0 0 0;
+    -fx-border-radius : 10px 0px 0px 0px;
 }
 
 .shop-item-minus-disabled:hover{
     -fx-background-color : #605040;
+    -fx-border-width : 1;
 }
 .shop-item-minus-disabled:pressed{
     -fx-background-color : #605040;
+    -fx-border-width : 1;
 }
 
 .shop-item{
