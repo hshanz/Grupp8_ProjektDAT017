@@ -355,7 +355,7 @@
                                           </BorderPane>
                                           <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                                              <left>
-                                                <TextField fx:id="cardNumberField" prefHeight="30.0" prefWidth="200.0" promptText="1234 1234 1234" styleClass="large-text-field" BorderPane.alignment="CENTER" />
+                                                <TextField fx:id="cardNumberField" prefHeight="30.0" prefWidth="200.0" promptText="1234 1234 1234 1234" styleClass="large-text-field" BorderPane.alignment="CENTER" />
                                              </left>
                                           </BorderPane>
                                           <Text nodeOrientation="LEFT_TO_RIGHT" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="normal-text" text="Korttyp" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
@@ -369,7 +369,10 @@
                                           </BorderPane>
                                        </children>
                                     </GridPane>
-                                    <Button layoutX="168.0" layoutY="647.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="325.0" styleClass="normal-button" text="Spara användarinfo" AnchorPane.bottomAnchor="15.0" />
+                                    <Button layoutX="168.0" layoutY="647.0" mnemonicParsing="false" prefHeight="53.0" prefWidth="325.0" styleClass="normal-button" text="Spara användarinfo" AnchorPane.bottomAnchor="15.0">
+                                       <tooltip>
+                                          <Tooltip styleClass="tooltip-style" text="Uppdatera och spara användarinformationen. " />
+                                       </tooltip></Button>
                                     <Text fx:id="save_text" layoutX="499.0" layoutY="666.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="small-text" text="Informationen har sparats!" wrappingWidth="118.1953125" AnchorPane.bottomAnchor="15.0" />
                                  </children>
                               </AnchorPane>
@@ -397,7 +400,10 @@
                                        <tooltip>
                                           <Tooltip styleClass="tooltip-style" text="Avbryt köp och återgå till affär" />
                                        </tooltip></Button>
-                                    <Button fx:id="remove_goBack" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#goBackStep" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Tillbaka" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0" />
+                                    <Button fx:id="remove_goBack" layoutX="10.0" layoutY="100.0" mnemonicParsing="false" onAction="#goBackStep" prefHeight="86.0" prefWidth="261.0" styleClass="caution-button" text="Tillbaka" AnchorPane.leftAnchor="10.0" AnchorPane.rightAnchor="10.0">
+                                       <tooltip>
+                                          <Tooltip styleClass="tooltip-style" text="Gå tillbaka till det tidigare steget." />
+                                       </tooltip></Button>
                                  </children>
                               </AnchorPane>
                               <Button fx:id="nextButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#nextStep" prefHeight="184.0" prefWidth="281.0" styleClass="important-button" text="Fortsätt" GridPane.halignment="CENTER" GridPane.rowIndex="4">

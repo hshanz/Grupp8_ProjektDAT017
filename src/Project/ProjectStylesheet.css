@@ -20,6 +20,23 @@
     -fx-background-insets: 0 10 0 0;
 }
 
+.list-cell-selected{
+    -fx-background-color: #d22d3e;
+    -fx-text-fill: black;
+    -fx-background-insets: 0 0 0 0;
+}
+
+.list-cell-selected:hover{
+    -fx-background-color: #d22d3e;
+    -fx-text-fill: black;
+    -fx-background-insets: 0 0 0 0;
+}
+.list-cell-selected:pressed{
+    -fx-background-color: #d22d3e;
+    -fx-text-fill: black;
+    -fx-background-insets: 0 0 0 0;
+}
+
 .list-cell:selected{
     -fx-background-color: #d22d3e;
     -fx-text-fill: black;

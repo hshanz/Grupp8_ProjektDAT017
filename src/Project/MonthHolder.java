@@ -39,10 +39,10 @@ public class MonthHolder implements Initializable {
     }
 
     private void hardcode(){
-        monthsList.add(new HistoryMonths(3));
-        monthsList.add(new HistoryMonths(2));
-        monthsList.add(new HistoryMonths(1));
-        monthsList.add(new HistoryMonths(0));
+        monthsList.add(new HistoryMonths(3,this));
+        monthsList.add(new HistoryMonths(2,this));
+        monthsList.add(new HistoryMonths(1,this));
+        monthsList.add(new HistoryMonths(0,this));
     }
 
 
@@ -54,9 +54,17 @@ public class MonthHolder implements Initializable {
         for (int i = orders.size() -1; i >= 0 ; i--) {
             calendar.setTimeInMillis(orders.get(i).getDate().getTime());
             month = calendar.get(Calendar.MONTH);
-            if (month != monthPrev) monthsList.add(new HistoryMonths(month));
+            if (month != monthPrev) monthsList.add(new HistoryMonths(month, this));
             monthPrev = month;
         }
         hardcode();
+    }
+
+    public void deselectMonths ()
+    {
+        for(HistoryMonths month:monthsList)
+        {
+            month.deselect();
+        }
     }
 }

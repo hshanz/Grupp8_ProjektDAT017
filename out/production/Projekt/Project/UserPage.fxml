@@ -46,7 +46,7 @@
                      </font>
                   </Label>
                   <Label alignment="CENTER_RIGHT" layoutX="119.0" layoutY="591.0" prefHeight="35.0" prefWidth="163.0" styleClass="normal-text" text="Kortnummer:" AnchorPane.rightAnchor="298.0" />
-                  <TextField fx:id="cardNumberField" layoutX="292.0" layoutY="591.0" promptText="1234 1234 1234" styleClass="large-text-field" AnchorPane.leftAnchor="292.0" />
+                  <TextField fx:id="cardNumberField" layoutX="292.0" layoutY="591.0" promptText="1234 1234 1234 1234" styleClass="large-text-field" AnchorPane.leftAnchor="292.0" />
                   <Label alignment="CENTER_RIGHT" layoutX="89.0" layoutY="635.0" prefHeight="35.0" prefWidth="193.0" styleClass="normal-text" text="Utgångsdatum:" AnchorPane.rightAnchor="298.0" />
                   <TextField fx:id="monthField" layoutX="292.0" layoutY="634.0" prefHeight="37.0" prefWidth="51.0" promptText="MM" styleClass="large-text-field" AnchorPane.leftAnchor="292.0">
                      <tooltip>
